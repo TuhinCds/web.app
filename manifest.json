@@ -1,6 +1,6 @@
 {
   "name": "Tuhin App",
-  "short_name": "Tuhin",
+  "short_name": "TuhinCds",
   "start_url": "/web.app/",
   "scope": "/web.app/",
   "display": "standalone",
