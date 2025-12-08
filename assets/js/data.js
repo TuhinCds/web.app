@@ -111,6 +111,24 @@ export const projects = {
         preview_link: '',
         status: 'featured',
     },
+    {
+        image: 'project4.png',
+        title: 'Ai Robot',
+        title_icon: '<i class="fa-solid fa-robot"></i>',
+        description: 'Ai Robot stions, class schet',
+        Used_in_project: [
+            { programing_lang: 'C language' },
+            { programing_lang: 'Data Stucture' },
+            { programing_lang: 'Arduino uno' },
+            { programing_lang: 'cicuits' },
+            { programing_lang: 'Python' },
+            {programing_lang: "component"}
+        ],
+        code_link: '',
+        preview_link: '',
+        status: 'featured',
+    },
+    
     ],
 
 }
