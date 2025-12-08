@@ -306,6 +306,3 @@ SkillsAndTools.Skills_Data.forEach(item => {
     
 })
 
-if(!document.querySelector('header')) {
-  document.body.insertAdjacentHTML('afterbegin', headerHTML);
-}
