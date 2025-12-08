@@ -31,7 +31,7 @@ export const appNavigation = {
         {
             option: 'Contact',
             link: '#Contact',
-            icon: '<i class="fa-solid fa-medal"></i>',
+            icon: '<i class="fa-solid fa-address-book"></i>',
             target: '',
             selected: false,
         },
