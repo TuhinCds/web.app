@@ -51,6 +51,7 @@
     border-color .35s ease;
     -webkit-tap-highlight-color: transparent;
     scrollbar-width: none;
+    user-select: none;
 }
 body {
     width: 100%;
