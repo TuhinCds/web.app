@@ -1,0 +1,211 @@
+
+@media (max-width: 768px) {
+    .navigation {
+        display: none;
+    }
+    .sidebar {
+        width: 230px;
+    }
+    #toggleSidebar {
+        display: none;
+    }
+    #menuToggler {
+        display: block;
+    }
+    #sidebar.open {
+    width: 230px;
+}
+#overly {
+    position: fixed;
+    inset: 0;
+    background: rgba(255, 0, 0, 0);
+    backdrop-filter: blur(2px);
+    z-index: 999;
+    display: none;
+}
+#overly.active {
+    display: block;
+}
+.hero-wraper {
+    text-align: center;
+}
+.my_title {
+    font-size: 2.3rem;
+    text-align: center;
+
+}
+.text-content-data {
+    font-size: .9rem;
+}
+.circle:nth-child(1) {
+    left: 0;
+    top: 40px;
+    width: calc( var(--circle-size) * 2);
+    height: calc( var(--circle-size) * 2);
+    filter: blur(50px);
+}
+.circle:nth-child(2) {
+    right: -16px;
+    top: 40px;
+    width: calc( var(--circle-size) * 2);
+    height: calc( var(--circle-size) * 2);
+    filter: blur(40px);
+    background: rgba(0, 128, 255, 0.402);
+}
+.circle:nth-child(3) {
+    right: -16px;
+    top: 40px;
+    width: calc( var(--circle-size) * 2);
+    height: calc( var(--circle-size) * 2);
+    filter: blur(40px);
+}
+.circle:nth-child(4) {
+    
+}
+.circle:nth-child(5) {
+    
+}
+.circle:nth-child(6) {
+    
+}
+.circle:nth-child(7) {
+    
+}
+.circle:nth-child(8) {  
+    right: -16px;
+    top: 40px;
+    width: calc( var(--circle-size) * 2);
+    height: calc( var(--circle-size) * 2);
+    filter: blur(40px);
+}
+.about {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.left-side-img img {
+    width: 100%;
+}
+.left-side-img img {
+    width: 100%;
+    height: 300px;
+}
+.left-side-img {
+    padding: 0px;
+}
+.aboutMe-wraper {
+    flex-direction: column;
+}
+.about_me_header_top {
+    font-size: 1.3rem;
+}
+#Im_What {
+    height: 50px;
+}
+.aboutMe-wraper {
+    background: transparent;
+}
+.icon-science {
+    margin-left: 0px;
+}
+.year-in-school {
+    font-size: .8rem;
+}
+.ssc-gpa {
+    font-size: .8rem;
+}
+
+.edu-body {
+    margin-top: 30px;
+    padding: 0 35px;
+}
+.year-and-gpa-in-collage {
+    font-size: .8rem;
+}
+.img-about-grid-two {
+    height: 40px !important;
+    margin-top: 15px;
+}
+.MyName {
+    font-size: 1.3rem;
+}
+#RecentProjects {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+    gap: 16px;
+    padding: 20px;
+    margin-top: 20px;
+}
+.Used_in_project button {
+    padding: 7px 15px;
+    border-radius: 1000px;
+    border: none;
+    background: rgba(0, 179, 255, 0.178);
+    color: var(--dark-transparent-40);
+}
+.code-view a:nth-child(2) {
+    background: rgba(80, 197, 255, 0.104);
+    padding: 8px 15px;
+    border-radius: 9px;
+    color: rgb(11, 150, 210);
+}
+.contact-child-con:nth-child(2) .contact-icon-con{
+    order: 2;
+    margin: 0;
+    margin-left: 10px;
+}
+.contact-child-con:nth-child(2) .contact-body-section-con{
+    order: 1;
+    margin: 0;
+}
+.contact-child-con:nth-child(4) .contact-icon-con{
+    order: 2;
+    margin: 0;
+    margin-left: 10px;
+}
+.contact-child-con:nth-child(4) .contact-body-section-con{
+    order: 1;
+    margin: 0;
+}
+.contact-data-con {
+    padding: 10px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 0px;
+}
+
+}
+
+@media (max-width: 450px) {
+.edu-body {
+    margin-top: 30px;
+    padding: 0 4px;
+}
+.img-about-grid-two {
+    height: 40px !important;
+    margin-top: 15px;
+}
+
+}
+@media (min-width: 768px) {
+    .img-about-grid-two {
+    height: 190px !important;
+    margin-top: 15px;
+}
+#RecentProjects {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+    gap: 16px;
+    padding: 20px;
+    margin-top: 20px;
+}
+}
+@media (min-width: 1024px) {
+    #RecentProjects {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+    gap: 16px;
+    padding: 20px;
+    margin-top: 20px;
+}
+}

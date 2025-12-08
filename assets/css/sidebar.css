@@ -1,0 +1,139 @@
+.sidebar-wraper {
+    white-space: nowrap;
+}
+#SidebarNav {
+    margin-top: 30px;
+}
+#SidebarNav li a {
+    padding: 8px 15px;
+    color: var(--text-color);
+    font-size: .9rem;
+    text-decoration: none;
+    display: block;
+    border: 1px solid rgba(233, 97, 0, 0);
+    margin: 8px;
+    transition: .4s;
+    position: relative;
+
+}
+#SidebarNav li {
+    margin: 5px 0;
+}
+#SidebarNav li a::after {
+    position: absolute;
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 1000px;
+    background: var(--nav-a-color);
+    right: 10px;
+    opacity: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: opacity .3s;
+}
+#SidebarNav li a:hover {
+    color: var(--nav-a-color);
+    border: 1px solid var(--nav-a-border-color);
+    background: var(--nav-a-background);
+    border-radius: 10px;
+}
+#SidebarNav li a:hover::after {
+    opacity: 1;
+}
+
+
+
+#SidebarNav li .selected::after {
+    position: absolute;
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 1000px;
+    background: var(--nav-a-color);
+    right: 10px;
+    opacity: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: opacity .3s;
+}
+#SidebarNav li .selected {
+    color: var(--nav-a-color);
+    border: 1px solid var(--nav-a-border-color);
+    background: var(--nav-a-background);
+    border-radius: 10px;
+}
+#SidebarNav li .selected::after {
+    opacity: 1;
+}
+
+.sidebar {
+    border-left: 1px solid var( --dark-transparent-99);
+    box-shadow: 2px 2px 40px var(--sidebar-shadow-color);
+}
+.icon-nav-item {
+    margin: 0 7px;
+    margin-left: 2px;
+}
+
+#toggleSidebar:hover {
+    background: var(--dark-transparent-99);
+}
+#sidebar {
+    width: 0px;
+    z-index: 9999;
+}
+
+@keyframes RotateSidebarBtn {
+    0%{
+        transform: rotate(0deg);
+    } 100% {
+        transform: rotate(360deg);
+    }
+}
+.sidebar-container {
+    overflow-y: auto;
+    overflow-x: hidden;
+
+}
+/* #toggleSidebar::after {
+    content: '';
+    position: absolute;
+    border-radius: 1000px;
+    top: -1px;
+    left: -1px;
+    bottom: -1px;
+    right: -1px;
+    background: linear-gradient(50deg, var(--bg-color) 70%, var(--sidebar-toggle-btn) 90%);
+    z-index: -1;
+    animation: RotateSidebarBtn 1s linear infinite;
+} */
+
+/* #toggleSidebar div {
+    width: 100%;
+    height: 100%;
+    border-radius: 1000px;
+    background: var(--bg-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+} */
+
+#menuToggler {
+    width: 46px;
+    height: 35px;
+    border-radius: 1000px;
+    border: none;
+    background: var(--dark-transparent-97);
+    color: var(--text-color);
+    cursor: pointer;
+    display: none;
+    z-index: 99999;
+}
+#menuToggler:hover {
+    background: var(--dark-transparent-98);
+}
+
+.right-side-btns {
+    z-index: 999999;
+}
