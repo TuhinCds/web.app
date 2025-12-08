@@ -51,7 +51,7 @@
     border-color .35s ease;
     -webkit-tap-highlight-color: transparent;
     scrollbar-width: none;
-    user-select: none;
+    -webkit-user-select: none;
 }
 body {
     width: 100%;
@@ -64,7 +64,7 @@ body {
     'footer';
     grid-template-columns: 1fr;
     grid-template-rows: var(--header-height) 1fr var(--footer-height);
-
+    -webkit-user-select: none;
 }
 html, body {
     transition: background-color .35s ease, 
