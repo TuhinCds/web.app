@@ -191,7 +191,7 @@ function AddProjects() {
                                         <div class="project-wraper">
                                             <div class="project-header">
                                                 <div class="header-image-wraper">
-                                                    <img src="../imgs/project_image/${project.image}" alt="loading...">
+                                                    <img src="imgs/project_image/${project.image}" alt="loading...">
                                                     <div class="${project.status ? 'Stutus_Show': 'hide_status'}">
                                                         <p class="${project.status === 'new' ? 'new' :
                                                              project.status === 'old' ? 'old' :
