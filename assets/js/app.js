@@ -207,8 +207,8 @@ function AddProjects() {
                                                 <!-- Programing Languages -->
                                                 </div>
                                                 <div class="code-view">
-                                                    <a href="#"><i class="fa-brands fa-github"></i>&nbsp;Code</a>
-                                                    <a href="#">Preview</a>
+                                                    <a href="${project.code_link}" target="${project.target}"><i class="fa-brands fa-github"></i>&nbsp;Code</a>
+                                                    <a href="${project.preview_link}" target="${project.target}">Preview</a>
                                                 </div>
                                       </div>
                                 </div>

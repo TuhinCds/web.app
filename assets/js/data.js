@@ -75,24 +75,25 @@ export const projects = {
             { programing_lang: 'Teilwind Css' },
             { programing_lang: 'Python' },
         ],
-        code_link: '',
-        preview_link: '',
+        code_link: 'https://github.com/TuhinCds/BMI-calc.web.git',
+        preview_link: 'https://tuhincds.github.io/BMI-calc.web/',
+        target: '_blank',
         status: '',
     },
     {
         image: 'project2.png',
-        title: 'Student management sys',
-        title_icon: '<i class="fa-solid fa-code"></i>',
+        title: 'Full Form Finder',
+        title_icon: '<i class="fa-solid fa-arrow-up-right-dots"></i>',
         description: 'An all-in-one student assistant for BSCSE students of NSU. Features academic progress tracking, course information, personalized course suggestions, class scheduling, and CGPA calculation with multi-user support',
         Used_in_project: [
-            { programing_lang: 'C' },
-            { programing_lang: 'Data Stucture' },
-            { programing_lang: 'File Manegement' },
-            { programing_lang: 'MySQL' },
+            { programing_lang: 'html' },
+            { programing_lang: 'css' },
+            { programing_lang: 'javaScript' },
             { programing_lang: 'LocalStorage' }
         ],
-        code_link: '',
-        preview_link: '',
+        code_link: 'https://github.com/TuhinCds/FullForm_Finder.web.git',
+        preview_link: 'https://tuhincds.github.io/FullForm_Finder.web/',
+        target: '_blank',
         status: 'new',
     },
     {
@@ -109,6 +110,7 @@ export const projects = {
         ],
         code_link: '',
         preview_link: '',
+        target: '',
         status: 'featured',
     },
     {
@@ -126,9 +128,27 @@ export const projects = {
         ],
         code_link: '',
         preview_link: '',
+        target: '',
         status: 'featured',
     },
-    
+    {
+        image: 'project5.png',
+        title: 'Facebook Clone website',
+        title_icon: '<i class="fa-brands fa-square-facebook"></i>',
+        description: 'This is my own Facebook website made by me , its totaly clone',
+        Used_in_project: [
+            { programing_lang: 'React js' },
+            { programing_lang: 'Teliwind css' },
+            { programing_lang: 'Data Stucture' },
+            { programing_lang: 'Python' },
+            { programing_lang: 'other component' },
+        ],
+        code_link: 'https://github.com/TuhinCds/facboClo.git',
+        preview_link: 'https://tuhincds.github.io/facboClo/',
+        target: '_blank',
+        status: 'featured',
+
+        },
     ],
 
 }
