@@ -1,5 +1,4 @@
-import { appNavigation, What_im, projects} from './data.js'
-import { SkillsAndTools } from './data.js'
+import { appNavigation, What_im, projects, SkillsAndTools} from './data.js'
 
 const themeBtn = document.getElementById('themeBtn')
 const themeBtnIcon = themeBtn.querySelector('i')
