@@ -35,13 +35,7 @@ export const appNavigation = {
             target: '',
             selected: false,
         },
-        {
-            option: 'Privacy policy',
-            link: '',
-            icon: '<i class="fa-solid fa-shield-halved"></i>',
-            target: '',
-            selected: false,
-        },
+        
         {
             option: '',
             link: '',
@@ -66,8 +60,8 @@ export const projects = {
         {
         image: 'project1.png',
         title: 'BMI scale with AI',
-        title_icon: '<i class="fa-solid fa-code"></i>',
-        description: 'An all-in-one student assistant for BSCSE students of NSU. Features academic progress tracking, course information, personalized course suggestions, class scheduling, and CGPA calculation with multi-user support',
+        title_icon: '<i class="fa-solid fa-weight-hanging"></i>',
+        description: 'It can track your body. If you input your body weight, height, age, it will automatically suggest what you should do. For example, if you are very thin, it will tell you how to get fit or gain weight in a healthy way.',
         Used_in_project: [
             { programing_lang: 'HTML & CSS' },
             { programing_lang: 'JavaScript' },
@@ -100,7 +94,7 @@ export const projects = {
         image: 'project3.png',
         title: 'Math solver AI',
         title_icon: '<i class="fa-solid fa-code"></i>',
-        description: 'An all-in-one student assistant for BSCSE students of NSU. Features academic progress tracking, course information, personalized course suggestions, class scheduling, and CGPA calculation with multi-user support',
+        description: 'It will solve your big math problems and have the ability to do much more.',
         Used_in_project: [
             { programing_lang: 'C' },
             { programing_lang: 'Data Stucture' },
