@@ -27,7 +27,7 @@
    
 }
 .logo-side i {
-    color: rgb(255, 81, 0);
+    color: rgb(0, 123, 255);
     font-size: 1.37rem;
 }
 .logo-side span {
@@ -97,7 +97,7 @@
     font-size: 1rem;
 }
 #TopNav .selectedTopNavItem {
-    color: rgb(255, 123, 0);
+    color: rgb(64, 140, 255);
 
 }
 #TopNav a {
@@ -105,10 +105,10 @@
     transition: .3s;
 }
 #TopNav a:hover {
-    color: rgb(255, 123, 0);
+    color: rgb(47, 106, 255);
 }
 #TopNav li:hover .selectedTopNavItem{
-    color: rgba(255, 98, 0, 0.708);
+    color: rgba(40, 115, 255, 0.968);
 }
 
 #TopNav .selectedTopNavItem::after {
@@ -117,11 +117,11 @@
     width: 3px;
     height: 50%;
     border-radius: 1000px;
-    background: linear-gradient(60deg,rgba(242, 105, 0, 0.853), rgba(255, 123, 0, 0.965), rgba(255, 128, 1, 0.925));
+    background: linear-gradient(60deg,rgba(61, 125, 255, 0.853), rgba(50, 125, 255, 0.965), rgba(57, 120, 255, 0.925));
     left: -10px;
     top: 50%;
     transform: translateY(-50%);
-    color: rgb(255, 123, 0);
+    color: rgb(0, 72, 255);
 }
 #Im_What {
 

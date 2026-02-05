@@ -1,3 +1,74 @@
+const MyInfo = {
+    MyGenarelInfo: {
+        liveIn: "Bangladesh",
+        homeDescription: "iam a web developer with a passion for creating beautiful and functional websites. i have expenrience in JavaScript, C, C++, Go, RUST, Python, etc. and various web development frameworks.",
+        IamInInternet: [
+            {name: "Email", title: "This is email", sortLink: "tuhin433@gmail.com", link: `mailto:tuhin433@gmail.com?subject=Hello&body=I want to talk to you`, icon: `<i class="fa-solid fa-envelope-circle-check"></i>`},
+            {name: "Phone", title: "Calling number",sortLink: "+8801314383497", link: `tel:+8801314383497`, icon: `<i class="fa-solid fa-mobile-vibrate"></i>`},
+            {name: "Location", title: "my location",sortLink: "Rajshahi, bangladesh", link: `https://maps.app.goo.gl/hemWNYXJhphVuAZH8`, icon: `<i class="fa-solid fa-location-arrow"></i>`},
+            {name: "Github", title: "this is my github profile",sortLink: "TuhinCds", link: `https://github.com/TuhinCds`, icon: `<i class="fa-brands fa-github-alt"></i>`}
+        ]
+    },
+    Education: {
+        eduNames: [
+            {step: 1, eduS: "SSC", eduFullName: "Secondary School Cer", GPA: "4.28", status: "done", Catagory: "Science", year: "2021 - 2025", organizationName: "Amgachi shahar banu high school"},
+            {step: 2, eduS: "HSC", GPA: "", status: "running study", Catagory: "Science", year: "2025 - Now running", organizationName: "Islamia collage, Rajshahi"}
+        ]
+    },
+    myExperience: [
+        
+    ],
+    AboutMe: {
+        aboutMeImgConfig: {
+            slideTime: 5,
+            imgClass: "active",
+            aboutMeImgs: [
+                {img: "aboutMeImg1.png"},
+                {img: "aboutMeImg2.png"},
+                {img: "aboutMeImg3.png"},
+                {img: "aboutMeImg4.png"},
+            ]
+        },
+        aboutMeTitle: `<i class="fa-solid fa-code"></i> Iam a passionate web developer with a knack for creating engaging and user-friendly websites.`,
+        aboutMeDescription: `Hey! I'm Md Tuhin, a young developer and <span class="mark-red">tech</span> explorer who loves turning ideas into real, functional creations. I'm genuinely passionate about technology—whether it's coding, electronics, or building smart systems—and I enjoy learning how things work behind the scenes.
+                             I see <span class="mark-blue">technology as a space where creativity</span> meets logic. That's why I spend my time experimenting with new concepts, <span class="mark-orange">learning modern development </span> skills, and building projects that help me grow step by step. From web development to automation and innovative tech solutions, I'm always excited to create something meaningful.
+                             I believe progress comes from curiosity, consistency, and the courage to try. Every <span class="mark-white">project I build</span>, no matter how small, teaches me something new and pushes me closer to the future I'm working for.
+                             In short: I love learning, I love building, and I'm committed to becoming better every single day. 🚀`,
+        
+
+    },
+    Logo: {
+        LogoName: {
+            logoIcon:  ``,
+            logo: "tuhin",
+            header: "",
+            footer: "",
+            sidebar: "",
+        },
+    },
+    MyInterrest: {
+        MyInterrestIn: "Science and Technology/developer"
+    },
+    
+}
+export {MyInfo}
+export const What_im = [
+    'Web developer',
+    'Critical thinker',
+    'Problem solver',
+    'Lifelong learner',
+    'Team player',
+    'Creative mind',
+    'App developer',
+    
+]
+
+
+
+
+
+
+
 export const appNavigation = {
     Nav: [
         {
@@ -45,16 +116,7 @@ export const appNavigation = {
         },
     ]
 }
-export const What_im = [
-    'Web developer',
-    'Critical thinker',
-    'Problem solver',
-    'Lifelong learner',
-    'Team player',
-    'Creative mind',
-    'App developer',
-    
-]
+
 export const projects = {
     Recent_Projects: [
         {
@@ -78,7 +140,7 @@ export const projects = {
         image: 'project2.png',
         title: 'Full Form Finder',
         title_icon: '<i class="fa-solid fa-arrow-up-right-dots"></i>',
-        description: 'An all-in-one student assistant for BSCSE students of NSU. Features academic progress tracking, course information, personalized course suggestions, class scheduling, and CGPA calculation with multi-user support',
+        description: 'if you search a sort form  so it find the full form and show the full form.',
         Used_in_project: [
             { programing_lang: 'html' },
             { programing_lang: 'css' },
@@ -88,7 +150,7 @@ export const projects = {
         code_link: 'https://github.com/TuhinCds/FullForm_Finder.web.git',
         preview_link: 'https://tuhincds.github.io/FullForm_Finder.web/',
         target: '_blank',
-        status: 'new',
+        status: 'old',
     },
     {
         image: 'project3.png',
@@ -105,7 +167,7 @@ export const projects = {
         code_link: '',
         preview_link: '',
         target: '',
-        status: 'featured',
+        status: 'upcoming',
     },
     {
         image: 'project4.png',
@@ -113,12 +175,12 @@ export const projects = {
         title_icon: '<i class="fa-solid fa-robot"></i>',
         description: 'Ai Robot stions, class schet',
         Used_in_project: [
-            { programing_lang: 'C language' },
+            { programing_lang: 'Arduino programming' },
             { programing_lang: 'Data Stucture' },
-            { programing_lang: 'Arduino uno' },
+            { programing_lang: 'Arduino uno, and other devices' },
             { programing_lang: 'cicuits' },
             { programing_lang: 'Python' },
-            {programing_lang: "component"}
+            {programing_lang: "other component"}
         ],
         code_link: '',
         preview_link: '',
@@ -129,7 +191,7 @@ export const projects = {
         image: 'project5.png',
         title: 'Facebook Clone website',
         title_icon: '<i class="fa-brands fa-square-facebook"></i>',
-        description: 'This is my own Facebook website made by me , its totaly clone',
+        description: 'This is Facebook clone website <span class="mark-blue">( just forntend )</span> made by me , its totaly clone ',
         Used_in_project: [
             { programing_lang: 'React js' },
             { programing_lang: 'Teliwind css' },
@@ -140,7 +202,7 @@ export const projects = {
         code_link: 'https://github.com/TuhinCds/facboClo.git',
         preview_link: 'https://tuhincds.github.io/facboClo/',
         target: '_blank',
-        status: 'featured',
+        status: '',
 
         },
     ],
@@ -149,9 +211,9 @@ export const projects = {
 export const SkillsAndTools = {
     Skills_Data: [
         {
-            header_title: 'Programing Lang',
+            header_title: 'Programing Languages',
             title: 'programing',
-            description: "I'm khowing programming langguage",
+            description: "I'm khowing programming languages",
             icon: '<i class="fa-solid fa-code"></i>',
             skills: [
                 {skill: "Python", parcent: 30},
@@ -160,11 +222,10 @@ export const SkillsAndTools = {
                 {skill: "PHP", parcent: 10}
             ],
 
-            
         },{
             header_title: 'Web development',
-            title: 'Web development',
-            description: "I'm khowing web develpment programming langguage",
+            title: "",
+            description: "I'm khowing web develpment programming languages",
             icon: '<i class="fa-solid fa-tv"></i>',
             skills: [
                 {skill: "HTML", parcent: 90},
@@ -179,7 +240,7 @@ export const SkillsAndTools = {
         {
             header_title: 'App development',
             title: 'App development',
-            description: "I'm khowing App develpment programming langguage",
+            description: "I'm khowing App develpment programming languages",
             icon: '<i class="fa-solid fa-laptop-code"></i>',
             skills: [
                 {skill: "Java", parcent: 20},
@@ -198,10 +259,9 @@ export const SkillsAndTools = {
             description: "Iam Learning Tools & Platforms",
             icon: '<i class="fa-solid fa-trowel-bricks"></i>',
             skills: [
-                {skill: "Git/GitHub", parcent: 40},
-                {skill: "Firebase", parcent: 20},
+                {skill: "Git/GitHub", parcent: 60},
+                {skill: "Firebase", parcent: 10},
                 {skill: "VS Code", parcent: 80},
-                {skill: 'Photoshop', parcent: 30}
             ],
             
         },
@@ -211,9 +271,8 @@ export const SkillsAndTools = {
             description: "I khow Robotics ",
             icon: '<i class="fa-solid fa-robot"></i>',
             skills: [
-                {skill: "C", parcent: 20},
+                {skill: "Arduino programing", parcent: 20},
                 {skill: "C++", parcent: 10},
-                {skill: "Circuit design", parcent: 6},
                 {skill: "Sensors", parcent: 40},
             ],
 
@@ -225,3 +284,4 @@ export const SkillsAndTools = {
 
     ]
 }
+

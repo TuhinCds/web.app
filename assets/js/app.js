@@ -1,4 +1,4 @@
-import { appNavigation, What_im, projects, SkillsAndTools} from './data.js'
+import { appNavigation, What_im, projects, SkillsAndTools, MyInfo} from './data.js'
 
 const themeBtn = document.getElementById('themeBtn')
 const themeBtnIcon = themeBtn.querySelector('i')
@@ -16,11 +16,28 @@ const overly = document.getElementById('overly')
 
 // Im_What 
 
+
 const Im_What = document.getElementById('Im_What')
 
 // Project add
 const RecentProjects = document.getElementById('RecentProjects')
 
+// website content 
+const ShowYear = document.getElementById("ShowYear")
+const logoNameAll = document.querySelectorAll(".logoName")
+const myintersetShow = document.getElementById("myintersetShow")
+const ContactContainer = document.getElementById("ContactContainer")
+const LiveIn = document.querySelectorAll(".LiveIn")
+const textContentData = document.querySelector(".text-content-data")
+const aboutMeImage = document.getElementById("aboutMeImage")
+const aboutMeTitle = document.getElementById("aboutMeTitle")
+const abouteMeDescriotion = document.getElementById("abouteMeDescriotion")
+const TotalProjectCount = document.getElementById("TotalProjectCount")
+const projectCount = document.getElementById("projectCount")
+
+// slider imgs 
+const AboutMeImage = document.getElementById("AboutMeImage")
+const imageSlideBtns = document.querySelector(".imageSlideBtns")
 
 //? THEME TOGGLER AND SET THEME
 function Settheme(theme) {
@@ -57,6 +74,7 @@ Navigation.forEach(item => {
     </a>`;
     
     TopNav.appendChild(createDataNav)
+    
 })
 
 
@@ -92,6 +110,10 @@ Navigation.forEach(item => {
     </a>`;
     
     SidebarNav.appendChild(createDataNav)
+    let createDataNavLink = createDataNav.querySelector("a")
+    createDataNavLink.addEventListener("click", (e) => {
+        createDataNavLink.classList.add("selected")
+    })
 
     // Click to toggle sidebar if needed
     let createDataNavData = createDataNav.querySelector('a')
@@ -119,6 +141,9 @@ function Sidebar() {
     }
 }
 menuToggler.addEventListener('click', () => {
+    Sidebar()
+})
+CloseSidebar.addEventListener("click", () => {
     Sidebar()
 })
 
@@ -194,21 +219,26 @@ function AddProjects() {
                                                     <div class="${project.status ? 'Stutus_Show': 'hide_status'}">
                                                         <p class="${project.status === 'new' ? 'new' :
                                                              project.status === 'old' ? 'old' :
-                                                              project.status === 'featured' ? 'featured' :
-                                                               '' }">${project.status.slice(0, 1).toUpperCase() + project.status.slice(1, 100000).toLowerCase()}</p>
+                                                              project.status === 'featured' ? 'featured' : project.status === "later" ? 'later' : 
+                                                              project.status === "upcoming" ? "upcoming" : 'hide' }">
+                                                               ${project.status === 
+                                                                "old" ? `<i class="fa-solid fa-person-cane"></i>` : project.status === "new" ? `<i class="fa-regular fa-folder-open"></i>` : project.status === "featured" ? `<i class="fa-solid fa-feather"></i>` : project.status === "later" ? `<i class="fa-solid fa-layer-group"></i>` : project.status === "upcoming" ? `<i class="fa-regular fa-clock"></i>` : ""
+                                                               }
+                                                               ${project.status.slice(0, 1).toUpperCase() + project.status.slice(1, 100000).toLowerCase()}</p>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="project-body-this">
-                                                <div class="project-title">${project.title_icon}&nbsp;${project.title}</div>
-                                                <div class="project-description">${project.description}</div>
+                                                <div class="project-title">${project.title_icon}&nbsp;${project.title.length > 40 ? project.title.slice(0, 40) + "..." : project.title}</div>
+                                                <div class="project-description">${project.description.length > 160 ? project.description.slice(0, 160) + "..." : project.description}</div>
                                                 <div class="Used_in_project">
                                                 <!-- Programing Languages -->
                                                 </div>
                                                 <div class="code-view">
-                                                    <a href="${project.code_link}" target="${project.target}"><i class="fa-brands fa-github"></i>&nbsp;Code</a>
-                                                    <a href="${project.preview_link}" target="${project.target}">Preview</a>
+                                                    <a ${project.status === "upcoming" ? "" : `href="${project.code_link}"`} target="${project.target ? project.target : "_blank"}"><i class="fa-brands fa-github"></i>&nbsp;Code</a>
+                                                    <a ${project.status === "upcoming" ? `class="upcoming-status"` : `href="${project.preview_link}"`} target="${project.target ? project.target : "_blank"}"><i class="fa-solid fa-arrow-up-right-from-square"></i>Live preview</a>
                                                 </div>
+                                                
                                       </div>
                                 </div>
                         </div>`
@@ -222,8 +252,6 @@ function AddProjects() {
             data.appendChild(createData)
         })
             
-    
-        
     })              
 }
 AddProjects()
@@ -267,12 +295,12 @@ SkillsAndTools.Skills_Data.forEach(item => {
                                     <div class="skill-slide-left">
                                         <div class="skills-left-content">
                                             <p class="skill-icon">${item.icon}</p>
-                                            <p class="skill-title">${item.title}</p>
+                                            <p class="skill-title">${item.title ? item.title.length > 15 ? item.title.slice(0, 15) + "..." : item.title : item.header_title.length > 17 ? item.header_title.slice(0, 17) + '...' : item.header_title}</p>
                                             <p class="skill-description">${item.description}</p>
                                         </div>
                                     </div>
                                     <div class="skill-slide-right">
-                                        <div class="state">${item.header_title}</div>
+                                        <div class="state">${item.header_title ? item.header_title.length > 17 ? item.header_title.slice(0, 17) + '...' : item.header_title : ""}</div>
                                         <div class="skills-container">
                                             </div>
                                         </div>
@@ -288,7 +316,7 @@ SkillsAndTools.Skills_Data.forEach(item => {
                 createParcent.innerHTML = `
                                 <div class="skill-parsentage-data">
                                             <p class="pro_lang">
-                                                <span>${item.skill}</span>
+                                                <span>${item.skill.length > 16 ? item.skill.slice(0, 15) + "..." : item.skill}</span>
                                                 <span>${item.parcent}%</span>
                                             </p>
                                      <div class="parsent-data">
@@ -297,11 +325,168 @@ SkillsAndTools.Skills_Data.forEach(item => {
                 `
 
             skills_container.appendChild(createParcent)
-        
-        
 
     })
 
     
 })
 
+
+// show year in footer
+    function fullYear() {
+        let Year = new Date().getFullYear()
+        return Year
+    }
+
+ShowYear.innerHTML = fullYear()
+
+logoNameAll.forEach((c, index) => {
+    if (index === 0 && MyInfo.Logo.LogoName.header) {
+        c.innerHTML = MyInfo.Logo.LogoName.header.slice(0, 1).toUpperCase() +  MyInfo.Logo.LogoName.header.slice(1).toLowerCase()
+    }
+    else if (index === 1 && MyInfo.Logo.LogoName.sidebar) {
+        c.innerHTML = MyInfo.Logo.LogoName.sidebar.slice(0, 1).toUpperCase() +  MyInfo.Logo.LogoName.sidebar.slice(1).toLowerCase()
+    } else if (index === 2 && MyInfo.Logo.LogoName.footer) {
+        c.innerHTML = MyInfo.Logo.LogoName.footer.slice(0, 1).toUpperCase() +  MyInfo.Logo.LogoName.footer.slice(1).toLowerCase()
+    } else if (index === 3 && MyInfo.Logo.LogoName.footer) {
+        c.innerHTML = MyInfo.Logo.LogoName.footer.slice(0, 1).toUpperCase() +  MyInfo.Logo.LogoName.footer.slice(1).toLowerCase()
+    }
+    else {
+        c.innerHTML = MyInfo.Logo.LogoName.logo.slice(0, 1).toUpperCase() +  MyInfo.Logo.LogoName.logo.slice(1).toLowerCase()
+    }  
+})
+
+
+function MyInterestShowing() {
+    myintersetShow.innerHTML = MyInfo.MyInterrest.MyInterrestIn
+}
+MyInterestShowing()
+
+MyInfo.MyGenarelInfo.IamInInternet.forEach((item, index) => {
+    let createContact = document.createElement("div")
+    createContact.classList.add("contact-child-con")
+    createContact.innerHTML = `
+                                    <a target="_blank"href="${item.link}" class="contact-icon-con">
+                                        ${item.icon}
+                                    </a>
+                                    <div class="contact-body-section-con">
+                                        <div class="contact-body-section-wraper">
+                                        <div class="title-contact-con">${item.name.length > 20 ? item.name.slice(0, 20) + "..." : item.name}</div>
+                                        <div class="descreption-contact-con">${item.title.length > 30 ? item.title.slice(0, 30) + "..." : item.title}</div>
+                                        <div class="link-body-con">
+                                            <a target="_blank"href="${item.link}">${item.sortLink.length > 28 ? item.sortLink.slice(0, 27) + "..." : item.sortLink}</a>
+                                        </div>
+                                        </div>
+                                    </div>`
+    ContactContainer.appendChild(createContact)
+})
+
+const PushMyDataInHtml = () => {
+    let sliceHomeDescription = `<div>${MyInfo.MyGenarelInfo.homeDescription.slice(0, 187)}... &nbsp;<button class="moreBtn">more</button></div>`
+    let homeDescription = ``
+    if(MyInfo.MyGenarelInfo.homeDescription.length > 187) {
+        homeDescription = sliceHomeDescription
+        let countData = 0
+        textContentData.addEventListener("click", () => {
+            countData++
+            if (countData >= 2) countData = 0
+            if (countData === 1) {
+                homeDescription = `<div>${MyInfo.MyGenarelInfo.homeDescription} &nbsp;<button class="moreBtn hide">more</button></div>`
+                textContentData.innerHTML = homeDescription
+            } else {
+                homeDescription = sliceHomeDescription
+                textContentData.innerHTML = homeDescription
+            }
+            console.log(countData)
+        })
+    } else {
+        homeDescription = MyInfo.MyGenarelInfo.homeDescription
+    }
+    
+
+    textContentData.innerHTML = homeDescription
+    LiveIn.forEach((item, index) => {
+        item.innerHTML = MyInfo.MyGenarelInfo.liveIn
+    })
+    aboutMeTitle.innerHTML = MyInfo.AboutMe.aboutMeTitle
+    abouteMeDescriotion.innerHTML = MyInfo.AboutMe.aboutMeDescription
+    TotalProjectCount.innerHTML = "total " + projects.Recent_Projects.length + ` ${projects.Recent_Projects < 2 ? "project" : "project's"} project`
+    projectCount.innerHTML = `${projects.Recent_Projects.length}`
+}
+PushMyDataInHtml()
+
+let SidebarElement = SidebarNav.querySelectorAll("li a")
+
+SidebarElement.forEach((btn, index) => {
+    btn.addEventListener("click", () => {
+        SidebarElement.forEach(btnData => btnData.classList.remove("selected"))
+        btn.classList.add("selected")
+    })
+})
+
+function Slider() {
+    const container = AboutMeImage
+    let count = 0
+    const imgs = MyInfo.AboutMe.aboutMeImgConfig.aboutMeImgs
+    const time = MyInfo.AboutMe.aboutMeImgConfig.slideTime * 1000
+    
+
+ imgs.forEach((img, index) => {
+            let createBtn = document.createElement("button")
+            createBtn.innerHTML = ""
+            imageSlideBtns.appendChild(createBtn)
+            if (index === 0) {
+                createBtn.classList.add("active")
+            }
+
+            createBtn.addEventListener("click", () => {
+                imageBtns.forEach(btn => btn.classList.remove("active"))
+                createBtn.classList.add("active")
+                count = index
+
+                Slideranimate()
+
+
+    })
+})
+
+    const imageBtns = imageSlideBtns.querySelectorAll("button")
+
+
+    imageBtns[0].classList.add("btnCompress")
+    imageBtns[imgs.length - 1].classList.add("btnCompress")
+
+    function Slideranimate() {
+            const next = document.createElement("img")
+            next.src = "imgs/" + imgs[count].img
+            container.appendChild(next)
+            next.classList.add("slideIn")
+            current.classList.add("slideOut")
+            imageBtns.forEach(btn => {
+                btn.classList.remove("active")
+            })
+            imageBtns[count].classList.add("active")
+
+            setTimeout(() => {
+                current.remove()
+                current = next
+            }, 500)
+    }
+
+    let current = container.querySelector("img")
+
+    setInterval(() => {
+        count++
+        if (count >= imgs.length) {
+            count = 0
+            
+        }
+        Slideranimate()
+
+    }, time)
+
+
+       
+}
+
+Slider()

@@ -11,17 +11,17 @@
     --bg-color-light-99: rgb(250, 250, 252);
     --text-color: black;
     --text-color-80: rgba(0, 0, 0, 0.782);
+    --text-color-tra-20: red ;
     --border-color: rgb(49, 49, 49);
     --dark-transparent-97: rgba(0, 0, 0, 0.083);
     --dark-transparent-98: rgba(0, 0, 0, 0.059);
     --dark-transparent-99: rgba(0, 0, 0, 0.032);
     --dark-transparent-40: rgba(0, 0, 0, 0.585);
-    --nav-a-color: rgb(247, 103, 0);
-    --nav-a-background: rgba(233, 97, 0, 0.131);
-    --nav-a-border-color: rgba(233, 97, 0, 0);
+    --nav-a-color: rgb(5, 109, 255);
+    --nav-a-background: rgba(0, 151, 233, 0.131);
+    --nav-a-border-color: rgba(0, 167, 233, 0);
     --sidebar-shadow-color: rgba(0, 0, 0, 0.196);
     --sidebar-toggle-btn: rgb(255, 255, 255);
-
 
 }
 :root[data-theme="dark"] {
@@ -34,9 +34,9 @@
     --dark-transparent-98: rgba(255, 255, 255, 0.093);
     --dark-transparent-99: rgba(255, 255, 255, 0.049);
     --dark-transparent-40: rgba(254, 254, 254, 0.539);
-    --nav-a-color: rgb(233, 97, 0);
-    --nav-a-background: rgba(233, 97, 0, 0.066);
-    --nav-a-border-color: rgba(255, 115, 0, 0);
+    --nav-a-color: rgb(32, 121, 255);
+    --nav-a-background: rgba(20, 102, 255, 0.066);
+    --nav-a-border-color: rgba(0, 89, 255, 0);
     --sidebar-shadow-color: rgb(0, 0, 0);
     --sidebar-toggle-btn: rgba(255, 255, 255, 0.163);
 }
@@ -77,16 +77,19 @@ html, body {
     background: var(--bg-color);
     position: sticky;
     top: 0;
-    z-index: 999999;
+    z-index: 99999;
 }
 .sidebar {
     position: fixed;
-    top: var(--header-height);
+    top: 0;
     bottom: 0;
     width: 0;
-    right: 0;
+    left: 0;
+    transform: translateX(-100%);
     background: var(--bg-color-light-99);
-    transition: width .4s;
+    transition: transform .4s;
+    z-index: 999999999999 !important;
+    box-shadow: 0 0 0 !important;
 }
 .main {
     grid-area: main;
@@ -142,7 +145,7 @@ html, body {
     border-radius: 10px;
 }
 .hero-btns a:first-child {
-    background: linear-gradient(49deg, rgb(0, 64, 255), rgb(93, 0, 255));
+    background: linear-gradient(49deg, rgb(0, 64, 255), rgb(20, 126, 255));
     color: white;
 }
 .hero-btns a:last-child {
@@ -154,7 +157,7 @@ html, body {
 }
 .text-dec1 {
     color: transparent;
-    background: linear-gradient(48deg, rgb(0, 72, 255) 20%, rgb(255, 94, 0) 40%, rgb(221, 186, 10));
+    background: linear-gradient(48deg, var(--text-color-80) 20%, rgb(0, 106, 255) 40%, rgb(84, 181, 255));
     -webkit-background-clip: text;
     background-clip: text;
 }
@@ -168,10 +171,7 @@ html, body {
     -webkit-background-clip: text;
     background-clip: text;
 }
-#Im_What {
-   
-    
-}
+
 .background-image {
     position: absolute;
     
@@ -652,7 +652,10 @@ html, body {
    background: rgba(247, 0, 255, 0.628);
    color: white;
 }
-.Stutus_Show p.uncoming {
+.Stutus_Show p.hide {
+    display: none;
+}
+.Stutus_Show p.upcoming {
    background: rgba(255, 0, 0, 0.66);
    color: white;
 }
@@ -1036,4 +1039,265 @@ html, body {
 .img-to-text-two-wraper {
     width: 100%;
     max-width: 800px;
+}
+.edu-head {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+#HideEducationBtn {
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.136);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1000px;
+    cursor: pointer;
+}
+#HideEducationBtn:hover {
+    background:  rgba(255, 255, 255, 0.155);
+}
+.edu_head_text {
+    font-size: 1rem;
+    font-weight: 400;
+}
+.mark-purple {
+    background: rgba(157, 0, 255, 0.261);
+    padding: 3px;
+}
+.mark-blue {
+    background: rgba(0, 81, 255, 0.307);
+    padding: 3px;
+    color: var(--text-color)
+}
+.mark-orange {
+    background: rgba(255, 174, 0, 0.262);
+    padding: 3px;
+    color: var(--text-color)
+}
+.mark-white {
+    background: rgba(255, 255, 255, 0.287);
+    padding: 3px;
+    color: var(--text-color)
+}
+.mark-red {
+    background: rgba(255, 0, 0, 0.234);
+    padding: 3px;
+    color: var(--text-color)
+}
+.right-side-text-data {
+    line-height: 24px;
+}
+
+.about {
+    display: flex;
+    flex-direction: column;
+}
+.aboutMe-wraper {
+    background: transparent;
+}
+.AboutMe {
+    background: var(--dark-transparent-98);
+}
+.about_me_down_content {
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 10px;
+}
+.later {
+    background: rgba(0, 171, 168, 0.685);
+    color: white;
+}
+#themeBtn {
+    border: 1px solid transparent !important;
+    background: transparent;
+    cursor: pointer;
+    font-size: 1rem;
+}
+#menuToggler {
+    background: transparent !important;
+    font-size: .9rem;
+}
+.links {
+    background: rgba(250, 250, 250, 0);
+    border: none;
+}
+.links button {
+    padding: 5px;
+}
+.links a {
+    padding: 14.8px !important;
+}
+#overly {
+    background: var(--dark-transparent-99) !important;
+}
+.logo-side {
+    text-decoration: none;
+    color: var(--text-color);
+}
+.contact-icon-con {
+    text-decoration: none;
+}
+.code-view a:nth-child(2) {
+    display: flex;
+    align-items: center;
+    gap: 5px
+}
+.code-view a:nth-child(2) i{
+    font-size: .9rem;
+}
+#AboutMeimageSlide {
+    height: 100%;
+    position: relative;
+}
+#AboutMeImage img {
+    width: 100% !important;
+}
+
+.imageSlideBtns {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: rgb(0, 0, 0);
+    padding: 7px;
+    border-radius: 100px;
+}
+.imageSlideBtns button {
+    width: 6px;
+    height: 6px;
+    border: none;
+    border-radius: 100px;
+    background: rgba(255, 255, 255, 0.42);
+    cursor: pointer;
+}
+.imageSlideBtns button.active {
+    background: white;
+}
+.img-to-text {
+    position: relative;
+}
+.about_me_header_top {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.873);
+    z-index: 999;
+    border: none;
+}
+#AboutMeImage {
+    height: 45vh;
+    overflow: hidden;
+    transition: all .3s ;
+}
+#AboutMeImage img {
+    height: 100%;
+    border: none;
+    transform: translateX(0);
+    transition: transform 2s ease;
+}
+#AboutMeImage .rightHide {
+    animation: slideRight 0.5s ease forwards;
+}
+
+@keyframes slideRight {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+}
+#AboutMeImage img {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+.slideOut {
+    animation: outRight 0.5s forwards;
+}
+.slideIn {
+    animation: inLeft 0.5s forwards;
+}
+@keyframes outRight {
+    from { transform: translateX(0); }
+    to   { transform: translateX(100%); }
+}
+
+@keyframes inLeft {
+    from { transform: translateX(-100%); }
+    to   { transform: translateX(0); }
+}
+.btnCompress {
+    width: 4px !important;
+    height: 4px !important;
+    border-radius: 100px;
+}
+.contact-data a {
+    background: transparent;
+}
+.skill{
+    border: 1px solid transparent !important;
+    padding: 0 !important;
+
+}
+.moreBtn {
+    font-size: .8rem;
+    background: transparent;
+    color: var(--text-color);
+    border: none;
+    padding: 4px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.moreBtn.hide {
+    display: none;
+}
+.upcoming-status {
+    position: relative;
+}
+.upcoming-status::after{
+    position: absolute;
+    content: "";
+    right: -20px;
+    width: 10px;
+    height: 10px;
+    border-radius: 100px;
+    background: rgba(220, 0, 0, 0.415);
+}
+.EduStepHead {
+    background: transparent;
+}
+.educationContainer {
+    width: 100%;
+}
+.EduStepHead {
+    display: flex;
+    align-items: center;
+    padding: 10px 30px;
+    gap: 5px;
+    color: var(--text-color);
+    justify-content: space-between;
+}
+.hr-w1-h-transparent {
+    height: 1px;
+    margin: 10px 20px;
+    background: rgba(249, 249, 249, 0.056);
+}
+
+.EduStepHead button {
+    background: var(--dark-transparent-98);
+    color: var(--text-color);
+    border: none;
+    padding: 8px 13px;
+    border-radius: 1000px;
+}
+.about_me_header_top {
+    color: white;
 }

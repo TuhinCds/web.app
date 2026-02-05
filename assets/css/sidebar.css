@@ -10,7 +10,7 @@
     font-size: .9rem;
     text-decoration: none;
     display: block;
-    border: 1px solid rgba(233, 97, 0, 0);
+    border: 1px solid transparent;
     margin: 8px;
     transition: .4s;
     position: relative;
@@ -80,7 +80,7 @@
     background: var(--dark-transparent-99);
 }
 #sidebar {
-    width: 0px;
+    width: 260px;
     z-index: 9999;
 }
 
@@ -136,4 +136,22 @@
 
 .right-side-btns {
     z-index: 999999;
+}
+.sidebar_header {
+    margin: 10px 19px;
+    margin-top: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.sidebar_header button {
+    background: none;
+    border: none;
+    color: var(--text-color-80);
+    font-size: .94rem;
+    cursor: pointer;
+    padding: 4px;
+}
+.sidebar_header button:hover {
+    color: var(--text-color);
 }

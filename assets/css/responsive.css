@@ -4,7 +4,7 @@
         display: none;
     }
     .sidebar {
-        width: 230px;
+        width: 260px;
     }
     #toggleSidebar {
         display: none;
@@ -13,18 +13,22 @@
         display: block;
     }
     #sidebar.open {
-    width: 230px;
+    transform: translateX(0);
 }
+
 #overly {
     position: fixed;
     inset: 0;
-    background: rgba(255, 0, 0, 0);
-    backdrop-filter: blur(2px);
-    z-index: 999;
-    display: none;
+    background: transparent;
+    backdrop-filter: blur(3px);
+    z-index: 99999999;
+    transform: scale(0) ;
+    opacity: 0;
+    transition: transform .3s, opacity .4s;
 }
 #overly.active {
-    display: block;
+    transform: scale(1) ;
+    opacity: 1;
 }
 .hero-wraper {
     text-align: center;
@@ -140,14 +144,14 @@
     padding: 7px 15px;
     border-radius: 1000px;
     border: none;
-    background: rgba(0, 179, 255, 0.178);
+    background: rgba(0, 247, 255, 0.139);
     color: var(--dark-transparent-40);
 }
 .code-view a:nth-child(2) {
-    background: rgba(80, 197, 255, 0.104);
+    background: var(--dark-transparent-99);
     padding: 8px 15px;
     border-radius: 9px;
-    color: rgb(11, 150, 210);
+    color: var(--text-color);
 }
 .contact-child-con:nth-child(2) .contact-icon-con{
     order: 2;
@@ -185,6 +189,20 @@
     height: 40px !important;
     margin-top: 15px;
 }
+.AboutMe {
+    background: transparent !important;
+}
+#RecentProjects .project {
+    background: transparent;
+    border: none;
+}
+.code-view {
+    border: none;
+}
+#AboutMeImage {
+    height: 42vh !important;
+    overflow: hidden;
+}
 
 }
 @media (min-width: 768px) {
@@ -207,5 +225,14 @@
     gap: 16px;
     padding: 20px;
     margin-top: 20px;
+}
+.EduStepHead {
+    justify-content: center;
+    gap: 20px;
+}
+.EduStepHead button {
+    background: var(--dark-transparent-99);
+    padding: 8px 13px;
+    border-radius: 1000px;
 }
 }
