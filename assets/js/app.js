@@ -206,16 +206,35 @@ function deleteWriter(){
 // start typing
 typeWriter();
 
-function AddProjects() {
-    projects.Recent_Projects.forEach(project => {
 
+ let countD = 0;
+ let countJ1 = 0;
+function AddProjects() {
+    if (projects.Recent_Projects.length < 1) return
+    projects.Recent_Projects.forEach(project => {
+        let filtaredImagesTitle = project.images.filter(item => item.title[0] !== "")
         let CreateData = document.createElement('div')
     CreateData.innerHTML = `
                               <div class="project">
                                         <div class="project-wraper">
                                             <div class="project-header">
                                                 <div class="header-image-wraper">
-                                                    <img src="imgs/project_image/${project.image}" alt="loading...">
+                                                    ${project.images.length < 1 ? "" : `<div class="slideImageContainer">
+                                                        <div class="slideImages">
+                                                            <img src="imgs/project_image/${project.images[0].img}">
+                                                            ${project.images.length > 1 ? `<div class="imgcoverHeader ${project.status ? 'left' : ""}">
+                                                                <div class="image_quantity_show">0/0</div>
+                                                            </div>`: ''}
+                                                            ${project.images.length > 0 && filtaredImagesTitle.length > 0 ? `<div class="imgcoverMain">
+                                                                <button class="closeimgTitle"><i class="fa-solid fa-xmark"></i></button>
+                                                                <div class="project_image_title">
+                                                                    ${project.images[0].title[0]}
+                                                                </div>
+                                                            </div>` : ""}
+                                                        </div>
+                                                        ${project.images.length > 1 ? `<div class="projectsImageSlideBtns">
+                                                        </div>` : ""}
+                                                    </div>`}
                                                     <div class="${project.status ? 'Stutus_Show': 'hide_status'}">
                                                         <p class="${project.status === 'new' ? 'new' :
                                                              project.status === 'old' ? 'old' :
@@ -224,13 +243,13 @@ function AddProjects() {
                                                                ${project.status === 
                                                                 "old" ? `<i class="fa-solid fa-person-cane"></i>` : project.status === "new" ? `<i class="fa-regular fa-folder-open"></i>` : project.status === "featured" ? `<i class="fa-solid fa-feather"></i>` : project.status === "later" ? `<i class="fa-solid fa-layer-group"></i>` : project.status === "upcoming" ? `<i class="fa-regular fa-clock"></i>` : ""
                                                                }
-                                                               ${project.status.slice(0, 1).toUpperCase() + project.status.slice(1, 100000).toLowerCase()}</p>
+                                                               ${project.status.slice(0, 1).toUpperCase() + project.status.slice(1).toLowerCase()}</p>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="project-body-this">
-                                                <div class="project-title">${project.title_icon}&nbsp;${project.title.length > 40 ? project.title.slice(0, 40) + "..." : project.title}</div>
-                                                <div class="project-description">${project.description.length > 160 ? project.description.slice(0, 160) + "..." : project.description}</div>
+                                                <div class="project-title">${project.title_icon}&nbsp;${project.title.length > 40 ? project.title.slice(0, 40) + "... " + "more" : project.title}</div>
+                                                <div class="project-description">${project.description.length > 155 ? project.description.slice(0, 155) + ".. " + `<span class="moreBtn">more</span>` : project.description}</div>
                                                 <div class="Used_in_project">
                                                 <!-- Programing Languages -->
                                                 </div>
@@ -243,18 +262,97 @@ function AddProjects() {
                                 </div>
                         </div>`
     RecentProjects.appendChild(CreateData)
+        if (project.description.length > 155){
+            let ProjectMoreBtn = CreateData.querySelector(".project-description")
+            ProjectMoreBtn.addEventListener("click", () => {
+                countJ1++;
+                if (countJ1 >= 2) countJ1 = 0;
+                if (countJ1) {
+                    ProjectMoreBtn.innerHTML = project.description
+                } else {
+                    ProjectMoreBtn.innerHTML = `${project.description.slice(0, 155)}... <span class="moreBtn">more</span>`
+                }
+            })
+        }
+        
 
+
+
+
+    
+        let components = project.Used_in_project
+        components = project.Used_in_project.filter(c => c.programing_lang !== "") 
         let data = CreateData.querySelector('.Used_in_project')
-        project.Used_in_project.forEach(project_in_used_lang => {
+        components.forEach(project_in_used_lang => {
             let createData = document.createElement('button')
             createData.innerHTML = project_in_used_lang.programing_lang
 
             data.appendChild(createData)
         })
+
+        const slideImagesImg = CreateData.querySelector(".slideImages img")
+        const projectsImageSlideBtns = CreateData.querySelector(".projectsImageSlideBtns")
+        let imgs = project.images
+        const image_quantity_show = CreateData.querySelector(".image_quantity_show")
+            
+        function ClickEvery(d) {
+                UpdateImgLength(d, imgs.length)
+                slideImagesImg.classList.add("animate")
+                setTimeout(() => {
+                    slideImagesImg.classList.remove("animate")
+                }, 300)
+                slideImagesImg.src = "imgs/project_image/" + project.images[d].img
+                projectsImageSlideBtns.querySelectorAll("button").forEach(btn => btn.classList.remove("active"))
+                projectsImageSlideBtns.querySelectorAll("button")[d].classList.add("active")
+            
+            }
+           
+
+        if (imgs.length > 1) {
+            imgs.forEach((imgJ, index) => {
+            let createBtn = document.createElement("button")
+            projectsImageSlideBtns.appendChild(createBtn)
+                if (index === 0) {
+                    createBtn.classList.add("active")
+                }
+                
+
+            createBtn.addEventListener("click", () => {
+                ClickEvery(index)
+                countD = index
+                
+            })
+
+            
+
+        })
+
+        slideImagesImg.addEventListener("click", () => {
+                countD++;
+                if (countD >= imgs.length) countD = 0;
+                ClickEvery(countD)
+                
+            })
+            
+            UpdateImgLength(countD, imgs.length)
+
+        }
+          
+        function UpdateImgLength(currentN, maxLength) {
+            image_quantity_show.innerHTML = `${currentN + 1}/${maxLength}`
+        }
+        if (imgs.length > 3) {
+            projectsImageSlideBtns.querySelectorAll("button")[0].classList.add("btnCompress")
+            projectsImageSlideBtns.querySelectorAll("button")[imgs.length - 1].classList.add("btnCompress")
+        }
+
+
             
     })              
 }
+
 AddProjects()
+
 
 
 const Get_In_Touch = document.getElementById('Get_In_Touch')
@@ -453,8 +551,10 @@ function Slider() {
     const imageBtns = imageSlideBtns.querySelectorAll("button")
 
 
-    imageBtns[0].classList.add("btnCompress")
-    imageBtns[imgs.length - 1].classList.add("btnCompress")
+   if (imgs.length > 3) {
+     imageBtns[0].classList.add("btnCompress")
+     imageBtns[imgs.length - 1].classList.add("btnCompress")
+   }
 
     function Slideranimate() {
             const next = document.createElement("img")

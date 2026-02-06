@@ -120,7 +120,37 @@ export const appNavigation = {
 export const projects = {
     Recent_Projects: [
         {
-        image: 'project1.png',
+        images: [
+            {img: 'noteProjectIm9.png', title: ["", 10], link: ""},
+            {img: 'noteProjectIm1.png', title: ["", 10], link: ""},
+            {img: 'noteProjectIm2.png', title: ["", 10], link: ""},
+            {img: 'noteProjectIm4.png', title: ["", 10], link: ""},
+            {img: 'noteProjectIm5.png', title: ["", 10], link: ""},
+            {img: 'noteProjectIm7.png', title: ["", 10], link: ""},
+            {img: 'noteProjectIm8.png', title: ["", 10], link: ""},
+        ],
+        title: 'NoteEve - Note Everything',
+        title_icon: '<i class="fa-solid fa-notes-medical"></i>',
+        description: 'If you want a note that will refresh your mind and you can <span class="mark-blue">write anything</span> at once that will be saved, you can delete, edit and do many more things as you wish. This is not just a note, it will make your life a little easier. This website includes many things such as a calculator, you can track how much money you are spending or earning and you will have an account of everything.',
+        Used_in_project: [
+            { programing_lang: 'JavaScript' },
+            {programing_lang: "Html"},
+            { programing_lang: 'CSS' },
+            { programing_lang: 'Data Stucture' },
+            { programing_lang: 'localStorage' },
+            { programing_lang: 'other component' },
+        ],
+        code_link: 'https://github.com/TuhinCds/NoteEve.git',
+        preview_link: 'https://tuhincds.github.io/NoteEve/',
+        target: '_blank',
+        status: '',
+
+        },
+        {
+        images: [
+            {img: 'bmiProjectim1.png', title: ["input your body info and this one suggest the output !", 10], link: ""},
+            {img: 'bmiProjectim2.png', title: ["its coding challanges", 10], link: ""},
+        ],
         title: 'BMI scale with AI',
         title_icon: '<i class="fa-solid fa-weight-hanging"></i>',
         description: 'It can track your body. If you input your body weight, height, age, it will automatically suggest what you should do. For example, if you are very thin, it will tell you how to get fit or gain weight in a healthy way.',
@@ -137,7 +167,9 @@ export const projects = {
         status: '',
     },
     {
-        image: 'project2.png',
+        images: [
+            {img: 'project2.png', title: ["", 10], link: ""}
+        ],
         title: 'Full Form Finder',
         title_icon: '<i class="fa-solid fa-arrow-up-right-dots"></i>',
         description: 'if you search a sort form  so it find the full form and show the full form.',
@@ -153,7 +185,9 @@ export const projects = {
         status: 'old',
     },
     {
-        image: 'project3.png',
+        images: [
+            {img: "project3.png", title: ["", 10], link: ""},
+        ],
         title: 'Math solver AI',
         title_icon: '<i class="fa-solid fa-code"></i>',
         description: 'It will solve your big math problems and have the ability to do much more.',
@@ -170,7 +204,9 @@ export const projects = {
         status: 'upcoming',
     },
     {
-        image: 'project4.png',
+        images: [
+            {img: 'project4.png', title: ["", 10], link: ""}
+        ],
         title: 'Ai Robot',
         title_icon: '<i class="fa-solid fa-robot"></i>',
         description: 'Ai Robot stions, class schet',
@@ -188,7 +224,9 @@ export const projects = {
         status: 'featured',
     },
     {
-        image: 'project5.png',
+        images: [
+            {img: 'project5.png', title: ["", 10], link: ""}
+        ],
         title: 'Facebook Clone website',
         title_icon: '<i class="fa-brands fa-square-facebook"></i>',
         description: 'This is Facebook clone website <span class="mark-blue">( just forntend )</span> made by me , its totaly clone ',
@@ -205,6 +243,7 @@ export const projects = {
         status: '',
 
         },
+    
     ],
 
 }
