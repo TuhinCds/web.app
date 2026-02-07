@@ -21,6 +21,7 @@ const Im_What = document.getElementById('Im_What')
 
 // Project add
 const RecentProjects = document.getElementById('RecentProjects')
+const ProjectCountIn = document.getElementById("ProjectCountIn")
 
 // website content 
 const ShowYear = document.getElementById("ShowYear")
@@ -34,6 +35,11 @@ const aboutMeTitle = document.getElementById("aboutMeTitle")
 const abouteMeDescriotion = document.getElementById("abouteMeDescriotion")
 const TotalProjectCount = document.getElementById("TotalProjectCount")
 const projectCount = document.getElementById("projectCount")
+const EducationIn = document.getElementById("EducationIn")
+const EduDataIn = document.getElementById("EduDataIn")
+
+
+
 
 // slider imgs 
 const AboutMeImage = document.getElementById("AboutMeImage")
@@ -539,7 +545,7 @@ const PushMyDataInHtml = () => {
     aboutMeTitle.innerHTML = MyInfo.AboutMe.aboutMeTitle
     abouteMeDescriotion.innerHTML = MyInfo.AboutMe.aboutMeDescription
     TotalProjectCount.innerHTML = "total " + projects.Recent_Projects.length + ` ${projects.Recent_Projects < 2 ? "project" : "project's"} project`
-    projectCount.innerHTML = `${projects.Recent_Projects.length}`
+    ProjectCountIn.innerHTML = projects.Recent_Projects.length < 10 ? "0" + projects.Recent_Projects.length : projects.Recent_Projects.length
 }
 PushMyDataInHtml()
 
@@ -620,3 +626,59 @@ function Slider() {
 }
 
 Slider()
+
+function MyEducation() {
+    // EducationIn
+     MyInfo.Education.eduNames.sort((a, b) => 
+        b.id - a.id
+     )
+    MyInfo.Education.eduNames.forEach((item, index) => {
+        let createEduContainer = document.createElement("div")
+        createEduContainer.classList.add("eduStep")
+        createEduContainer.innerHTML = `
+                                                <div class="eduStepHeader">
+                                                    <div class="eduStepLeftSide">
+                                                        <span>${item.eduFullName}</span>
+                                                        <span class="indicator-white"></span>
+                                                        <span>${item.eduS}</span>
+                                                    </div>
+                                                </div>
+                                                <div class="eduStepMain">
+                                                    <div class="eduStepMainPart1">
+                                                        <div class="organizationName eduOrgan-${item.eduS === "SSC" ? "blue" : ""}">
+                                                            <span class="icon"><i class="fa-solid fa-school-circle-check"></i></span>
+                                                            <span>${item.organizationName}</span>
+                                                        </div>
+                                                        <div class="eduMain">
+                                                            <p class="edu-year-show">${item.year}</p>
+                                                            <div class="vr-border-p1"></div>
+                                                            <p class="gpaSec">
+                                                                <span>GPA</span>
+                                                                <span class="indicator-white"></span>
+                                                                <span class="gpaValue">${item.GPA}</span>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="hr-border-p1"></div>
+                                                    <div class="eduStepMainPart2">
+                                                        <div class="eduP2Content">
+                                                            <div class="showStatus">
+                                                                ${item.status === "running_study" ? `<i class="fa-solid fa-chart-simple"></i><span class="indicator-green-g1"></span>` : `<span class="indicator-white"></span>`}
+                                                                <span></span>
+                                                                <span class="statusValue">${item.status.split("_").join(" ")}</span>
+                                                            </div>
+                                                            <div class="catagory">
+                                                                <div class="catagorytext">
+                                                                    <span>with</span>
+                                                                    <span class="catagoryType">Science</span>
+                                                                </div>
+                                                                ${item.Catagory === "Science" ? `<span class="icon"><i class="fa-solid fa-flask-vial"></i></span>` : ""}
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>`
+
+        EduDataIn.appendChild(createEduContainer)
+    })
+}
+ MyEducation()

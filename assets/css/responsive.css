@@ -63,18 +63,7 @@
     height: calc( var(--circle-size) * 2);
     filter: blur(40px);
 }
-.circle:nth-child(4) {
-    
-}
-.circle:nth-child(5) {
-    
-}
-.circle:nth-child(6) {
-    
-}
-.circle:nth-child(7) {
-    
-}
+
 .circle:nth-child(8) {  
     right: -16px;
     top: 40px;
@@ -189,9 +178,7 @@
     height: 40px !important;
     margin-top: 15px;
 }
-.AboutMe {
-    background: transparent !important;
-}
+
 #RecentProjects .project {
     background: transparent;
     border: none;
@@ -217,6 +204,7 @@
     padding: 20px;
     margin-top: 20px;
 }
+
 }
 @media (min-width: 1024px) {
     #RecentProjects {
@@ -226,13 +214,71 @@
     padding: 20px;
     margin-top: 20px;
 }
-.EduStepHead {
-    justify-content: center;
-    gap: 20px;
-}
+
 .EduStepHead button {
     background: var(--dark-transparent-99);
     padding: 8px 13px;
     border-radius: 1000px;
+}
+}
+@media (min-width: 680px) {
+    #EduDataIn {
+        flex-direction: row;
+    }
+.eduStep {
+    width: unset;
+}
+.eduStepIndicator {
+    position: absolute;
+    background: var(--dark-transparent-98);
+    width: 90%;
+    height: 10px;
+    bottom: 0;
+    border-radius: 1000px;
+}
+.eduStep::after {
+    width: 12px;
+    height: 20px;
+    border: none;
+    border: 2px solid var(--bg-color);
+    border-bottom: none;
+    background: var(--dark-transparent-97);
+    bottom: -35px;
+    transform: translateX(-50%);
+    left: 50%;
+    top: unset !important;
+    border-radius: 1px;
+}
+
+.eduStep::before {
+    width: 20px;
+    height: 3px;
+    border-radius: 5px !important;
+    bottom: -12px;
+    left: 50%;
+    top: unset;
+    transform: translateX(-50%) !important;
+}
+.EduStepMain {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#EducationIn {
+    width: unset;
+}
+#EduDataIn {
+    width: unset;
+}
+.EduStepHead {
+    justify-content: center;
+    gap: 20px;
+}
+#EducationIn {
+    padding: 0;
+    padding-bottom: 35px;
+}
+.eduStep {
+    background: var(--dark-transparent-97);
 }
 }

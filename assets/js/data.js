@@ -11,8 +11,8 @@ const MyInfo = {
     },
     Education: {
         eduNames: [
-            {step: 1, eduS: "SSC", eduFullName: "Secondary School Cer", GPA: "4.28", status: "done", Catagory: "Science", year: "2021 - 2025", organizationName: "Amgachi shahar banu high school"},
-            {step: 2, eduS: "HSC", GPA: "", status: "running study", Catagory: "Science", year: "2025 - Now running", organizationName: "Islamia collage, Rajshahi"}
+            {id: 1, eduS: "SSC", eduFullName: "Secondary School Certificate", GPA: "4.28", status: "done", Catagory: "Science", year: "2021 - 2025", organizationName: "Amgachi shahar banu high school"},
+            {id: 2, eduS: "HSC", eduFullName: "Higher Secondary Certificate", GPA: "", status: "running_study", Catagory: "Science", year: "2025", organizationName: "Islamia collage, Rajshahi"}
         ]
     },
     myExperience: [
@@ -170,12 +170,12 @@ export const projects = {
         },
         {
         images: [
-            {img: 'bmiProjectim1.png', title: ["input your body info and this one suggest the output !", 10], link: ""},
-            {img: 'bmiProjectim2.png', title: ["its coding challanges", 10], link: ""},
+            {img: 'bmiProjectim1.png', title: ["", 10], link: ""},
+            {img: 'bmiProjectim2.png', title: ["", 10], link: ""},
         ],
-        title: 'BMI scale with AI',
+        title: 'BMI scale with AI ',
         title_icon: '<i class="fa-solid fa-weight-hanging"></i>',
-        description: 'It can track your body. If you input your body weight, height, age, it will automatically suggest what you should do. For example, if you are very thin, it will tell you how to get fit or gain weight in a healthy way.',
+        description: 'It can track your body. If you input your body weight, height, age, it will automatically suggest what you should do. For example, if you are very thin, it will tell you how to get fit or gain weight in a healthy way. <span class="mark-orange">(my old project)</span>',
         Used_in_project: [
             { component: 'HTML & CSS' },
             { component: 'JavaScript' },
