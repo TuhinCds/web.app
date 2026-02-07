@@ -1586,8 +1586,9 @@ html, body {
     width: 33px;
     height: 33px;  
 }
-
-
+.eduStepLeftSide span:last-child {
+    font-size: .89rem;
+}
 
 
 

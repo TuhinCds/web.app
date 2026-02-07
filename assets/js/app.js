@@ -640,7 +640,7 @@ function MyEducation() {
                                                     <div class="eduStepLeftSide">
                                                         <span>${item.eduFullName}</span>
                                                         <span class="indicator-white"></span>
-                                                        <span>${item.eduS}</span>
+                                                        <span class=""ShortEduName>${item.eduS}</span>
                                                     </div>
                                                 </div>
                                                 <div class="eduStepMain">
