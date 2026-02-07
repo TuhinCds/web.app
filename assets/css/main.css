@@ -1412,3 +1412,8 @@ html, body {
     background: var(--dark-transparent-97);
     color: var(--text-color)
 }
+#Contact{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

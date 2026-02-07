@@ -281,11 +281,11 @@ function AddProjects() {
 
     
         let components = project.Used_in_project
-        components = project.Used_in_project.filter(c => c.programing_lang !== "") 
+        components = project.Used_in_project.filter(c => c.component !== "") 
         let data = CreateData.querySelector('.Used_in_project')
         components.forEach(project_in_used_lang => {
             let createData = document.createElement('button')
-            createData.innerHTML = project_in_used_lang.programing_lang
+            createData.innerHTML = project_in_used_lang.component
 
             data.appendChild(createData)
         })
@@ -380,7 +380,33 @@ Get_In_Touch.addEventListener('mouseout', () => {
     })
 })
 })
+let skillCon = SkillsAndTools.Skills_Data.map(item => item.skills).flat().map(item => item.skill)
+let skillNameCount = {}
+let skillNameData = []
+for(let i = 0; i < skillCon.length; i++) {
+    skillNameCount[skillCon[i]] = ++skillNameCount[skillCon[i]] || 1
+}
+for (let i = 0; i < Object.keys(skillNameCount).length; i++) {
+    if (skillNameCount[Object.keys(skillNameCount)[i]] > 1) {
+        skillNameData.push(Object.keys(skillNameCount)[i])
+    }
+}
 
+for (let i = 0; i < skillNameData.length; i++) {
+let dublicateData = SkillsAndTools.Skills_Data.map(item => item.skills).flat().filter(item => item.skill === skillNameData[i])
+    SkillsAndTools.Skills_Data = SkillsAndTools.Skills_Data.map(section => {
+        return {
+            ...section,
+            skills: section.skills.map(item => {
+                if (item.skill === skillNameData[i]) {
+                    return { ...item, parcent:  dublicateData[0].parcent}
+                }
+                return item
+            })
+        }
+    })
+
+}
 
 // Skils container
 const SkillsIn = document.getElementById('SkillsIn')
@@ -410,6 +436,7 @@ SkillsAndTools.Skills_Data.forEach(item => {
                 const skills_left_content = createData.querySelector('.skills-left-content')
     
                 item.skills.forEach(item => {
+
                 let createParcent = document.createElement('div')
                 createParcent.innerHTML = `
                                 <div class="skill-parsentage-data">
@@ -423,11 +450,14 @@ SkillsAndTools.Skills_Data.forEach(item => {
                 `
 
             skills_container.appendChild(createParcent)
-
+            
+             
     })
+    
 
     
 })
+
 
 
 // show year in footer

@@ -133,15 +133,37 @@ export const projects = {
         title_icon: '<i class="fa-solid fa-notes-medical"></i>',
         description: 'If you want a note that will refresh your mind and you can <span class="mark-blue">write anything</span> at once that will be saved, you can delete, edit and do many more things as you wish. This is not just a note, it will make your life a little easier. This website includes many things such as a calculator, you can track how much money you are spending or earning and you will have an account of everything.',
         Used_in_project: [
-            { programing_lang: 'JavaScript' },
-            {programing_lang: "Html"},
-            { programing_lang: 'CSS' },
-            { programing_lang: 'Data Stucture' },
-            { programing_lang: 'localStorage' },
-            { programing_lang: 'other component' },
+            { component: 'JavaScript' },
+            {component: "Html"},
+            { component: 'CSS' },
+            { component: 'Data Stucture' },
+            { component: 'localStorage' },
+            { component: 'other component' },
         ],
         code_link: 'https://github.com/TuhinCds/NoteEve.git',
         preview_link: 'https://tuhincds.github.io/NoteEve/',
+        target: '_blank',
+        status: '',
+
+        },
+        {
+        images: [
+            {img: 'ccp3.png', title: ["", 10], link: ""},
+            {img: 'ccp1.png', title: ["", 10], link: ""},
+            {img: 'ccp4.png', title: ["", 10], link: ""}
+        ],
+        title: 'Currency Convarter',
+        title_icon: '<i class="fa-solid fa-bitcoin-sign"></i>',
+        description: 'Auto updated currency convarter',
+        Used_in_project: [
+            { component: 'JavaScript' },
+            { component: 'CSS' },
+            { component: 'Html' },
+            { component: "API's" },
+            { component: 'other component' },
+        ],
+        code_link: 'https://github.com/TuhinCds/CurrencyConverter.git',
+        preview_link: 'https://tuhincds.github.io/CurrencyConverter/',
         target: '_blank',
         status: '',
 
@@ -155,11 +177,11 @@ export const projects = {
         title_icon: '<i class="fa-solid fa-weight-hanging"></i>',
         description: 'It can track your body. If you input your body weight, height, age, it will automatically suggest what you should do. For example, if you are very thin, it will tell you how to get fit or gain weight in a healthy way.',
         Used_in_project: [
-            { programing_lang: 'HTML & CSS' },
-            { programing_lang: 'JavaScript' },
-            { programing_lang: 'localStorage' },
-            { programing_lang: 'Teilwind Css' },
-            { programing_lang: 'Python' },
+            { component: 'HTML & CSS' },
+            { component: 'JavaScript' },
+            { component: 'localStorage' },
+            { component: 'Teilwind Css' },
+            { component: 'Python' },
         ],
         code_link: 'https://github.com/TuhinCds/BMI-calc.web.git',
         preview_link: 'https://tuhincds.github.io/BMI-calc.web/',
@@ -174,10 +196,10 @@ export const projects = {
         title_icon: '<i class="fa-solid fa-arrow-up-right-dots"></i>',
         description: 'if you search a sort form  so it find the full form and show the full form.',
         Used_in_project: [
-            { programing_lang: 'html' },
-            { programing_lang: 'css' },
-            { programing_lang: 'javaScript' },
-            { programing_lang: 'LocalStorage' }
+            { component: 'html' },
+            { component: 'css' },
+            { component: 'javaScript' },
+            { component: 'LocalStorage' }
         ],
         code_link: 'https://github.com/TuhinCds/FullForm_Finder.web.git',
         preview_link: 'https://tuhincds.github.io/FullForm_Finder.web/',
@@ -192,11 +214,11 @@ export const projects = {
         title_icon: '<i class="fa-solid fa-code"></i>',
         description: 'It will solve your big math problems and have the ability to do much more.',
         Used_in_project: [
-            { programing_lang: 'C' },
-            { programing_lang: 'Data Stucture' },
-            { programing_lang: 'File Manegement' },
-            { programing_lang: 'CLI' },
-            { programing_lang: 'Python' }
+            { component: 'C' },
+            { component: 'Data Stucture' },
+            { component: 'File Manegement' },
+            { component: 'CLI' },
+            { component: 'Python' }
         ],
         code_link: '',
         preview_link: '',
@@ -211,12 +233,12 @@ export const projects = {
         title_icon: '<i class="fa-solid fa-robot"></i>',
         description: 'Ai Robot stions, class schet',
         Used_in_project: [
-            { programing_lang: 'Arduino programming' },
-            { programing_lang: 'Data Stucture' },
-            { programing_lang: 'Arduino uno, and other devices' },
-            { programing_lang: 'cicuits' },
-            { programing_lang: 'Python' },
-            {programing_lang: "other component"}
+            { component: 'Arduino programming' },
+            { component: 'Data Stucture' },
+            { component: 'Arduino uno, and other devices' },
+            { component: 'cicuits' },
+            { component: 'Python' },
+            {component: "other component"}
         ],
         code_link: '',
         preview_link: '',
@@ -231,11 +253,11 @@ export const projects = {
         title_icon: '<i class="fa-brands fa-square-facebook"></i>',
         description: 'This is Facebook clone website <span class="mark-blue">( just forntend )</span> made by me , its totaly clone ',
         Used_in_project: [
-            { programing_lang: 'React js' },
-            { programing_lang: 'Teliwind css' },
-            { programing_lang: 'Data Stucture' },
-            { programing_lang: 'Python' },
-            { programing_lang: 'other component' },
+            { component: 'React js' },
+            { component: 'Teliwind css' },
+            { component: 'Data Stucture' },
+            { component: 'Python' },
+            { component: 'other component' },
         ],
         code_link: 'https://github.com/TuhinCds/facboClo.git',
         preview_link: 'https://tuhincds.github.io/facboClo/',
@@ -243,6 +265,7 @@ export const projects = {
         status: '',
 
         },
+    
     
     ],
 
@@ -317,6 +340,7 @@ export const SkillsAndTools = {
 
             
         },
+        
     
     ],
     Tools_Data: [
