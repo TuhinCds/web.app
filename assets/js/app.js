@@ -20,8 +20,12 @@ const overly = document.getElementById('overly')
 const Im_What = document.getElementById('Im_What')
 
 // Project add
-const RecentProjects = document.getElementById('RecentProjects')
 const ProjectCountIn = document.getElementById("ProjectCountIn")
+
+// website pages
+const RecentRopos = document.getElementById("RecentRopos")
+const RecentProjects = document.getElementById('RecentProjects')
+
 
 // website content 
 const ShowYear = document.getElementById("ShowYear")
@@ -38,12 +42,41 @@ const projectCount = document.getElementById("projectCount")
 const EducationIn = document.getElementById("EducationIn")
 const EduDataIn = document.getElementById("EduDataIn")
 
-
+// btns-p
+const btnsP = document.querySelector(".btns-p")
+const btnsPallbtn = btnsP.querySelectorAll("button")
 
 
 // slider imgs 
 const AboutMeImage = document.getElementById("AboutMeImage")
 const imageSlideBtns = document.querySelector(".imageSlideBtns")
+
+
+// ErrorViewer
+
+const ErrorViewer = document.getElementById("ErrorViewer")
+const ErrorHandlerCard = document.getElementById("ErrorHandlerCard")
+
+
+
+
+
+const months = [
+  { short: "Jan", full: "January" },
+  { short: "Feb", full: "February" },
+  { short: "Mar", full: "March" },
+  { short: "Apr", full: "April" },
+  { short: "May", full: "May" },
+  { short: "Jun", full: "June" },
+  { short: "Jul", full: "July" },
+  { short: "Aug", full: "August" },
+  { short: "Sep", full: "September" },
+  { short: "Oct", full: "October" },
+  { short: "Nov", full: "November" },
+  { short: "Dec", full: "December" }
+];
+
+
 
 //? THEME TOGGLER AND SET THEME
 function Settheme(theme) {
@@ -682,3 +715,148 @@ function MyEducation() {
     })
 }
  MyEducation()
+
+
+
+
+
+
+let pageActive = localStorage.getItem("pageActive") || "projectPage"
+
+RoutesPage(pageActive)
+
+ btnsPallbtn.forEach((btn, index) => {
+    btn.addEventListener("click", () => {
+        btnsPallbtn.forEach(offBtn => offBtn.classList.remove("active"))
+        btn.classList.add("active")
+        RoutesPage(btn.dataset.text)
+        
+    })
+ })
+
+ function RoutesPage(pageName)
+ {
+    btnsPallbtn.forEach(item => item.classList.remove("active"))
+    localStorage.setItem("pageActive", pageName);
+    switch(pageName) 
+    {
+        case "ReposPage":
+            btnsPallbtn[1].classList.add("active")
+            RecentProjects.classList.add("height0")
+            RecentRopos.classList.remove("height0")
+            break
+        case "projectPage":
+            btnsPallbtn[0].classList.add("active")
+            RecentProjects.classList.remove("height0")
+            RecentRopos.classList.add("height0")
+            break
+        default:
+            btnsPallbtn[0].classList.add("active")
+            RecentProjects.classList.remove("height0")
+            RecentRopos.classList.add("height0")
+    }
+ }
+ 
+
+ function ShowErrorData(ErrorSymbol, ErrorTitle, errorDescription) {
+    ErrorViewer.innerHTML = `<span class="ErrorIcon">
+                               ${ErrorSymbol || `<i class="fa-solid fa-circle-exclamation"></i>`}
+                             </span>
+                                <div class="errorhandlerTitle">
+                                   ${ErrorTitle || "Something Went Wrong !"}
+                                </div>
+                                <div class="errorTextdescription">
+                                    ${errorDescription}
+                                </div>`
+ }
+ ShowErrorData("", "Something Went Wrong !", "Maybe your internet problem check your internet conection !")
+
+
+
+
+async function FetchGithubRepos() {
+    try {
+        let github_username = "tuhinCds"
+        let res = await fetch(`https://api.github.com/users/${github_username}/repos?sort=updated`)
+        let repos = await res.json()
+        ShowGithubData(repos)
+
+    } catch (err) {
+        console.log(err)
+    }
+}
+FetchGithubRepos()
+
+function ShowGithubData(data) {
+    console.log(data)
+    data.forEach((item, index) => {
+
+
+        let createAtDate = new Date(item.created_at)
+        let updateDate = new Date(item.updated_at)
+        let createAt = `${months[createAtDate.getMonth()].short} ${String(createAtDate.getDate()).padStart(2, "0")} ${createAtDate.getFullYear()}`
+        let updatedAt = `${months[updateDate.getMonth()].short} ${String(updateDate.getDate()).padStart(2, "0")} ${updateDate.getFullYear()}`
+        let createDiv = document.createElement("div")
+        createDiv.className = "repoCardMain"
+        createDiv.innerHTML = 
+        `<div class="repoCard">
+                                            <div class="repoImgContainer">
+                                                <div class="repoimage">
+                                                    <img src="/imgs/aboutMeImg1.png" alt="">
+                                                    <div class="imgOverlap"></div>
+                                                </div>
+                                                <div class="repoHead">
+                                                    <div class="repoCardHeadleft">
+                                                        <span>${item.visibility} ৽ r</span>
+
+                                                    </div>
+                                                    <div class="repoCardHeadRight">
+                                                        <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                                                        <a href="#"><i class="fa-solid fa-code"></i></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="repoMainSection">
+                                                <div class="repoName"><span class="repoNameFi">Repo</span> ${item.name}</div>
+                                                <div class="repoDescription">
+                                                    <div class="repoDescriptionSection">
+                                                        <div class="repoDescriptionSectionTexts">
+                                                            <div class="descriptionText">
+                                                                <span>description</span> ${item.description}
+                                                            </div>
+                                                        </div>
+                                                        <div class="hr-border-p1"></div>
+                                                        <div class="repoCardDescriptionFooter">
+                                                            <div class="created_at"><span>created<i class="fa-regular fa-clock"></i></span> <span>${createAt}</span></div>
+                                                            <div class="vr-border-p1"></div>
+                                                            <div class="updated_at"><span>updated<i class="fa-regular fa-pen-to-square"></i></span> <span>${updatedAt}</span></div>
+                                                            <div class="vr-border-p1"></div>
+                                                            <div class="pushed_at"><span>pushed<i class="fa-regular fa-circle-down"></i></span> <span>2025/02/12</span></div>
+                                                            <div class="vr-border-p1"></div>
+                                                            <div class="default_branch"><span>branch<i class="fa-solid fa-code-branch"></i></span> <span>MAIN</span></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="repoCardFooter">
+                                                <div class="repoCardFooterRow1">
+                                                    <div class="githubAvater">
+                                                    <div class="profile">
+                                                        <a href="#" class="indicator-g-profile">
+                                                            <img src="https://avatars.githubusercontent.com/u/201694110?v=4" alt="">
+                                                        </a>
+                                                    </div>
+                                                    <a href="#" class="username">${item.owner.login}</a>
+                                                </div>
+                                                <div class="profile-info">
+                                                    <div class="watchers_count"><i class="fa-regular fa-eye"></i> 0 </div>
+                                                    <button><i class="fa-solid fa-ellipsis"></i></button>
+                                                </div>
+                                                </div>
+                                                
+                                            </div>
+                                        </div>`
+
+        RecentRopos.appendChild(createDiv)
+    })
+}

@@ -112,9 +112,9 @@
                                 <a href="#projects-section" class="btn-secondary">View Projects</a>
                             </div>
                             <div class="contact-data">
-                                    <a target="_blank"href="https://github.com/TuhinCds"><i class="fa-brands fa-github"></i></a>
-                                    <a target="_blank"href="mailto:tuhin433@gmail.com?subject=Hello&body=I want to talk to you"><i class="fa-solid fa-envelope"></i></a>
-                                    <a href="tel:+8801314383497" target="_blank"><i class="fa-solid fa-phone"></i></a>
+                                <a target="_blank"href="https://github.com/TuhinCds"><i class="fa-brands fa-github"></i></a>
+                                <a target="_blank"href="mailto:tuhin433@gmail.com?subject=Hello&body=I want to talk to you"><i class="fa-solid fa-envelope"></i></a>
+                                <a href="tel:+8801314383497" target="_blank"><i class="fa-solid fa-phone"></i></a>
                             </div>
                         </div>
                     </div>
@@ -194,16 +194,41 @@
                     <div class="project-wraper">
                         <div class="project-header">
                             <div class="project-header-text-top">
-                               My Recent Projects <i class="fa-solid fa-diagram-project"></i>
+                               Repository and Projects
                             </div>
                             <div class="project-header-text-bottom">
                                 Here are all my recent projects and the ones I will make in the future, <span id="TotalProjectCount"></span>
+                            </div>
+                            <div class="project-header-text-btns">
+                                <div class="project-head-all-btns-b">
+                                    <div class="btns-p">
+                                        <button  data-text="projectPage" id="projectsShowBtn" class="active">Projects</button>
+                                        <button data-text="ReposPage" id="reposShowBtn">Repos</button>
+                                    </div>
+                                    <button id="filterBtn"><i class="fa-solid fa-filter"></i></button>
+                                </div>
                             </div>
                         </div>
                         <div class="project-body">
                             <div class="recent-projects-container">
                                 <div id="RecentProjects">
                                     <!-- Projects -->
+                                </div>
+                                <div id="RecentRopos" class="height0">
+                                    <!-- all my repos -->
+                                     
+                                </div>
+                                <div id="ErrorHandlerCard" class="height0">
+                                    <div class="errorHandlerMain">
+                                        <div class="errorhandlerMainRow1 ">
+                                            <div class="errorHandlerText" id="ErrorViewer">
+                                            <!-- showing error -->
+                                        </div>
+                                        <div class="errorHandlerBtns">
+                                            <button><i class="fa-solid fa-arrow-rotate-left"></i>Try Again </button>
+                                        </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
