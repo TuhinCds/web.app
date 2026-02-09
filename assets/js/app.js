@@ -826,7 +826,7 @@ function ShowGithubData(data) {
                                                     <div class="repoDescriptionSection">
                                                         <div class="repoDescriptionSectionTexts">
                                                             <div class="descriptionText">
-                                                                <span>description</span> ${item.description}
+                                                                <span>description</span> ${item.description || item.owner.login + " is not write description "}
                                                             </div>
                                                         </div>
                                                         <div class="hr-border-p1"></div>
@@ -837,7 +837,7 @@ function ShowGithubData(data) {
                                                             <div class="vr-border-p1"></div>
                                                             <div class="pushed_at"><span>pushed<i class="fa-regular fa-circle-down"></i></span> <span>${TimedataShow(item.pushed_at)}</span></div>
                                                             <div class="vr-border-p1"></div>
-                                                            <div class="default_branch"><span>branch<i class="fa-solid fa-code-branch"></i></span> <span>MAIN</span></div>
+                                                            <div class="default_branch"><span>branch<i class="fa-solid fa-code-branch"></i></span> <span class="default_branch">${item.default_branch}</span></div>
                                                         </div>
                                                     </div>
                                                 </div>

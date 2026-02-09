@@ -2046,7 +2046,9 @@ html, body {
     overflow: hidden;
     border: 1px solid var(--dark-transparent-99);
 }
-
+.default_branch {
+    text-transform: uppercase;
+}
 
 
 
