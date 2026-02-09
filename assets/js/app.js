@@ -788,15 +788,18 @@ async function FetchGithubRepos() {
 }
 FetchGithubRepos()
 
+function TimedataShow(date) {
+    date = new Date(date)
+    let timedataS = `${months[date.getMonth()].short} ${String(date.getDate()).padStart(2, "0")} ${date.getFullYear()}`
+    return timedataS
+}
+
+
 function ShowGithubData(data) {
     console.log(data)
     data.forEach((item, index) => {
 
 
-        let createAtDate = new Date(item.created_at)
-        let updateDate = new Date(item.updated_at)
-        let createAt = `${months[createAtDate.getMonth()].short} ${String(createAtDate.getDate()).padStart(2, "0")} ${createAtDate.getFullYear()}`
-        let updatedAt = `${months[updateDate.getMonth()].short} ${String(updateDate.getDate()).padStart(2, "0")} ${updateDate.getFullYear()}`
         let createDiv = document.createElement("div")
         createDiv.className = "repoCardMain"
         createDiv.innerHTML = 
@@ -828,11 +831,11 @@ function ShowGithubData(data) {
                                                         </div>
                                                         <div class="hr-border-p1"></div>
                                                         <div class="repoCardDescriptionFooter">
-                                                            <div class="created_at"><span>created<i class="fa-regular fa-clock"></i></span> <span>${createAt}</span></div>
+                                                            <div class="created_at"><span>created<i class="fa-regular fa-clock"></i></span> <span>${TimedataShow(item.created_at)}</span></div>
                                                             <div class="vr-border-p1"></div>
-                                                            <div class="updated_at"><span>updated<i class="fa-regular fa-pen-to-square"></i></span> <span>${updatedAt}</span></div>
+                                                            <div class="updated_at"><span>updated<i class="fa-regular fa-pen-to-square"></i></span> <span>${TimedataShow(item.updated_at)}</span></div>
                                                             <div class="vr-border-p1"></div>
-                                                            <div class="pushed_at"><span>pushed<i class="fa-regular fa-circle-down"></i></span> <span>2025/02/12</span></div>
+                                                            <div class="pushed_at"><span>pushed<i class="fa-regular fa-circle-down"></i></span> <span>${TimedataShow(item.pushed_at)}</span></div>
                                                             <div class="vr-border-p1"></div>
                                                             <div class="default_branch"><span>branch<i class="fa-solid fa-code-branch"></i></span> <span>MAIN</span></div>
                                                         </div>
