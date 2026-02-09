@@ -771,12 +771,12 @@ RoutesPage(pageActive)
  }
  ShowErrorData("", "Something Went Wrong !", "Maybe your internet problem check your internet conection !")
 
-let isFetched = false
+// let isFetched = false
 
 
 async function FetchGithubRepos() {
-    if (isFetched) return 
-    isFetched = true
+    // if (isFetched) return 
+    // isFetched = true
     try {
         let res = await fetch("/.netlify/functions/repos")
         let repos = await res.json()
@@ -799,7 +799,7 @@ function ShowGithubData(data) {
     console.log(data)
     data.forEach((item, index) => {
 
-
+        let webLink = `https://tuhincds.github.io/${item.name}/`
         let createDiv = document.createElement("div")
         createDiv.className = "repoCardMain"
         createDiv.innerHTML = 
@@ -815,8 +815,8 @@ function ShowGithubData(data) {
 
                                                     </div>
                                                     <div class="repoCardHeadRight">
-                                                        <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                                                        <a href="#"><i class="fa-solid fa-code"></i></a>
+                                                        <a href="${webLink}" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                                                        <a href="${item.clone_url}" target="_blank"><i class="fa-solid fa-code"></i></a>
                                                     </div>
                                                 </div>
                                             </div>

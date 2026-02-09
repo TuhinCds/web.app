@@ -49,6 +49,7 @@ const MyInfo = {
     MyInterrest: {
         MyInterrestIn: "Science and Technology/developer"
     },
+    Hide_repos: [""]
     
 }
 export {MyInfo}
