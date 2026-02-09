@@ -771,15 +771,16 @@ RoutesPage(pageActive)
  }
  ShowErrorData("", "Something Went Wrong !", "Maybe your internet problem check your internet conection !")
 
-
+let isFetched = false
 
 
 async function FetchGithubRepos() {
+    if (isFetched) return 
+    isFetched = true
     try {
-        let github_username = "tuhinCds"
-        let res = await fetch(`https://api.github.com/users/${github_username}/repos?sort=updated`)
+        let res = await fetch("/.netlify/functions/repos")
         let repos = await res.json()
-        ShowGithubData(repos)
+            ShowGithubData(repos)
 
     } catch (err) {
         console.log(err)
