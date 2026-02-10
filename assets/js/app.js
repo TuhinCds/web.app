@@ -803,8 +803,8 @@ function ShowGithubData(data) {
         let createDiv = document.createElement("div")
         createDiv.className = "repoCardMain"
         createDiv.innerHTML = 
-        `<div class="repoCard">
-                                            <div class="repoImgContainer">
+        `                      <div class="repoCard">
+                                <div class="repoImgContainer">
                                                 <div class="repoimage">
                                                     <img src="/imgs/aboutMeImg1.png" alt="">
                                                     <div class="imgOverlap"></div>
@@ -847,7 +847,7 @@ function ShowGithubData(data) {
                                                     <div class="githubAvater">
                                                     <div class="profile">
                                                         <a href="#" class="indicator-g-profile">
-                                                            <img src="https://avatars.githubusercontent.com/u/201694110?v=4" alt="">
+                                                            <img src="${item.owner.avatar_url}" alt="">
                                                         </a>
                                                     </div>
                                                     <a href="#" class="username">${item.owner.login}</a>
