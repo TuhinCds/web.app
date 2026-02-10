@@ -778,7 +778,7 @@ async function FetchGithubRepos() {
     // if (isFetched) return 
     // isFetched = true
     try {
-        let res = await fetch("/.netlify/functions/repos")
+        let res = await fetch("/api/repos")
         let repos = await res.json()
             ShowGithubData(repos)
 
