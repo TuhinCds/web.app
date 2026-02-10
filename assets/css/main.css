@@ -2053,10 +2053,6 @@ html, body {
 .repoimage.heightFix {
     height: 12vh !important;
 }
-.topicsContent {
-    margin: 10px 10px;
-    background: red;
-}
 
 .topicsContent p {
     display: flex;
