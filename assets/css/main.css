@@ -2050,8 +2050,8 @@ html, body {
 .repoimage {
     height: 35vh;
 }
-.repoimage.hide {
-    height: 6vh !important;
+.repoimage.heightFix {
+    height: 12vh !important;
 }
 
 
@@ -2108,7 +2108,9 @@ html, body {
 .hide {
     display: none !important;
 }
-
+.overlapHide {
+    display: none !important;
+}
 
 /* end */
 

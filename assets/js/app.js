@@ -805,9 +805,9 @@ function ShowGithubData(data) {
         createDiv.innerHTML = 
         `                      <div class="repoCard">
                                 <div class="repoImgContainer">
-                                                <div class="repoimage hide">
-                                                    <img src="g" alt="">
-                                                    <div class="imgOverlap"></div>
+                                                <div class="repoimage heightFix">
+                                                    <img src="" alt="" class="hide">
+                                                    <div class="imgOverlap overlapHide"></div>
                                                 </div>
                                                 <div class="repoHead">
                                                     <div class="repoCardHeadleft">
