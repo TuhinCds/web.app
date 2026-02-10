@@ -5,7 +5,7 @@
     --header-height: 70px;
     --footer-height: 260px;
     --circle-size: 30px;
-    --dark-transparent-v-90: rgba(0, 0, 0, 0.302);
+    --dark-transparent-v-90: rgba(58, 58, 58, 0.222);
 }
 :root[data-theme="light"] {
     --bg-color: rgb(253, 251, 251);
@@ -2061,10 +2061,12 @@ html, body {
 .topicsContent p {
     display: flex;
     align-items: center;
-    gap: 5px;
+    gap: 3px;
     font-size: .9rem;
     color: var(--text-color-80);
-    justify-content: space-between;
+}
+.topicsContent p i {
+    font-size: .77rem;
 }
 .topicsContent {
     display: flex;

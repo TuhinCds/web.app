@@ -829,6 +829,12 @@ function ShowGithubData(data) {
                                                                 <span>description</span> ${item.description || item.owner.login + " is not write description "}
                                                             </div>
                                                         </div>
+                                                        <div class="topicsContent">
+                                                            <p>Topics<i class="fa-solid fa-arrows-turn-right"></i></p>
+                                                            <div class="topics-g">
+                                                                <span class="topic-g">Web app<span>
+                                                            </div>
+                                                        </div>
                                                         <div class="hr-border-p1"></div>
                                                         <div class="repoCardDescriptionFooter">
                                                             <div class="created_at"><span>created<i class="fa-regular fa-clock"></i></span> <span>${TimedataShow(item.created_at)}</span></div>
@@ -841,12 +847,7 @@ function ShowGithubData(data) {
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="topicsContent">
-                                                    <p>Topics<i class="fa-solid fa-arrows-turn-right"></i></p>
-                                                    <div class="topics-g">
-                                                        <span class="topic-g">Web app<span>
-                                                    </div>
-                                                </div>
+
                                             </div>
                                             <div class="repoCardFooter">
                                                 <div class="repoCardFooterRow1">
