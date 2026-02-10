@@ -841,6 +841,12 @@ function ShowGithubData(data) {
                                                         </div>
                                                     </div>
                                                 </div>
+                                                <div class="topicsContent">
+                                                    <p>Topics<i class="fa-solid fa-arrows-turn-right"></i></p>
+                                                    <div class="topics">
+                                                        <span class="topic">Web app<span>
+                                                    </div>
+                                                </div>
                                             </div>
                                             <div class="repoCardFooter">
                                                 <div class="repoCardFooterRow1">
@@ -853,8 +859,8 @@ function ShowGithubData(data) {
                                                     <a href="${'https://github.com/' + item.owner.login}" target="_blank" class="username">${item.owner.login}</a>
                                                 </div>
                                                 <div class="profile-info">
-                                                    <div class="watchers_count"><i class="fa-regular fa-eye"></i> 0 </div>
-                                                    <button><i class="fa-solid fa-ellipsis"></i></button>
+                                                    <div class="watchers_count"><i class="fa-regular fa-eye"></i> ${item.watchers_count}</div>
+                                                    <button class="moreOptionsBtn"><i class="fa-solid fa-ellipsis"></i></button>
                                                 </div>
                                                 </div>
                                                 
@@ -864,3 +870,4 @@ function ShowGithubData(data) {
         RecentRopos.appendChild(createDiv)
     })
 }
+
