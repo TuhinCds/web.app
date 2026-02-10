@@ -832,12 +832,12 @@ function ShowGithubData(data) {
                                                         <div class="hr-border-p1"></div>
                                                         <div class="repoCardDescriptionFooter">
                                                             <div class="created_at"><span>created<i class="fa-regular fa-clock"></i></span> <span>${TimedataShow(item.created_at)}</span></div>
+                                                            <div class="vr-border-p1 ${TimedataShow(item.created_at) === TimedataShow(item.updated_at) ? "hide" : ""}"></div>
+                                                            <div class="updated_at ${TimedataShow(item.created_at) === TimedataShow(item.updated_at) ? "hide" : ""}"><span>updated<i class="fa-regular fa-pen-to-square"></i></span> <span>${TimedataShow(item.updated_at)}</span></div>
+                                                            <div class="vr-border-p1 ${TimedataShow(item.created_at) === TimedataShow(item.pushed_at) ? "hide" : ""}"></div>
+                                                            <div class="pushed_at ${TimedataShow(item.created_at) === TimedataShow(item.pushed_at) ? "hide" : ""}"><span>pushed<i class="fa-regular fa-circle-down"></i></span> <span>${TimedataShow(item.pushed_at)}</span></div>
                                                             <div class="vr-border-p1"></div>
-                                                            <div class="updated_at"><span>updated<i class="fa-regular fa-pen-to-square"></i></span> <span>${TimedataShow(item.updated_at)}</span></div>
-                                                            <div class="vr-border-p1"></div>
-                                                            <div class="pushed_at"><span>pushed<i class="fa-regular fa-circle-down"></i></span> <span>${TimedataShow(item.pushed_at)}</span></div>
-                                                            <div class="vr-border-p1"></div>
-                                                            <div class="default_branch"><span>branch<i class="fa-solid fa-code-branch"></i></span> <span class="default_branch">${item.default_branch}</span></div>
+                                                            <div class="default_branch_content"><span>branch<i class="fa-solid fa-code-branch"></i></span> <span class="default_branch">${item.default_branch}</span></div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -846,11 +846,11 @@ function ShowGithubData(data) {
                                                 <div class="repoCardFooterRow1">
                                                     <div class="githubAvater">
                                                     <div class="profile">
-                                                        <a href="${'https://github.com/' + item.owner.login}" class="indicator-g-profile">
+                                                        <a href="${'https://github.com/' + item.owner.login}" target="_blank" class="indicator-g-profile">
                                                             <img src="${item.owner.avatar_url}" alt="">
                                                         </a>
                                                     </div>
-                                                    <a href="#" class="username">${item.owner.login}</a>
+                                                    <a href="${'https://github.com/' + item.owner.login}" target="_blank" class="username">${item.owner.login}</a>
                                                 </div>
                                                 <div class="profile-info">
                                                     <div class="watchers_count"><i class="fa-regular fa-eye"></i> 0 </div>

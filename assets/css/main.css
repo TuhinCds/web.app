@@ -36,7 +36,7 @@
     --dark-transparent-98: rgba(255, 255, 255, 0.093);
     --dark-transparent-99: rgba(255, 255, 255, 0.049);
     --dark-transparent-40: rgba(254, 254, 254, 0.539);
-    --dark-solid-40: rgb(20, 20, 20);
+    --dark-solid-40: rgb(15, 15, 15);
     --nav-a-color: rgb(32, 121, 255);
     --nav-a-background: rgba(20, 102, 255, 0.066);
     --nav-a-border-color: rgba(0, 89, 255, 0);
@@ -2105,7 +2105,9 @@ html, body {
     background: rgb(224, 0, 0);
     border-radius: 1000px;
 }
-
+.hide {
+    display: none !important;
+}
 
 
 /* end */
