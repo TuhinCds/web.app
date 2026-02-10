@@ -843,8 +843,8 @@ function ShowGithubData(data) {
                                                 </div>
                                                 <div class="topicsContent">
                                                     <p>Topics<i class="fa-solid fa-arrows-turn-right"></i></p>
-                                                    <div class="topics">
-                                                        <span class="topic">Web app<span>
+                                                    <div class="topics-g">
+                                                        <span class="topic-g">Web app<span>
                                                     </div>
                                                 </div>
                                             </div>

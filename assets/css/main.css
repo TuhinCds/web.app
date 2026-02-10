@@ -2054,8 +2054,7 @@ html, body {
     height: 10vh !important;
 }
 .topicsContent {
-    background: red;
-    margin: 5px 0;
+    margin: 15px 20px;
 
 }
 
@@ -2063,26 +2062,22 @@ html, body {
     display: flex;
     align-items: center;
     gap: 5px;
+    font-size: .9rem;
 }
 .topicsContent {
     display: flex;
     flex-direction: column;
     gap: 6px;
 }
-.topics {
-    background: rgb(0, 68, 255);
+.topics-g {
     padding: 4px;
     text-wrap: wrap;
-}
-.topics {
-    background: rgba(177, 177, 177, 0.566);
     display: flex;
     flex-wrap: wrap;
     gap: 5px;
 }
-.topics span {
-    background: rgba(255, 123, 0, 0.671);
-    color: white;
+.topics .topic-g {
+    color: var(--dark-transparent-97);
     padding: 6px 10px;
     border-radius: 1000px;
 }
