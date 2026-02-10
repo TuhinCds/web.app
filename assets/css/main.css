@@ -1831,9 +1831,7 @@ html, body {
     align-items: center;
     gap: 10px;
 }
-.repoimage {
-    height: 35vh;
-}
+
 .repoImgContainer {
     position: relative;
 }
@@ -2049,7 +2047,12 @@ html, body {
 .default_branch {
     text-transform: uppercase;
 }
-
+.repoimage {
+    height: 35vh;
+}
+.repoimage.hide {
+    height: 6vh !important;
+}
 
 
 

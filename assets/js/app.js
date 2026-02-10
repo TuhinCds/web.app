@@ -800,13 +800,18 @@ function ShowGithubData(data) {
     data.forEach((item, index) => {
 
         let webLink = `https://tuhincds.github.io/${item.name}/`
+        let previewImg = `https://raw.githubusercontent.com/${item.owner.login}/${item.name}/main/preview.png`
         let createDiv = document.createElement("div")
+        let classNameChnage = ""
+        previewImg.onerror = () => {
+            classNameChnage = "hide"
+        }
         createDiv.className = "repoCardMain"
         createDiv.innerHTML = 
         `                      <div class="repoCard">
                                 <div class="repoImgContainer">
-                                                <div class="repoimage">
-                                                    <img src="/imgs/aboutMeImg1.png" alt="">
+                                                <div class="repoimage ${classNameChnage}">
+                                                    <img src="${previewImg}" alt="">
                                                     <div class="imgOverlap"></div>
                                                 </div>
                                                 <div class="repoHead">
@@ -846,7 +851,7 @@ function ShowGithubData(data) {
                                                 <div class="repoCardFooterRow1">
                                                     <div class="githubAvater">
                                                     <div class="profile">
-                                                        <a href="#" class="indicator-g-profile">
+                                                        <a href="${'https://github.com/' + item.owner.login}" class="indicator-g-profile">
                                                             <img src="${item.owner.avatar_url}" alt="">
                                                         </a>
                                                     </div>
