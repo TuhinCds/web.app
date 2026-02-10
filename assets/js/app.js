@@ -803,7 +803,6 @@ function ShowGithubData(data) {
        {
          if (MyInfo.Hide_repos[i] === item.name) return
        }
-
         let isErrorInImg = false
         let webLink = `https://tuhincds.github.io/${item.name}/`
         let imgUrl = `https://raw.githubusercontent.com/${item.owner.login}/${item.name}/main/preview.png`
@@ -842,10 +841,10 @@ function ShowGithubData(data) {
                                                         </div>
                                                         <div class="Branch_show_con">
                                                             <i class="fa-solid fa-code-branch"></i>
-                                                            <span>main</span>
+                                                            <span>${item.default_branch}</span>
                                                         </div>
                                                         <div class="languageshowContent">
-                                                            <p>Language <i class="fa-solid fa-language"></i></p>
+                                                            <p><i class="fa-solid fa-language"></i> Language</p>
                                                             <div class="languages">
                                                                 <span class="${item.language}">${item.language}</span>
                                                             </div>
@@ -869,7 +868,7 @@ function ShowGithubData(data) {
                                                 <div class="repoCardFooterRow1">
                                                     <div class="githubAvater">
                                                     <div class="profile">
-                                                        <a href="${'https://github.com/' + item.owner.login}" target="_blank" class="indicator-g-profile">
+                                                        <a href="${'https://github.com/' + item.owner.login}" target="_blank" class="${FormatTimeSeconds(item.pushed_at) < (84600 * 1) ?  "indicator-g-profile" : ""}">
                                                             <img src="${item.owner.avatar_url}" alt="">
                                                         </a>
                                                     </div>
@@ -878,6 +877,9 @@ function ShowGithubData(data) {
                                                 <div class="profile-info">
                                                     <div class="watchers_count"><i class="fa-regular fa-eye"></i> ${item.watchers_count}</div>
                                                     <button class="moreOptionsBtn"><i class="fa-solid fa-ellipsis"></i></button>
+                                                        <div class="MoreInfoMenu hideThisOne">
+                                                            <a href="${`https://github.com/${item.owner.login}/${item.name}/archive/refs/heads/${item.default_branch}.zip`}"><i class="fa-regular fa-file-zipper"></i>Download Zip</a>
+                                                        </div>
                                                 </div>
                                                 </div>
                                                 
@@ -910,7 +912,6 @@ function ShowGithubData(data) {
             topicsG.innerHTML = '<span>[]</span>'
         }
 
-
     })
 }
 
@@ -923,9 +924,60 @@ function FormatTime(time) {
     let second = milisecond / 1000
 
     if (second < 7) return 'just now'
-    if (second < 60) return `${Math.floor(second)}s ago`
+    if (second < 60) return `${second}s ago`
+    if (second < 3600) return `${Math.floor(second / 60)}m ago`
     if (second < 86400) return `${Math.floor(second / 3600)}h ago`
-    if (second > 86400 && second < 604800) return `${Math.floor((second / 3600) / 24)}d ago`
-    if (second >= 604800 && second <= 2419200) return `${Math.floor(((second / 3600) / 24) / 7)}w ago`
-    if (second > 2419200 && second < 31536000) return `${Math.floor(((second / 3600 ) / 24) / 365)}y ago`
+    if (second < 604800) return `${Math.floor(second / 86400)}d ago`
+    if (second < 2419200) return `${Math.floor(second / 604800)}w ago`
+    if (second < 31536000) return `${Math.floor(second / 2419200)}mo ago`
+
+    return `${Math.floor(second / 31536000)}y ago`
+}
+function FormatTimeSeconds(time) {
+    let now = Date.now()
+    let old = new Date(time).getTime()
+    let milisecond = Math.floor(now - old)
+    let second = milisecond / 1000
+
+    return second
+}
+
+
+let activeRepoMenu = null;
+
+document.addEventListener("click", (e) => {
+    const btn = e.target.closest(".moreOptionsBtn");
+    const clickedMenu = e.target.closest(".MoreInfoMenu");
+
+    // button click
+    if (btn) {
+        const menu = btn.nextElementSibling;
+        MenuToggler(menu);
+        return;
+    }
+
+    // menu er vitore click → do nothing
+    if (clickedMenu) return;
+
+    // outside click → close
+    if (activeRepoMenu) {
+        activeRepoMenu.classList.remove("show");
+        activeRepoMenu = null;
+    }
+});
+
+function MenuToggler(menu) {
+    if (!menu) return;
+
+    if (activeRepoMenu && activeRepoMenu !== menu) {
+        activeRepoMenu.classList.remove("show");
+    }
+
+    menu.classList.toggle("show");
+
+    if (menu.classList.contains("show")) {
+        activeRepoMenu = menu;
+    } else {
+        activeRepoMenu = null;
+    }
 }

@@ -49,7 +49,7 @@ const MyInfo = {
     MyInterrest: {
         MyInterrestIn: "Science and Technology/developer"
     },
-    Hide_repos: [""]
+    Hide_repos: ["web.app", "Currency"]
     
 }
 export {MyInfo}
@@ -128,7 +128,6 @@ export const projects = {
             {img: 'noteProjectIm4.png', title: ["", 10], link: ""},
             {img: 'noteProjectIm5.png', title: ["", 10], link: ""},
             {img: 'noteProjectIm7.png', title: ["", 10], link: ""},
-            {img: 'noteProjectIm8.png', title: ["", 10], link: ""},
         ],
         title: 'NoteEve - Note Everything',
         title_icon: '<i class="fa-solid fa-notes-medical"></i>',

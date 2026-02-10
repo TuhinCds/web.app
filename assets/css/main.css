@@ -19,6 +19,7 @@
     --dark-transparent-99: rgba(0, 0, 0, 0.032);
     --dark-transparent-40: rgba(0, 0, 0, 0.585);
     --dark-solid-40: rgb(238, 238, 238);
+    --dark-solid-50: rgb(225, 225, 225);
     --nav-a-color: rgb(5, 109, 255);
     --nav-a-background: rgba(0, 151, 233, 0.131);
     --nav-a-border-color: rgba(0, 167, 233, 0);
@@ -37,6 +38,7 @@
     --dark-transparent-99: rgba(255, 255, 255, 0.049);
     --dark-transparent-40: rgba(254, 254, 254, 0.539);
     --dark-solid-40: rgb(15, 15, 15);
+    --dark-solid-50: rgb(28, 28, 28);
     --nav-a-color: rgb(32, 121, 255);
     --nav-a-background: rgba(20, 102, 255, 0.066);
     --nav-a-border-color: rgba(0, 89, 255, 0);
@@ -2105,24 +2107,80 @@ html, body {
     gap: 5px;
 }
 .languageshowContent .languages .JavaScript {
-    background: rgba(255, 132, 25, 0.122);
-    color: rgba(255, 121, 54, 0.795);
+    background: transparent;
+    color: rgba(255, 103, 32, 0.859);
+    position: relative;
+}
+.languageshowContent .languages .JavaScript::after {
+    position: absolute;
+    content: "";
+    width: 4px;
+    height: 4px;
+    border-radius: 100px;
+    background: rgba(255, 103, 32, 0.859);
+    left: 2px;
+    top: 50%;
+    transform: translateY(-50%);
 }
 .languageshowContent .languages .TypeScript {
-    background: rgba(25, 121, 255, 0.166);
-    color: rgba(54, 111, 255, 0.789);
+    color: rgb(11, 113, 255);
+    position: relative;
+}
+.languageshowContent .languages .TypeScript::after {
+    position: absolute;
+    content: "";
+    width: 4px;
+    height: 4px;
+    border-radius: 100px;
+    background: rgb(11, 113, 255);
+    left: 2px;
+    top: 50%;
+    transform: translateY(-50%);
 }
 .languageshowContent .languages .SCSS {
-    background: rgba(25, 255, 186, 0.172);
-    color: rgba(54, 248, 255, 0.791);
+    color: rgb(138, 35, 255);
+    position: relative;
+}
+.languageshowContent .languages .SCSS::after {
+    position: absolute;
+    content: "";
+    width: 4px;
+    height: 4px;
+    border-radius: 100px;
+    background: rgb(138, 35, 255);
+    left: 2px;
+    top: 50%;
+    transform: translateY(-50%);
 }
 .languageshowContent .languages .CSS {
-    background: rgba(255, 25, 136, 0.14);
-    color: rgba(255, 48, 158, 0.818);
+    color: rgb(222, 13, 250);
+    position: relative;
+}
+.languageshowContent .languages .CSS::after {
+    position: absolute;
+    content: "";
+    width: 4px;
+    height: 4px;
+    border-radius: 100px;
+    background: rgb(222, 13, 250);
+    left: 2px;
+    top: 50%;
+    transform: translateY(-50%);
 }
 .languageshowContent .languages .Python {
-    background: rgba(25, 255, 128, 0.145);
-    color: rgba(0, 212, 99, 0.815);
+    color: rgb(10, 221, 105);
+    position: relative;
+}
+.languageshowContent .languages .Python::after {
+    position: absolute;
+    content: "";
+    width: 4px;
+    height: 4px;
+    border-radius: 100px;
+    background: rgb(10, 221, 105);
+    left: 2px;
+    top: 50%;
+    transform: translateY(-50%);
 }
 .languageshowContent .languages span {
     padding: 5px 10px;
@@ -2145,9 +2203,55 @@ html, body {
 .moreOptionsBtn {
     background: transparent !important;
 }
-
-
-
+.profile-info {
+    position: relative;
+}
+.MoreInfoMenu {
+    position: absolute;
+    right: 35px;
+    background: var(--dark-solid-50);
+    width: 170px;
+    height: max-content;
+    border-radius: 4px;
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    gap: 5px;
+    padding: 6px 6px;
+    z-index: 999;
+    transform: scale(0);
+    opacity: 0;
+    transition: transform .1s, opacity .4s ease;
+}
+.MoreInfoMenu::before {
+    position: absolute;
+    content: "";
+    width:  25px;
+    height: 12px;
+    background: var(--dark-solid-50);
+    right: 0px;
+    top: 47%;
+    transform: rotate(30deg) translateY(-50%);
+}
+.MoreInfoMenu a {
+    display: flex;
+    width: 100%;
+    padding: 6px 14px;
+    background: transparent;
+    color: var(--text-color);
+    align-items: center;
+    gap: 3px;
+    text-decoration: none;
+    font-size: .9rem;
+    
+}
+.MoreInfoMenu button:hover {
+    background: transparent !important;
+}
+.MoreInfoMenu.show{
+    transform: scale(1) !important;
+    opacity: 1 !important;
+}
 
 /* multi used classes */
 
