@@ -796,17 +796,17 @@ function TimedataShow(date) {
 
 
 function ShowGithubData(data) {
-    console.log(data)
     data.forEach((item, index) => {
-
+        let isErrorInImg = false
         let webLink = `https://tuhincds.github.io/${item.name}/`
+        let imgUrl = `https://raw.githubusercontent.com/${item.owner.login}/${item.name}/main/preview.png`
         let createDiv = document.createElement("div")
         createDiv.className = "repoCardMain"
         createDiv.innerHTML = 
         `                      <div class="repoCard">
                                 <div class="repoImgContainer">
                                                 <div class="repoimage heightFix">
-                                                    <img src="" alt="" class="hide">
+                                                    <img src="${imgUrl}" alt="" class="repoImg">
                                                     <div class="imgOverlap overlapHide"></div>
                                                 </div>
                                                 <div class="repoHead">
@@ -869,6 +869,18 @@ function ShowGithubData(data) {
                                         </div>`
 
         RecentRopos.appendChild(createDiv)
+
+
+        const repoImg = createDiv.querySelector(".repoImg")
+        const repoimage = createDiv.querySelector(".repoimage")
+        const imgOverlap = createDiv.querySelector(".imgOverlap")
+
+        repoImg.onerror = () => {
+            isErrorInImg = true
+            repoImg.classList.add("hide")
+            repoimage.classList.add("heightFix")
+            imgOverlap.classList.add("hide")
+        }
     })
 }
 
