@@ -2076,9 +2076,11 @@ html, body {
     flex-wrap: wrap;
     gap: 5px;
 }
-.topics .topic-g {
-    color: var(--dark-transparent-97);
+.topics-g .topic-g {
+    color: var(--text-color);
+    background: var(--dark-transparent-98);
     padding: 6px 10px;
+    font-size: .84rem;
     border-radius: 1000px;
 }
 
