@@ -2058,7 +2058,7 @@ html, body {
     display: flex;
     align-items: center;
     gap: 3px;
-    font-size: .9rem;
+    font-size: .97rem;
     color: var(--text-color-80);
 }
 .topicsContent p i {
@@ -2080,12 +2080,71 @@ html, body {
     color: var(--text-color);
     background: var(--dark-transparent-98);
     padding: 6px 10px;
-    font-size: .8rem;
+    font-size: .9rem;
     border-radius: 1000px;
 }
-
-
-
+.languageshowContent {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+.languageshowContent p {
+    font-size: .96rem;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+.languageshowContent p i {
+    font-size: .83rem;
+}
+.languageshowContent .languages {
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    overflow-x: auto;
+    gap: 5px;
+}
+.languageshowContent .languages .JavaScript {
+    background: rgba(255, 132, 25, 0.122);
+    color: rgba(255, 121, 54, 0.795);
+}
+.languageshowContent .languages .TypeScript {
+    background: rgba(25, 121, 255, 0.166);
+    color: rgba(54, 111, 255, 0.789);
+}
+.languageshowContent .languages .SCSS {
+    background: rgba(25, 255, 186, 0.172);
+    color: rgba(54, 248, 255, 0.791);
+}
+.languageshowContent .languages .CSS {
+    background: rgba(255, 25, 136, 0.14);
+    color: rgba(255, 48, 158, 0.818);
+}
+.languageshowContent .languages .Python {
+    background: rgba(25, 255, 128, 0.145);
+    color: rgba(0, 212, 99, 0.815);
+}
+.languageshowContent .languages span {
+    padding: 5px 10px;
+    border-radius: 500px;
+    font-size: .84rem;
+}
+.Branch_show_con {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    color: var(--text-color-80)
+}
+.Branch_show_con i {
+    font-size: .9rem;
+}
+.Branch_show_con span{
+    font-size: .95rem;
+    color: var(--text-color)
+}
+.moreOptionsBtn {
+    background: transparent !important;
+}
 
 
 

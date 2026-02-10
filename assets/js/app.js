@@ -795,8 +795,15 @@ function TimedataShow(date) {
 }
 
 
+
+
 function ShowGithubData(data) {
     data.forEach((item, index) => {
+       for (let i = 0; i < MyInfo.Hide_repos.length; i++)
+       {
+         if (MyInfo.Hide_repos[i] === item.name) return
+       }
+
         let isErrorInImg = false
         let webLink = `https://tuhincds.github.io/${item.name}/`
         let imgUrl = `https://raw.githubusercontent.com/${item.owner.login}/${item.name}/main/preview.png`
@@ -805,9 +812,9 @@ function ShowGithubData(data) {
         createDiv.innerHTML = 
         `                      <div class="repoCard">
                                 <div class="repoImgContainer">
-                                                <div class="repoimage heightFix">
+                                                <div class="repoimage">
                                                     <img src="${imgUrl}" alt="" class="repoImg">
-                                                    <div class="imgOverlap overlapHide"></div>
+                                                    <div class="imgOverlap"></div>
                                                 </div>
                                                 <div class="repoHead">
                                                     <div class="repoCardHeadleft">
@@ -831,19 +838,28 @@ function ShowGithubData(data) {
                                                         </div>
                                                         <div class="topicsContent">
                                                             <p>Topics<i class="fa-solid fa-arrows-turn-right"></i></p>
-                                                            <div class="topics-g">
-                                                                <span class="topic-g">Web app<span>
+                                                            <div class="topics-g"></div>
+                                                        </div>
+                                                        <div class="Branch_show_con">
+                                                            <i class="fa-solid fa-code-branch"></i>
+                                                            <span>main</span>
+                                                        </div>
+                                                        <div class="languageshowContent">
+                                                            <p>Language <i class="fa-solid fa-language"></i></p>
+                                                            <div class="languages">
+                                                                <span class="${item.language}">${item.language}</span>
                                                             </div>
                                                         </div>
+                                                
                                                         <div class="hr-border-p1"></div>
                                                         <div class="repoCardDescriptionFooter">
                                                             <div class="created_at"><span>created<i class="fa-regular fa-clock"></i></span> <span>${TimedataShow(item.created_at)}</span></div>
                                                             <div class="vr-border-p1 ${TimedataShow(item.created_at) === TimedataShow(item.updated_at) ? "hide" : ""}"></div>
                                                             <div class="updated_at ${TimedataShow(item.created_at) === TimedataShow(item.updated_at) ? "hide" : ""}"><span>updated<i class="fa-regular fa-pen-to-square"></i></span> <span>${TimedataShow(item.updated_at)}</span></div>
                                                             <div class="vr-border-p1 ${TimedataShow(item.created_at) === TimedataShow(item.pushed_at) ? "hide" : ""}"></div>
-                                                            <div class="pushed_at ${TimedataShow(item.created_at) === TimedataShow(item.pushed_at) ? "hide" : ""}"><span>pushed<i class="fa-regular fa-circle-down"></i></span> <span>${TimedataShow(item.pushed_at)}</span></div>
-                                                            <div class="vr-border-p1"></div>
-                                                            <div class="default_branch_content"><span>branch<i class="fa-solid fa-code-branch"></i></span> <span class="default_branch">${item.default_branch}</span></div>
+                                                            <div class="pushed_at ${TimedataShow(item.created_at) === TimedataShow(item.pushed_at) ? "hide" : ""}"><span>pushed<i class="fa-regular fa-circle-down"></i></span> <span>${TimedataShow(item.pushed_at)} (${FormatTime(item.pushed_at)})</span></div>
+                                                            ${TimedataShow(item.created_at) === TimedataShow(item.updated_at) && TimedataShow(item.created_at) === TimedataShow(item.updated_at) ? `<div class="vr-border-p1"></div>
+                                                            <div class="default_branch_content"><span>branch<i class="fa-solid fa-code-branch"></i></span> <span class="default_branch">${item.default_branch}</span></div>` : ""}
                                                         </div>
                                                     </div>
                                                 </div>
@@ -881,6 +897,35 @@ function ShowGithubData(data) {
             repoimage.classList.add("heightFix")
             imgOverlap.classList.add("hide")
         }
+
+        const topicsG = createDiv.querySelector(".topics-g")
+        if (item.topics.length > 0) {
+            item.topics.forEach((topic, index) => {
+                let createTopic = document.createElement("span")
+                createTopic.innerHTML = `${topic}`
+                topicsG.appendChild(createTopic)
+            })
+            
+        } else {
+            topicsG.innerHTML = '<span>[]</span>'
+        }
+
+
     })
 }
 
+
+
+function FormatTime(time) {
+    let now = Date.now()
+    let old = new Date(time).getTime()
+    let milisecond = Math.floor(now - old)
+    let second = milisecond / 1000
+
+    if (second < 7) return 'just now'
+    if (second < 60) return `${Math.floor(second)}s ago`
+    if (second < 86400) return `${Math.floor(second / 3600)}h ago`
+    if (second > 86400 && second < 604800) return `${Math.floor((second / 3600) / 24)}d ago`
+    if (second >= 604800 && second <= 2419200) return `${Math.floor(((second / 3600) / 24) / 7)}w ago`
+    if (second > 2419200 && second < 31536000) return `${Math.floor(((second / 3600 ) / 24) / 365)}y ago`
+}
