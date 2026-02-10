@@ -2051,7 +2051,7 @@ html, body {
     height: 35vh;
 }
 .repoimage.heightFix {
-    height: 10vh !important;
+    height: 12vh !important;
 }
 .topicsContent {
     margin: 15px 20px;
@@ -2063,6 +2063,8 @@ html, body {
     align-items: center;
     gap: 5px;
     font-size: .9rem;
+    color: var(--text-color-80);
+    justify-content: space-between;
 }
 .topicsContent {
     display: flex;
@@ -2080,7 +2082,7 @@ html, body {
     color: var(--text-color);
     background: var(--dark-transparent-98);
     padding: 6px 10px;
-    font-size: .84rem;
+    font-size: .8rem;
     border-radius: 1000px;
 }
 
