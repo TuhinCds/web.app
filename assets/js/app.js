@@ -789,11 +789,13 @@ RoutesPage(pageActive)
             btnsPallbtn[1].classList.add("active")
             RecentProjects.classList.add("height0")
             RecentRopos.classList.remove("height0")
+            FetchGithubRepos()
             break
         case "projectPage":
             btnsPallbtn[0].classList.add("active")
             RecentProjects.classList.remove("height0")
             RecentRopos.classList.add("height0")
+            ShowErrorData("", "", "", "")
             break
         default:
             btnsPallbtn[0].classList.add("active")
@@ -832,6 +834,10 @@ async function FetchGithubRepos() {
             ShowGithubData(repos)
 
     } catch (err) {
+
+        if (pageActive === "projectPage") return
+
+
         if (!navigator.onLine) {
          ShowErrorData("", "No Internet Conection !", "Check your internet conection ! connect your wifi or mobile data", "add")   
         } else {
@@ -846,9 +852,6 @@ async function FetchGithubRepos() {
         loadingContainer.classList.add("height0")
     }
 }
-FetchGithubRepos()
-
-
 
 TryAgainBtn.addEventListener("click", () => {
     FetchGithubRepos()
@@ -866,6 +869,7 @@ function TimedataShow(date) {
 
 function ShowGithubData(data) {
     if (!data) return
+    RecentRopos.innerHTML = ""
     data.forEach((item, index) => {
        for (let i = 0; i < MyInfo.Hide_repos.length; i++)
        {
