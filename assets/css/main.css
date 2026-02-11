@@ -70,6 +70,7 @@ body {
     grid-template-columns: 1fr;
     grid-template-rows: var(--header-height) 1fr var(--footer-height);
     -webkit-user-select: none;
+    background-color: var(--bg-color) !important;
 }
 html, body {
     transition: background-color .35s ease, 
@@ -1658,8 +1659,9 @@ html, body {
 }
 .height0 {
     height: 0 !important;
-    overflow: hidden;
+    overflow: hidden !important;
     padding: 0 !important;
+    opacity: 0 !important;
 }
 #ErrorHandlerCard {
     display: flex;
@@ -2252,6 +2254,319 @@ html, body {
     transform: scale(1) !important;
     opacity: 1 !important;
 }
+#loadingContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 36px 20px;
+    opacity: 1;
+    transition: opacity .2s;
+}
+.loading {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.loading .loader {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: linear-gradient(45deg, #ff4a4a, #4a90ff, #4affaa);
+  background-size: 600% 600%; /* big for smooth movement */
+  animation: gradientMove 3s ease infinite, pulseScale 2s ease-in-out infinite;
+  transform: scale(0.5);
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes pulseScale {
+  0%, 100% {
+    transform: scale(0.5);
+  }
+  50% {
+    transform: scale(1);
+  }
+}
+#bodyLoader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--bg-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999999999999;
+    opacity: 1;
+    transition: opacity 0.5s ease;
+}
+#bodyLoader.hideLoader {
+    opacity: 0;
+    pointer-events: none;
+}
+#bodyLoader .LoadingBar {
+    width: 65px;
+    height: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#bodyLoader .LoadingBar .loader {
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  background: linear-gradient(45deg, #ff4a4a, #4a90ff, #4affaa);
+  background-size: 600% 600%; /* big for smooth movement */
+  animation: gradientMove2 3s ease infinite, pulseScale2 2s ease-in-out infinite;
+  transform: scale(0.5);
+}
+
+@keyframes gradientMove2 {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes pulseScale2 {
+  0%, 100% {
+    transform: scale(0.5);
+  }
+  50% {
+    transform: scale(1);
+  }
+}
+.header , .aside, .main , .footer {
+    display: none;
+}
+.showEl {
+    display: unset;
+}
+.project-header {
+    position: relative;
+}
+
+#FilterMenu {
+    height: 53vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 20px;
+    opacity: 1;
+    transition: height .3s, opacity .4s;
+}
+.FilterMenuWraper {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    width: 90%;
+    max-width: 560px;
+    height: 53vh;
+    background: transparent;
+    border-radius: 10px;
+}
+.FilterMenuHead {
+    display: flex;
+    flex-direction: column;
+}
+.SearchContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.searchDiv {
+    width: 100%;
+}
+
+.ReposFilterMenuMain .RepoShort button {
+    width: 100%;
+    text-align: start;
+    padding: 6px;
+    border: none;
+    background: transparent;
+    color: var(--text-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    position: relative;
+    margin-left: 5px;
+    cursor: pointer;
+    padding: 10px 8px;
+}
+.ReposFilterMenuMain .RepoShort button:hover {
+    background: var(--dark-transparent-98);
+}
+.ReposFilterMenuMain .RepoShort button::after {
+    position: absolute;
+    content: "";
+    width: 2px;
+    height: 2px;
+    background: var(--text-color-80);
+    left: -3px;
+    border-radius: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.newRepoSign {
+    width: 7px;
+    height: 7px;
+    background: rgba(0, 187, 255, 0.802);
+    border-radius: 40px;
+}
+.lastRepoSign {
+    width: 7px;
+    height: 7px;
+    background: rgba(255, 0, 0, 0.703);
+    border-radius: 40px;
+}
+
+
+.ReposFilterMenuMain .RepoShort button .filter-condition{
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+.createS {
+    padding: 4px 10px;
+    border-radius: 1000px;
+    font-size: .6rem;
+    text-transform: uppercase;
+    color: var(--text-color-80)
+}
+.pushedS {
+    padding: 4px 10px;
+    border-radius: 1000px;
+    font-size: .6rem;
+    text-transform: uppercase;
+    color: var(--text-color-80)
+}
+.ReposFilterMenuMain .RepoShort {
+    overflow-y: auto;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    padding-left: 4px;
+    gap: 1px;
+}
+.searchDiv {
+    position: relative;
+}
+#SearchPlaceholder {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-color-80);
+    left: 20px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: .9rem;
+    pointer-events: none;
+    font-weight: 250;
+}
+#SearchPlaceholder i {
+    font-size: .75rem;
+}
+.FilterMenuHead {
+    margin-bottom: 25px;
+}
+.SearchSuggestContainer {
+    height: 10vh;
+    border-bottom: 2px solid var(--dark-transparent-98);
+}
+.FilterMenuHead {
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+
+}
+.searchSuggestWraper {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
+.SearchSuggestContainer {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    padding: 0 20px;
+    color: var(--text-color)
+}
+.searchDiv input {
+    width: 100%;
+    padding: 17px;
+    border: none;
+    background: transparent;
+    outline: none;
+    text-align: start;
+    color: var(--text-color);
+    background: var(--dark-transparent-98);
+    border-radius: 100px;
+    flex: 2;
+}
+#filterBtn {
+    cursor: pointer;
+}
+#filterBtn:hover{
+    background: transparent;
+}
+.searchInput button {
+    width: 50px;
+    height: 50px;
+    border-radius: 1000px;
+    border: none;
+    background: var(--dark-transparent-98);
+    color: var(--text-color);
+}
+.searchInput {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+   
+}
+#HideSearchContainer {
+    cursor: pointer;
+}
+#SearchPlaceholder {
+    opacity: 1;
+    transition: opacity .2s;
+}
+.SearchSuggestContainer {
+    transition: height .4s;
+}
+
+
+
+
+
+
+
+
+
+
+
 
 /* multi used classes */
 
@@ -2296,6 +2611,7 @@ html, body {
 .overlapHide {
     display: none !important;
 }
+
 
 /* end */
 

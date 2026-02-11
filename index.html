@@ -28,12 +28,18 @@
 
 </head>
 <body>
+    
     <div id="overly"></div>
+    <div id="bodyLoader">
+        <div class="LoadingBar">
+            <div class="loader"></div>
+        </div>
+    </div>
     <header class="header">
         <div class="header-wraper">
             <a href="index.html" class="logo-side">
                 <i class="fa-brands fa-squarespace"></i>
-                <span class="logoName"> </span>
+                <span class="logoName"></span>
             </a>
             <div class="navigation">
                 <nav>
@@ -209,8 +215,80 @@
                                 </div>
                             </div>
                         </div>
+                        <div id="FilterMenu" class="height0">
+                                <div class="FilterMenuWraper">
+                                    <div class="FilterMenuHead">
+                                        <div class="SearchContainer">
+                                           <div class="searchDiv">
+                                              <div class="searchInput">
+                                                <input id="SearchInputData" type="text">
+                                                <button id="HideSearchContainer">
+                                                    <i class="fa-solid fa-xmark"></i>
+                                                </button>
+                                              </div>
+                                              <span id="SearchPlaceholder"><i class="fa-solid fa-magnifying-glass"></i>Search Projects...</span>
+                                           </div>
+                                        </div>
+                                        <div class="SearchSuggestContainer">
+                                            <div class="searchSuggestWraper">
+                                                <i class="fa-solid fa-arrows-turn-right"></i>
+                                                <p id="Search_Suggest"></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="ReposFilterMenuMain">
+                                        <div class="RepoShort">
+                                            <button>
+                                                <span class="text" data-text="Updated Repository">Updated Repository</span>
+                                            </button>
+                                            <button>
+                                                <span class="text" data-text="10h ago Repository">10h ago Repository</span>
+                                                <span class="filter-condition">
+                                                    <span class="dotSign"></span>
+                                                    <span class="createS">created</span>
+                                                </span>
+                                            </button>
+                                            <button>
+                                                <span class="text" data-text="3d ago Repository">3d ago Repository</span>
+                                                <span class="filter-condition">
+                                                    <span class="dotSign"></span>
+                                                    <span class="createS">created</span>
+                                                </span>
+                                            </button>
+                                            <button>
+                                                <span class="text" data-text="10d ago Repository">10d ago Repository</span>
+                                                <span class="filter-condition">
+                                                    <span class="dotSign"></span>
+                                                    <span class="pushedS">pushed</span>
+                                                </span>
+                                            </button>
+                                            <button>
+                                                <span class="text" data-text="New Repository">New Repository</span>
+                                                <span class="newRepoSign"></span>
+                                            </button>
+                                            <button>
+                                                <span class="text" data-text="Last Repository">Last Repository</span>
+                                                <span class="lastRepoSign"></span>
+                                            </button>
+                                            <button>
+                                                <span class="text" data-text="Show All Repository">Show All Repository</span>
+                                            </button>
+                                            </div>
+                                            <div class="downloadPop">
+                                                <div class="downloadZipSec">
+                                                        
+                                                </div>
+                                         </div>
+                                    </div>
+                                </div>
+                        </div>
                         <div class="project-body">
                             <div class="recent-projects-container">
+                                <div id="loadingContainer" class="height0">
+                                    <div class="loading">
+                                        <div class="loader"></div>
+                                    </div>
+                                </div>
                                 <div id="RecentProjects">
                                     <!-- Projects -->
                                 </div>
@@ -225,7 +303,7 @@
                                                 <!-- showing error -->
                                             </div>
                                         <div class="errorHandlerBtns">
-                                            <button><i class="fa-solid fa-arrow-rotate-left"></i>Try Again </button>
+                                            <button id="TryAgainBtn"><i class="fa-solid fa-arrow-rotate-left"></i>Try Again </button>
                                         </div>
                                         </div>
                                     </div>

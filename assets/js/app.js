@@ -1,5 +1,35 @@
 import { appNavigation, What_im, projects, SkillsAndTools, MyInfo} from './data.js'
 
+
+
+const loadingContainer = document.getElementById("loadingContainer")
+const header = document.querySelector(".header")
+const aside = document.querySelector(".sidebar")
+const main = document.querySelector(".main")
+const footer = document.querySelector(".footer")
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    // loader part
+const bodyLoader = document.getElementById("bodyLoader")
+bodyLoader.classList.remove("hideLoader")
+
+window.addEventListener("load", () => {
+    let timeSet = setTimeout(() => {
+        bodyLoader.classList.add("hideLoader")
+        header.classList.add("showEl")
+        aside.classList.add("showEl")
+        main.classList.add('showEl')
+        footer.classList.add("showEl")
+
+
+        clearTimeout(timeSet)
+    }, 200)
+})
+})
+
+
+
 const themeBtn = document.getElementById('themeBtn')
 const themeBtnIcon = themeBtn.querySelector('i')
 const html = document.documentElement
@@ -42,6 +72,21 @@ const projectCount = document.getElementById("projectCount")
 const EducationIn = document.getElementById("EducationIn")
 const EduDataIn = document.getElementById("EduDataIn")
 
+
+// filter 
+const filterBtn = document.getElementById("filterBtn")
+const FilterMenu = document.getElementById("FilterMenu")
+const projectHeaderTextBtns = document.querySelector(".project-header-text-btns")
+const HideSearchContainer = document.getElementById("HideSearchContainer")
+const SearchInputData = document.getElementById("SearchInputData")
+const SearchPlaceholder = document.getElementById("SearchPlaceholder")
+const RepoShort = document.querySelector(".RepoShort")
+const RepoShortBtns = RepoShort.querySelectorAll("button")
+const Search_Suggest = document.getElementById("Search_Suggest")
+const SearchSuggestContainer = document.querySelector(".SearchSuggestContainer")
+
+
+
 // btns-p
 const btnsP = document.querySelector(".btns-p")
 const btnsPallbtn = btnsP.querySelectorAll("button")
@@ -56,7 +101,7 @@ const imageSlideBtns = document.querySelector(".imageSlideBtns")
 
 const ErrorViewer = document.getElementById("ErrorViewer")
 const ErrorHandlerCard = document.getElementById("ErrorHandlerCard")
-
+const TryAgainBtn = document.getElementById("TryAgainBtn")
 
 
 
@@ -744,11 +789,13 @@ RoutesPage(pageActive)
             btnsPallbtn[1].classList.add("active")
             RecentProjects.classList.add("height0")
             RecentRopos.classList.remove("height0")
+            FetchGithubRepos()
             break
         case "projectPage":
             btnsPallbtn[0].classList.add("active")
             RecentProjects.classList.remove("height0")
             RecentRopos.classList.add("height0")
+            ShowErrorData("", "", "", "")
             break
         default:
             btnsPallbtn[0].classList.add("active")
@@ -758,7 +805,14 @@ RoutesPage(pageActive)
  }
  
 
- function ShowErrorData(ErrorSymbol, ErrorTitle, errorDescription) {
+ function ShowErrorData(ErrorSymbol, ErrorTitle, errorDescription, classType) {
+
+    if (classType === "add") {
+        ErrorHandlerCard.classList.remove("height0")
+    } else {
+        ErrorHandlerCard.classList.add("height0")
+    }
+    
     ErrorViewer.innerHTML = `<span class="ErrorIcon">
                                ${ErrorSymbol || `<i class="fa-solid fa-circle-exclamation"></i>`}
                              </span>
@@ -769,24 +823,40 @@ RoutesPage(pageActive)
                                     ${errorDescription}
                                 </div>`
  }
- ShowErrorData("", "Something Went Wrong !", "Maybe your internet problem check your internet conection !")
-
-// let isFetched = false
+ ShowErrorData("", "Something Went Wrong !", "Maybe your internet problem check your internet conection !", "")
 
 
 async function FetchGithubRepos() {
-    // if (isFetched) return 
-    // isFetched = true
+    loadingContainer.classList.remove("height0")
     try {
         let res = await fetch("/api/repos")
         let repos = await res.json()
             ShowGithubData(repos)
 
     } catch (err) {
-        console.log(err)
+        if (pageActive === "projectPage") return
+        if (!navigator.onLine) {
+         ShowErrorData("", "No Internet Conection !", "Check your internet conection ! connect your wifi or mobile data", "add")   
+        } else {
+            ShowErrorData(
+            "",
+            "Something Went Wrong !",
+            "Maybe there is a problem with the API or an internet problem.",
+            "add"
+        )
+        } 
+    } finally {
+        loadingContainer.classList.add("height0")
     }
 }
 FetchGithubRepos()
+
+
+
+TryAgainBtn.addEventListener("click", () => {
+    FetchGithubRepos()
+    ShowErrorData("", "", "", "")
+})
 
 function TimedataShow(date) {
     date = new Date(date)
@@ -798,6 +868,7 @@ function TimedataShow(date) {
 
 
 function ShowGithubData(data) {
+    if (!data) return
     data.forEach((item, index) => {
        for (let i = 0; i < MyInfo.Hide_repos.length; i++)
        {
@@ -942,42 +1013,91 @@ function FormatTimeSeconds(time) {
     return second
 }
 
-
-let activeRepoMenu = null;
+let ActiveMenu = null
 
 document.addEventListener("click", (e) => {
-    const btn = e.target.closest(".moreOptionsBtn");
-    const clickedMenu = e.target.closest(".MoreInfoMenu");
-
-    // button click
+    let btn = e.target.closest(".moreOptionsBtn")
     if (btn) {
-        const menu = btn.nextElementSibling;
-        MenuToggler(menu);
-        return;
+        const menu = btn.nextElementSibling
+        RepomenuToggler(menu)
+        return
     }
 
-    // menu er vitore click → do nothing
-    if (clickedMenu) return;
-
-    // outside click → close
-    if (activeRepoMenu) {
-        activeRepoMenu.classList.remove("show");
-        activeRepoMenu = null;
+    if (e.target.closest(".MoreInfoMenu")) return
+    if (ActiveMenu) {
+        ActiveMenu.classList.remove("show")
+        ActiveMenu = null
     }
-});
+})
 
-function MenuToggler(menu) {
-    if (!menu) return;
-
-    if (activeRepoMenu && activeRepoMenu !== menu) {
-        activeRepoMenu.classList.remove("show");
+function RepomenuToggler(menu) {
+    if (ActiveMenu && ActiveMenu !== menu) {
+        ActiveMenu.classList.remove("show")
+        ActiveMenu = null
     }
+    menu.classList.toggle("show")
 
-    menu.classList.toggle("show");
-
-    if (menu.classList.contains("show")) {
-        activeRepoMenu = menu;
-    } else {
-        activeRepoMenu = null;
+    if (menu.classList.contains("show")){
+        ActiveMenu = menu
+    }
+    else {
+        ActiveMenu = null
     }
 }
+
+
+function FilterMenuToggle(status) {
+    if(status === "add") {
+        FilterMenu.classList.remove("height0")
+        projectHeaderTextBtns.classList.add("height0") 
+        return  
+    } else if (status === "remove"){
+        FilterMenu.classList.add("height0")
+        projectHeaderTextBtns.classList.remove("height0")  
+        return
+    }
+    FilterMenu.classList.toggle("height0")
+    projectHeaderTextBtns.classList.toggle("height0")
+}
+filterBtn.addEventListener('click', () => {
+    FilterMenuToggle("add")
+})
+HideSearchContainer.addEventListener("click", () => {
+    FilterMenuToggle("remove")
+})
+
+
+function SearchInputDataFunc() {
+     let SearchInputDataVal = SearchInputData.value
+    Search_Suggest.innerHTML = SearchInputDataVal
+
+
+   if (SearchInputDataVal.length > 0) {
+        SearchPlaceholder.style.opacity = "0"
+        SearchSuggestContainer.classList.remove("height0")
+   } else {
+        SearchPlaceholder.style.opacity = "1"
+        SearchSuggestContainer.classList.add("height0")
+   }
+}
+
+SearchInputData.addEventListener("input", () => {
+  SearchInputDataFunc()
+})
+
+RepoShortBtns.forEach((btn, index) => {
+    btn.addEventListener("click", () => {
+        SearchInputData.value = btn.querySelector(".text").dataset.text
+        SearchInputDataFunc()
+    })
+    console.log(btn.dataset.text)
+})
+
+SearchRepos()
+
+function SearchRepos() {
+
+}
+window.addEventListener("load", () => {
+    SearchInputData.value = ""
+})

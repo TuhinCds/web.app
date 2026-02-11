@@ -1,7 +1,7 @@
 const MyInfo = {
     MyGenarelInfo: {
         liveIn: "Bangladesh",
-        homeDescription: "iam a web developer with a passion for creating beautiful and functional websites. i have expenrience in JavaScript, C, C++, Go, RUST, Python, etc. and various web development frameworks.",
+        homeDescription: "iam a web developer with a passion for creating beautiful and functional websites. i have expenrience in JavaScript, C, C++, Go, RUST, Python and various web development frameworks.",
         IamInInternet: [
             {name: "Email", title: "This is email", sortLink: "tuhin433@gmail.com", link: `mailto:tuhin433@gmail.com?subject=Hello&body=I want to talk to you`, icon: `<i class="fa-solid fa-envelope-circle-check"></i>`},
             {name: "Phone", title: "Calling number",sortLink: "+8801314383497", link: `tel:+8801314383497`, icon: `<i class="fa-solid fa-mobile-vibrate"></i>`},
