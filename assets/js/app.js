@@ -1058,7 +1058,7 @@ function FormatTime(time) {
     let second = milisecond / 1000
 
     if (second < 7) return 'just now'
-    if (second < 60) return `${second}s ago`
+    if (second < 60) return `${Math.floor(second)}s ago`
     if (second < 3600) return `${Math.floor(second / 60)}m ago`
     if (second < 86400) return `${Math.floor(second / 3600)}h ago`
     if (second < 604800) return `${Math.floor(second / 86400)}d ago`
