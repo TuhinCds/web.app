@@ -1904,23 +1904,8 @@ html, body {
     color: var(--text-color-80);
     font-size: 1.1rem;
 }
-.repoNameFi {
-    padding: 6px 10px;
-    border-radius: 100px;
-    color: var(--text-color);
-    position: relative;
-}
-.repoNameFi::after {
-    position: absolute;
-    content: "";
-    width: 5px;
-    height: 5px;
-    background: var(--dark-transparent-40);
-    border-radius: 100px;
-    top: 50%;
-    transform: translateY(-50%);
-    right: 0;
-}
+
+
 .repoCardDescriptionFooter {
     background: transparent;
 
@@ -1978,18 +1963,6 @@ html, body {
     font-size: .94rem;
     color: var(--text-color);
     position: relative;
-    margin-right: 10px;
-}
-.repoDescriptionSectionTexts .descriptionText span::after {
-    position: absolute;
-    content: "";
-    width: 3px;
-    height: 3px;
-    background: var(--dark-transparent-40);
-    border-radius: 100px;
-    top: 50%;
-    transform: translateY(-50%);
-    right: -8px;
 }
 .profile-info {
     display: flex;
@@ -2554,8 +2527,222 @@ html, body {
     opacity: 1;
     transition: height .5s, opacity .4s;
 }
+#ErrorHandlerCard {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.showCommits {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.inOther {
+    display: flex;
+    align-items: center;
+}
+.commit {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+.commit.col {
+    align-items: unset;
+    flex-direction: column;
+    gap: 6px;
+}
+.commit .commit-TextHead {
+    font-size: .88rem;
+}
+.commit span{
+    font-size: .88rem;  
+}
+.commit .commit-TextHead {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.commit .commitMessage {
+    color: var(--text-color)
+}
 
+.commitMessage.col {
+    display: block;
+    text-wrap: wrap;
+    flex-wrap: wrap;
+    width: 100%;
+    border-radius: 5px;
+}
+.commitMessage p {
+    font-size: .84rem;
+}
+.commitMessage p.col {
+    display: block;
+    white-space: nowrap;
+    text-wrap: wrap;
+    flex-wrap: wrap;
+    width: 100%;
+}
+.showCommits {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.commitSection {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.commit-Author-Head {
+    font-size: .88rem;
+    color: var(--text-color)
+}
+.author {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: .85rem;
+}
+.author .authorName {
+    color: var(--text-color);
+    font-size: .85rem;
+}
+.author p {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+.authorContentTimeLine {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+.timeShow {
+    color: var(--text-color)
+}
 
+.AuthorCommit {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+.authorEmail {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+.authorEmail p {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: .88rem;
+    color: var(--text-color-80)
+}
+.authorEmail .authoremailShow {
+    font-size: .88rem;
+    color: var(--text-color)
+}
+.isAdmin {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+.isAdmin p {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: .88rem;
+    color: var(--text-color-80)
+}
+.isAdmin .isAdminDataShow {
+    font-size: .88rem;
+    color: var(--text-color)
+}
+.isAdmin p i, .authorEmail p i ,  .author p i{
+    font-size: .78rem;
+}
+.commit-Author-Head i {
+    font-size: .73rem;
+}
+.commit-Author-Head i {
+    transform: rotate(180deg);
+    transition: transform .4s;
+}
+.commit-Author-Head i.rotTop {
+    transform: rotate(0deg);
+}
+.commit-Author-Head {
+    display: inline !important;
+    text-align: start;
+    width: unset !important;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+.AuthorCommit {
+    height: 10vh ;
+    opacity: 1;
+    transition: height .4s , opacity .4s ease-in-out;
+}
+.descriptionText span:nth-child(1) {
+    color: var(--text-color-80) !important
+}
+.descriptionText span:nth-child(2) {
+    color: var(--text-color) !important
+}
+.repoNameFi {
+    color: var(--text-color-80) !important
+}
+.repoNameText {
+    color: var(--text-color)
+}
+.repoName {
+    display: flex;
+    align-items: center;
+    gap: 2px !important;
+}
+.descriptionText {
+    gap: 2px !important; 
+}
+.repoNameFi {
+    padding: 6px 3.5px;
+    padding-left: 10px;
+    border-radius: 100px;
+    color: var(--text-color);
+}
+.descriptionText {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    text-wrap: wrap;
+    gap: 5px  !important;
+
+}
+.descriptionText span {
+    font-size: 1rem !important;
+}
+.topics-g span {
+    font-size: .9rem !important;
+
+}
+.topics-g{
+    display: flex;
+    flex-wrap: wrap;
+    text-wrap: wrap;
+    align-items: center;
+    gap: 6px;
+    color: var(--text-color)
+}
+.topicDot {
+    width: 3px;
+    height: 3px;
+    background: var(--text-color-80);
+    border-radius: 10px;
+}
+.topics-g .hideSpan {
+    display: none;
+}
 
 
 
@@ -2607,7 +2794,6 @@ html, body {
 .overlapHide {
     display: none !important;
 }
-
 
 /* end */
 

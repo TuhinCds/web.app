@@ -825,13 +825,12 @@ RoutesPage(pageActive)
  }
  ShowErrorData("", "Something Went Wrong !", "Maybe your internet problem check your internet conection !", "")
 
-
 async function FetchGithubRepos() {
     loadingContainer.classList.remove("height0")
     try {
         let res = await fetch("/api/repos")
         let repos = await res.json()
-            ShowGithubData(repos)
+        await ShowGithubData(repos)
 
     } catch (err) {
 
@@ -866,16 +865,15 @@ function TimedataShow(date) {
 
 
 
+async function ShowGithubData(data) {
+    let visibleRepos = data.filter(item => !MyInfo.Hide_repos.includes(item.name))
 
-function ShowGithubData(data) {
-    if (!data) return
-    RecentRopos.innerHTML = ""
-    data.forEach((item, index) => {
-       for (let i = 0; i < MyInfo.Hide_repos.length; i++)
-       {
-         if (MyInfo.Hide_repos[i] === item.name) return
-       }
-        let isErrorInImg = false
+      const promiseArr = visibleRepos.map(item => HandleCommits(item.name))
+      const Commit = (await Promise.all(promiseArr)).flat()
+
+     let isErrorInImg = false
+        visibleRepos.forEach((item, index) => {
+
         let webLink = `https://tuhincds.github.io/${item.name}/`
         let imgUrl = `https://raw.githubusercontent.com/${item.owner.login}/${item.name}/main/preview.png`
         let createDiv = document.createElement("div")
@@ -899,21 +897,54 @@ function ShowGithubData(data) {
                                                 </div>
                                             </div>
                                             <div class="repoMainSection">
-                                                <div class="repoName"><span class="repoNameFi">Repo</span> ${item.name}</div>
+                                                <div class="repoName">
+                                                    <span class="repoNameFi">Repo</span>
+                                                    <span class="repoNameText">${item.name}</span>
+                                                </div>
                                                 <div class="repoDescription">
                                                     <div class="repoDescriptionSection">
                                                         <div class="repoDescriptionSectionTexts">
                                                             <div class="descriptionText">
-                                                                <span>description</span> ${item.description || item.owner.login + " is not write description "}
+                                                                <span class="">description</span>
+                                                                <span>${item.description || item.owner.login + " is not write description - Empty"}</span>
                                                             </div>
                                                         </div>
                                                         <div class="topicsContent">
                                                             <p>Topics<i class="fa-solid fa-arrows-turn-right"></i></p>
-                                                            <div class="topics-g"></div>
+                                                            <div class="topics-g">
+                                                            </div>
                                                         </div>
-                                                        <div class="Branch_show_con">
-                                                            <i class="fa-solid fa-code-branch"></i>
-                                                            <span>${item.default_branch}</span>
+                                                        <div class="showCommits">
+                                                            <div class="commitSection">
+                                                                <div class="Branch_show_con">
+                                                                    <i class="fa-solid fa-code-branch"></i>
+                                                                    <span>${item.default_branch}</span>
+                                                                </div>
+                                                            <div class="inOther">
+                                                                <div class="commit ${Commit[index].commit.message.length > 16 ? "col" : ""}">
+                                                                    <p class="commit-TextHead"><i class="fa-solid fa-code-commit"></i>Last commit</p>
+                                                                    <div class="commitMessage ${Commit[index].commit.message.length > 16 ? "col" : ""}">
+                                                                        <p class="${Commit[index].commit.message.length > 16 ? "col" : ""}">"${Commit[index].commit.message.length > 30 ? Commit[index].commit.message.slice(0, 30) + "..." : Commit[index].commit.message}"</p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            </div>
+                                                            <button class="commit-Author-Head">commit Author <i class="fa-solid fa-caret-down"></i></button>
+                                                             <div class="AuthorCommit">
+                                                                <div class="author">
+                                                                    <p><i class="fa-solid fa-user-pen"></i>Author</p>
+                                                                    <span class="authorName">${Commit[index].commit.author.name}</span>
+                                                                    <span class="authorContentTimeLine">at <span class="timeShow">${FormatTime(Commit[index].commit.author.date)}</span></span>
+                                                                </div>
+                                                                <div class="authorEmail">
+                                                                    <p><i class="fa-solid fa-at"></i>Email</p>
+                                                                    <span class="authoremailShow">${Commit[index].commit.author.email}</span>
+                                                                </div>
+                                                                <div class="isAdmin">
+                                                                    <p><i class="fa-solid fa-user-tie"></i>Admin</p>
+                                                                    <span class="isAdminDataShow">${item.permissions.admin ? "yes" : "no"}</span>
+                                                                </div>
+                                                            </div>
                                                         </div>
                                                         <div class="languageshowContent">
                                                             <p><i class="fa-solid fa-language"></i> Language</p>
@@ -960,7 +991,7 @@ function ShowGithubData(data) {
 
         RecentRopos.appendChild(createDiv)
 
-
+                                                            
         const repoImg = createDiv.querySelector(".repoImg")
         const repoimage = createDiv.querySelector(".repoimage")
         const imgOverlap = createDiv.querySelector(".imgOverlap")
@@ -971,19 +1002,50 @@ function ShowGithubData(data) {
             repoimage.classList.add("heightFix")
             imgOverlap.classList.add("hide")
         }
-
         const topicsG = createDiv.querySelector(".topics-g")
         if (item.topics.length > 0) {
             item.topics.forEach((topic, index) => {
                 let createTopic = document.createElement("span")
+                let createDot = document.createElement("span")
+                let createSpan = document.createElement("span")
                 createTopic.innerHTML = `${topic}`
+
+
+                 if (index === 0) {
+                    createSpan.innerHTML = "["
+                    topicsG.appendChild(createSpan)
+                }
                 topicsG.appendChild(createTopic)
+                if ((item.topics.length - 1) === index) {
+                    createDot.className = "hideSpan"
+                } else {
+                    createDot.className = "topicDot"
+                }
+                topicsG.appendChild(createDot) 
+               
+                if ((item.topics.length - 1 ) === index) {
+                    createSpan.innerHTML = "]"
+                    topicsG.appendChild(createSpan)
+                }
             })
             
         } else {
             topicsG.innerHTML = '<span>[]</span>'
         }
 
+
+
+        const commitAuthorHead = createDiv.querySelector(".commit-Author-Head")
+        const AuthorCommit = createDiv.querySelector(".AuthorCommit")
+
+        commitAuthorHead.addEventListener("click", () => {
+            AuthorCommit.classList.toggle("height0")
+            if (AuthorCommit.classList.contains("height0")) {
+                commitAuthorHead.querySelector("i").classList.add("rotTop")
+            } else {
+                commitAuthorHead.querySelector("i").classList.remove("rotTop")
+            }
+        })
     })
 }
 
@@ -1091,7 +1153,6 @@ RepoShortBtns.forEach((btn, index) => {
         SearchInputData.value = btn.querySelector(".text").dataset.text
         SearchInputDataFunc()
     })
-    console.log(btn.dataset.text)
 })
 
 SearchRepos()
@@ -1102,3 +1163,14 @@ function SearchRepos() {
 window.addEventListener("load", () => {
     SearchInputData.value = ""
 })
+
+
+async function HandleCommits(repo) {
+    try {
+        let req = await fetch(`/api/commits?repo=${repo}`)
+        let data = await req.json()
+        return data
+    } catch (err) {
+        console.log(err)
+    }
+} 
