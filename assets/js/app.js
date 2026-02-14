@@ -930,7 +930,7 @@ async function ShowGithubData(data) {
                                                             </div>
                                                             </div>
                                                             <button class="commit-Author-Head">commit Author <i class="fa-solid fa-caret-down"></i></button>
-                                                             <div class="AuthorCommit">
+                                                             <div class="AuthorCommit height0">
                                                                 <div class="author">
                                                                     <p><i class="fa-solid fa-user-pen"></i>Author</p>
                                                                     <span class="authorName">${Commit[index].commit.author.name}</span>
@@ -1041,9 +1041,9 @@ async function ShowGithubData(data) {
         commitAuthorHead.addEventListener("click", () => {
             AuthorCommit.classList.toggle("height0")
             if (AuthorCommit.classList.contains("height0")) {
-                commitAuthorHead.querySelector("i").classList.add("rotTop")
-            } else {
                 commitAuthorHead.querySelector("i").classList.remove("rotTop")
+            } else {
+                commitAuthorHead.querySelector("i").classList.add("rotTop")
             }
         })
     })

@@ -2666,11 +2666,11 @@ html, body {
     font-size: .73rem;
 }
 .commit-Author-Head i {
-    transform: rotate(180deg);
+    transform: rotate(0deg);
     transition: transform .4s;
 }
 .commit-Author-Head i.rotTop {
-    transform: rotate(0deg);
+    transform: rotate(180deg);
 }
 .commit-Author-Head {
     display: inline !important;
