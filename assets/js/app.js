@@ -866,6 +866,7 @@ function TimedataShow(date) {
 
 
 async function ShowGithubData(data) {
+    RecentRopos.innerHTML = ""
     let visibleRepos = data.filter(item => !MyInfo.Hide_repos.includes(item.name))
 
       const promiseArr = visibleRepos.map(item => HandleCommits(item.name))
