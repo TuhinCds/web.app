@@ -157,8 +157,6 @@ export const projects = {
         description: 'Auto updated currency convarter',
         Used_in_project: [
             { component: 'JavaScript' },
-            { component: 'CSS' },
-            { component: 'Html' },
             { component: "API's" },
             { component: 'other component' },
         ],
@@ -173,15 +171,13 @@ export const projects = {
             {img: 'bmiProjectim1.png', title: ["", 10], link: ""},
             {img: 'bmiProjectim2.png', title: ["", 10], link: ""},
         ],
-        title: 'BMI scale with AI ',
+        title: 'BMI scale calculator',
         title_icon: '<i class="fa-solid fa-weight-hanging"></i>',
         description: 'It can track your body. If you input your body weight, height, age, it will automatically suggest what you should do. For example, if you are very thin, it will tell you how to get fit or gain weight in a healthy way. <span class="mark-orange">(my old project)</span>',
         Used_in_project: [
             { component: 'HTML & CSS' },
             { component: 'JavaScript' },
             { component: 'localStorage' },
-            { component: 'Teilwind Css' },
-            { component: 'Python' },
         ],
         code_link: 'https://github.com/TuhinCds/BMI-calc.web.git',
         preview_link: 'https://tuhincds.github.io/BMI-calc.web/',
@@ -244,27 +240,7 @@ export const projects = {
         preview_link: '',
         target: '',
         status: 'featured',
-    },
-    {
-        images: [
-            {img: 'project5.png', title: ["", 10], link: ""}
-        ],
-        title: 'Facebook Clone website',
-        title_icon: '<i class="fa-brands fa-square-facebook"></i>',
-        description: 'This is Facebook clone website <span class="mark-blue">( just forntend )</span> made by me , its totaly clone ',
-        Used_in_project: [
-            { component: 'React js' },
-            { component: 'Teliwind css' },
-            { component: 'Data Stucture' },
-            { component: 'Python' },
-            { component: 'other component' },
-        ],
-        code_link: 'https://github.com/TuhinCds/facboClo.git',
-        preview_link: 'https://tuhincds.github.io/facboClo/',
-        target: '_blank',
-        status: '',
-
-        },
+    }
     
     
     
@@ -281,8 +257,10 @@ export const SkillsAndTools = {
             skills: [
                 {skill: "Python", parcent: 30},
                 {skill: "Java", parcent: 8},
-                {skill: "JavaScript", parcent: 60},
-                {skill: "PHP", parcent: 10}
+                {skill: "JavaScript", parcent: 79},
+                {skill: "C", parcent: 50},
+                {skill: "C++", parcent: 40},
+                {skill: "RUST", parcent: 10},
             ],
 
         },{
@@ -291,11 +269,9 @@ export const SkillsAndTools = {
             description: "I'm khowing web develpment programming languages",
             icon: '<i class="fa-solid fa-tv"></i>',
             skills: [
-                {skill: "HTML", parcent: 90},
-                {skill: "CSS", parcent: 70},
-                {skill: "JavaScript", parcent: 56},
+                {skill: "JavaScript", parcent: 40},
+                {skill: "Node.js", parcent: 50},
                 {skill: "MySQL", parcent: 10},
-                {skill: "C", parcent: 40}
             ],
 
             
@@ -309,8 +285,7 @@ export const SkillsAndTools = {
                 {skill: "Java", parcent: 20},
                 {skill: "C++", parcent: 10},
                 {skill: "C", parcent: 56},
-                {skill: "JavaScript", parcent: 50},
-                {skill: "Swift", parcent: 10},
+                {skill: "JavaScript", parcent: 79},
             ],
 
             
@@ -337,6 +312,7 @@ export const SkillsAndTools = {
                 {skill: "Arduino programing", parcent: 20},
                 {skill: "C++", parcent: 10},
                 {skill: "Sensors", parcent: 40},
+                {skill: "C", parcent: 60}
             ],
 
             

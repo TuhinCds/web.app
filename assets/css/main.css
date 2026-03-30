@@ -25,6 +25,8 @@
     --nav-a-border-color: rgba(0, 167, 233, 0);
     --sidebar-shadow-color: rgba(0, 0, 0, 0.196);
     --sidebar-toggle-btn: rgb(255, 255, 255);
+    --blur-color: rgba(255, 255, 255, 0.763);
+    --blur-header: blur(20px);
 
 }
 :root[data-theme="dark"] {
@@ -44,6 +46,8 @@
     --nav-a-border-color: rgba(0, 89, 255, 0);
     --sidebar-shadow-color: rgb(0, 0, 0);
     --sidebar-toggle-btn: rgba(255, 255, 255, 0.163);
+    --blur-color: rgba(0, 0, 0, 0.429);
+    --blur-header: blur(70px);
 }
 *,
 *::after,
@@ -80,7 +84,8 @@ html, body {
 
 .header {
     grid-area: header;
-    background: var(--bg-color);
+    background: var(--blur-color);
+    backdrop-filter: var(--blur-header);
     position: sticky;
     top: 0;
     z-index: 99999;
@@ -2743,12 +2748,64 @@ html, body {
 .topics-g .hideSpan {
     display: none;
 }
+.centerCorner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.introSec {
+    margin-bottom: 25px;
+}
+.meInFacebook {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    color: var(--text-color-80);
+    padding: 9px 16px;
+    border-radius: 1000px;
+    background: rgba(146, 162, 255, 0.095);
+    text-decoration: none;
+    border: 1px solid rgba(255, 255, 255, 0);
+    font-size: .9rem;
+}
+.indicatorXc {
+    width: 8px;
+    height: 8px;
+    background: var(--text-color-80);
+    border-radius: 100px;
+    animation: dataX 4s ease-in-out infinite;
+}
+@keyframes dataX {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(.3);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+.links {
+    background: var(--dark-transparent-98);
+    border: 1px solid var(--dark-transparent-99);
+}
 
-
-
-
-
-
+.links a {
+    background: transparent;
+}
+.links button {
+    background: transparent;
+    color: var(--text-color);
+    transition: background .3s, color .3s;
+}
+.border-xxcw {
+    width: 1px;
+    height: 20px;
+    background: var(--dark-transparent-98);
+}
 
 
 /* multi used classes */
