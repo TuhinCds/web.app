@@ -49,7 +49,7 @@ const MyInfo = {
     MyInterrest: {
         MyInterrestIn: "Science and Technology/developer"
     },
-    Hide_repos: ["web.app", "Currency"]
+    Hide_repos: ["web.app", "Currency", "facboClo", "TuhinCds"]
     
 }
 export {MyInfo}
