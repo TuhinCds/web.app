@@ -2807,6 +2807,18 @@ html, body {
     background: var(--dark-transparent-98);
 }
 
+.hero-content{
+    z-index: 9999;
+}
+.background-image{
+    pointer-events: none;
+}
+.btn-secondary{
+    background: rgba(245, 245, 245, 0.105) !important;
+}
+
+
+
 
 /* multi used classes */
 
@@ -2851,6 +2863,7 @@ html, body {
 .overlapHide {
     display: none !important;
 }
+
 
 /* end */
 
