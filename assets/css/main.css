@@ -1413,7 +1413,8 @@ html, body {
     overflow: auto;
 }
 .Used_in_project button {
-    background: rgba(0, 30, 255, 0.54);
+    background: rgba(51, 109, 255, 0.349);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.061);
     color: white;
 }
 .code-view{
@@ -1637,7 +1638,9 @@ html, body {
     background: var(--dark-transparent-97);
     color: var(--text-color)
 }
-
+#filterBtn {
+    display: none !important;
+}
 .btnslider {
     position: absolute;
 }
@@ -2817,7 +2820,9 @@ html, body {
     background: rgba(245, 245, 245, 0.105) !important;
 }
 
-
+.Used_in_project{
+    
+}
 
 
 /* multi used classes */

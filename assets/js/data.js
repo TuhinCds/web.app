@@ -49,7 +49,7 @@ const MyInfo = {
     MyInterrest: {
         MyInterrestIn: "Science and Technology/developer"
     },
-    Hide_repos: ["web.app", "Currency", "facboClo", "TuhinCds"]
+    Hide_repos: ["web.app", "Currency", "facboClo", "TuhinCds", "Solving-Challenges-C", "desktop-tutorial", "C_Programing_practice", "Anki"]
     
 }
 export {MyInfo}
@@ -120,32 +120,30 @@ export const appNavigation = {
 
 export const projects = {
     Recent_Projects: [
-        {
-        images: [
-            {img: 'noteProjectIm9.png', title: ["", 10], link: ""},
-            {img: 'noteProjectIm1.png', title: ["", 10], link: ""},
-            {img: 'noteProjectIm2.png', title: ["", 10], link: ""},
-            {img: 'noteProjectIm4.png', title: ["", 10], link: ""},
-            {img: 'noteProjectIm5.png', title: ["", 10], link: ""},
-            {img: 'noteProjectIm7.png', title: ["", 10], link: ""},
-        ],
-        title: 'NoteEve - Note Everything',
-        title_icon: '<i class="fa-solid fa-notes-medical"></i>',
-        description: 'If you want a note that will refresh your mind and you can <span class="mark-blue">write anything</span> at once that will be saved, you can delete, edit and do many more things as you wish. This is not just a note, it will make your life a little easier. This website includes many things such as a calculator, you can track how much money you are spending or earning and you will have an account of everything.',
-        Used_in_project: [
-            { component: 'JavaScript' },
-            {component: "Html"},
-            { component: 'CSS' },
-            { component: 'Data Stucture' },
-            { component: 'localStorage' },
-            { component: 'other component' },
-        ],
-        code_link: 'https://github.com/TuhinCds/NoteEve.git',
-        preview_link: 'https://tuhincds.github.io/NoteEve/',
-        target: '_blank',
-        status: '',
+        // {
+        // images: [
+        //     {img: 'noteProjectIm9.png', title: ["", 10], link: ""},
+        //     {img: 'noteProjectIm1.png', title: ["", 10], link: ""},
+        //     {img: 'noteProjectIm2.png', title: ["", 10], link: ""},
+        //     {img: 'noteProjectIm4.png', title: ["", 10], link: ""},
+        //     {img: 'noteProjectIm5.png', title: ["", 10], link: ""},
+        //     {img: 'noteProjectIm7.png', title: ["", 10], link: ""},
+        // ],
+        // title: 'NoteEve - Note Everything',
+        // title_icon: '<i class="fa-solid fa-notes-medical"></i>',
+        // description: 'If you want a note that will refresh your mind and you can <span class="mark-blue">write anything</span> at once that will be saved, you can delete, edit and do many more things as you wish. This is not just a note, it will make your life a little easier. This website includes many things such as a calculator, you can track how much money you are spending or earning and you will have an account of everything.',
+        // Used_in_project: [
+        //     { component: 'JavaScript' },
+        //     { component: 'Data Stucture' },
+        //     { component: 'file managements' },
+        //     { component: 'other component' },
+        // ],
+        // code_link: 'https://github.com/TuhinCds/NoteEve.git',
+        // preview_link: 'https://tuhincds.github.io/NoteEve/',
+        // target: '_blank',
+        // status: '',
 
-        },
+        // },
         {
         images: [
             {img: 'ccp3.png', title: ["", 10], link: ""},
@@ -175,9 +173,8 @@ export const projects = {
         title_icon: '<i class="fa-solid fa-weight-hanging"></i>',
         description: 'It can track your body. If you input your body weight, height, age, it will automatically suggest what you should do. For example, if you are very thin, it will tell you how to get fit or gain weight in a healthy way. <span class="mark-orange">(my old project)</span>',
         Used_in_project: [
-            { component: 'HTML & CSS' },
             { component: 'JavaScript' },
-            { component: 'localStorage' },
+            { component: 'node js' },
         ],
         code_link: 'https://github.com/TuhinCds/BMI-calc.web.git',
         preview_link: 'https://tuhincds.github.io/BMI-calc.web/',
@@ -188,37 +185,17 @@ export const projects = {
         images: [
             {img: 'project2.png', title: ["", 10], link: ""}
         ],
-        title: 'Full Form Finder',
+        title: 'Full Form Finder API',
         title_icon: '<i class="fa-solid fa-arrow-up-right-dots"></i>',
-        description: 'if you search a sort form  so it find the full form and show the full form.',
+        description: 'if you search a sort form  so it find the full form.',
         Used_in_project: [
-            { component: 'html' },
-            { component: 'css' },
-            { component: 'javaScript' },
-            { component: 'LocalStorage' }
+            { component: 'node.js' },
+            { component: 'file managements'},
+            { component: 'database used file'}
         ],
         code_link: 'https://github.com/TuhinCds/FullForm_Finder.web.git',
-        preview_link: 'https://tuhincds.github.io/FullForm_Finder.web/',
-        target: '_blank',
-        status: 'old',
-    },
-    {
-        images: [
-            {img: "project3.png", title: ["", 10], link: ""},
-        ],
-        title: 'Math solver AI',
-        title_icon: '<i class="fa-solid fa-code"></i>',
-        description: 'It will solve your big math problems and have the ability to do much more.',
-        Used_in_project: [
-            { component: 'C' },
-            { component: 'Data Stucture' },
-            { component: 'File Manegement' },
-            { component: 'CLI' },
-            { component: 'Python' }
-        ],
-        code_link: '',
         preview_link: '',
-        target: '',
+        target: '_blank',
         status: 'upcoming',
     },
     {
@@ -239,7 +216,7 @@ export const projects = {
         code_link: '',
         preview_link: '',
         target: '',
-        status: 'featured',
+        status: 'upcoming',
     }
     
     
@@ -252,7 +229,7 @@ export const SkillsAndTools = {
         {
             header_title: 'Programing Languages',
             title: 'programing',
-            description: "I'm khowing programming languages",
+            description: "I'm knowing programming languages",
             icon: '<i class="fa-solid fa-code"></i>',
             skills: [
                 {skill: "Python", parcent: 30},
@@ -266,7 +243,7 @@ export const SkillsAndTools = {
         },{
             header_title: 'Web development',
             title: "",
-            description: "I'm khowing web develpment programming languages",
+            description: "I'm knowing web develpment programming languages",
             icon: '<i class="fa-solid fa-tv"></i>',
             skills: [
                 {skill: "JavaScript", parcent: 40},
@@ -279,7 +256,7 @@ export const SkillsAndTools = {
         {
             header_title: 'App development',
             title: 'App development',
-            description: "I'm khowing App develpment programming languages",
+            description: "I'm knowing App develpment programming languages",
             icon: '<i class="fa-solid fa-laptop-code"></i>',
             skills: [
                 {skill: "Java", parcent: 20},
@@ -306,7 +283,7 @@ export const SkillsAndTools = {
         {
             header_title: 'Robotics',
             title: 'Robotics',
-            description: "I khow Robotics ",
+            description: "I knowing Robotics ",
             icon: '<i class="fa-solid fa-robot"></i>',
             skills: [
                 {skill: "Arduino programing", parcent: 20},
@@ -325,3 +302,4 @@ export const SkillsAndTools = {
     ]
 }
 
+  
