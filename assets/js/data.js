@@ -3,10 +3,10 @@ const MyInfo = {
         liveIn: "Bangladesh",
         homeDescription: "iam a web developer with a passion for creating beautiful and functional websites. i have expenrience in JavaScript, Node.js, C, C++, Go, RUST, Python and various web development frameworks.",
         IamInInternet: [
-            {name: "Email", title: "This is email", sortLink: "tuhin433@gmail.com", link: `mailto:tuhin433@gmail.com?subject=Hello&body=I want to talk to you`, icon: `<i class="fa-solid fa-envelope-circle-check"></i>`},
+            {name: "Email", title: "• EMAIL", sortLink: "tuhin433@gmail.com", link: `mailto:tuhin433@gmail.com?subject=Hello&body=I want to talk to you`, icon: `<i class="fa-solid fa-envelope-circle-check"></i>`},
             {name: "Phone", title: "Calling number",sortLink: "+8801314383497", link: `tel:+8801314383497`, icon: `<i class="fa-solid fa-mobile-vibrate"></i>`},
-            {name: "Location", title: "my location",sortLink: "Rajshahi, bangladesh", link: `https://maps.app.goo.gl/hemWNYXJhphVuAZH8`, icon: `<i class="fa-solid fa-location-arrow"></i>`},
-            {name: "Github", title: "this is my github profile",sortLink: "TuhinCds", link: `https://github.com/TuhinCds`, icon: `<i class="fa-brands fa-github-alt"></i>`}
+            {name: "Location", title: "• Location",sortLink: "Rajshahi, bangladesh", link: `https://maps.app.goo.gl/hemWNYXJhphVuAZH8`, icon: `<i class="fa-solid fa-location-arrow"></i>`},
+            {name: "Github", title: "Github profile",sortLink: "TuhinCds", link: `https://github.com/TuhinCds`, icon: `<i class="fa-brands fa-github-alt"></i>`}
         ]
     },
     Education: {
@@ -47,21 +47,18 @@ const MyInfo = {
         },
     },
     MyInterrest: {
-        MyInterrestIn: "Science and Technology/developer"
+        MyInterrestIn: "Love Computer Science and Technology"
     },
     Hide_repos: ["web.app", "Currency", "facboClo", "TuhinCds", "Solving-Challenges-C", "desktop-tutorial", "C_Programing_practice", "Anki"]
     
 }
 export {MyInfo}
 export const What_im = [
-    'Web developer',
     'Critical thinker',
     'Problem solver',
     'Lifelong learner',
     'Team player',
     'Creative mind',
-    'App developer',
-    
 ]
 
 
@@ -232,11 +229,11 @@ export const SkillsAndTools = {
             description: "I'm knowing programming languages",
             icon: '<i class="fa-solid fa-code"></i>',
             skills: [
-                {skill: "Python", parcent: 30},
+                {skill: "Python", parcent: 70},
                 {skill: "Java", parcent: 8},
-                {skill: "JavaScript", parcent: 79},
-                {skill: "C", parcent: 50},
-                {skill: "C++", parcent: 40},
+                {skill: "JavaScript - backend", parcent: 80},
+                {skill: "C", parcent: 80},
+                {skill: "C++", parcent: 90},
                 {skill: "RUST", parcent: 10},
             ],
 
@@ -246,7 +243,7 @@ export const SkillsAndTools = {
             description: "I'm knowing web develpment programming languages",
             icon: '<i class="fa-solid fa-tv"></i>',
             skills: [
-                {skill: "JavaScript", parcent: 40},
+                {skill: "JavaScript - backend", parcent: 40},
                 {skill: "Node.js", parcent: 50},
                 {skill: "MySQL", parcent: 10},
             ],
@@ -262,7 +259,7 @@ export const SkillsAndTools = {
                 {skill: "Java", parcent: 20},
                 {skill: "C++", parcent: 10},
                 {skill: "C", parcent: 56},
-                {skill: "JavaScript", parcent: 79},
+                {skill: "JavaScript - backend", parcent: 79},
             ],
 
             
@@ -275,7 +272,6 @@ export const SkillsAndTools = {
             icon: '<i class="fa-solid fa-trowel-bricks"></i>',
             skills: [
                 {skill: "Git/GitHub", parcent: 60},
-                {skill: "Firebase", parcent: 10},
                 {skill: "VS Code", parcent: 80},
             ],
             
@@ -286,7 +282,7 @@ export const SkillsAndTools = {
             description: "I knowing Robotics ",
             icon: '<i class="fa-solid fa-robot"></i>',
             skills: [
-                {skill: "Arduino programing", parcent: 20},
+                {skill: "Arduino programing", parcent: 50},
                 {skill: "C++", parcent: 10},
                 {skill: "Sensors", parcent: 40},
                 {skill: "C", parcent: 60}
