@@ -369,7 +369,7 @@ function AddProjects() {
         let data = CreateData.querySelector('.Used_in_project')
         components.forEach(project_in_used_lang => {
             let createData = document.createElement('button')
-            createData.innerHTML = project_in_used_lang.component
+            createData.innerHTML = project_in_used_lang.component.length > 20 ? project_in_used_lang.component.slice(0, 20) + "..." :  project_in_used_lang.component;
 
             data.appendChild(createData)
         })

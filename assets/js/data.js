@@ -1,7 +1,7 @@
 const MyInfo = {
     MyGenarelInfo: {
         liveIn: "Bangladesh",
-        homeDescription: "iam a web developer with a passion for creating beautiful and functional websites. i have expenrience in JavaScript, Node.js, C, C++, Go, RUST, Python and various web development frameworks.",
+        homeDescription: "Iam a Learner, i have expenrience in JavaScript, Node.js, C, C++, Go, RUST, Python and various web development frameworks.",
         IamInInternet: [
             {name: "Email", title: "• EMAIL", sortLink: "tuhin433@gmail.com", link: `mailto:tuhin433@gmail.com?subject=Hello&body=I want to talk to you`, icon: `<i class="fa-solid fa-envelope-circle-check"></i>`},
             {name: "Phone", title: "Calling number",sortLink: "+8801314383497", link: `tel:+8801314383497`, icon: `<i class="fa-solid fa-mobile-vibrate"></i>`},
@@ -29,7 +29,7 @@ const MyInfo = {
                 {img: "aboutMeImg4.png"},
             ]
         },
-        aboutMeTitle: `<i class="fa-solid fa-code"></i> Iam a passionate web developer with a knack for creating engaging and user-friendly websites.`,
+        aboutMeTitle: `<i class="fa-solid fa-code"></i> Hello, Iam Tuhin and Iam a Learner`,
         aboutMeDescription: `Hey! I'm Md Tuhin, a young developer and <span class="mark-red">tech</span> explorer who loves turning ideas into real, functional creations. I'm genuinely passionate about technology—whether it's coding, electronics, or building smart systems—and I enjoy learning how things work behind the scenes.
                              I see <span class="mark-blue">technology as a space where creativity</span> meets logic. That's why I spend my time experimenting with new concepts, <span class="mark-orange">learning modern development </span> skills, and building projects that help me grow step by step. From web development to automation and innovative tech solutions, I'm always excited to create something meaningful.
                              I believe progress comes from curiosity, consistency, and the courage to try. Every <span class="mark-white">project I build</span>, no matter how small, teaches me something new and pushes me closer to the future I'm working for.
@@ -49,7 +49,7 @@ const MyInfo = {
     MyInterrest: {
         MyInterrestIn: "Love Computer Science and Technology"
     },
-    Hide_repos: ["web.app", "Currency", "facboClo", "TuhinCds", "Solving-Challenges-C", "desktop-tutorial", "C_Programing_practice", "Anki"]
+    Hide_repos: ["web.app", "facboClo", "TuhinCds", "Solving-Challenges-C", "desktop-tutorial", "Anki"]
     
 }
 export {MyInfo}
@@ -59,6 +59,7 @@ export const What_im = [
     'Lifelong learner',
     'Team player',
     'Creative mind',
+    'Learner'
 ]
 
 
@@ -231,7 +232,7 @@ export const SkillsAndTools = {
             skills: [
                 {skill: "Python", parcent: 70},
                 {skill: "Java", parcent: 8},
-                {skill: "JavaScript - backend", parcent: 80},
+                {skill: "JavaScript", parcent: 80},
                 {skill: "C", parcent: 80},
                 {skill: "C++", parcent: 90},
                 {skill: "RUST", parcent: 10},
@@ -243,7 +244,7 @@ export const SkillsAndTools = {
             description: "I'm knowing web develpment programming languages",
             icon: '<i class="fa-solid fa-tv"></i>',
             skills: [
-                {skill: "JavaScript - backend", parcent: 40},
+                {skill: "JavaScript", parcent: 40},
                 {skill: "Node.js", parcent: 50},
                 {skill: "MySQL", parcent: 10},
             ],
