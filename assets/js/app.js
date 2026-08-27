@@ -611,7 +611,7 @@ const PushMyDataInHtml = () => {
     })
     aboutMeTitle.innerHTML = MyInfo.AboutMe.aboutMeTitle
     abouteMeDescriotion.innerHTML = MyInfo.AboutMe.aboutMeDescription
-    TotalProjectCount.innerHTML = "total " + projects.Recent_Projects.length + ` ${projects.Recent_Projects < 2 ? "project" : "project's"} project`
+    TotalProjectCount.innerHTML = "total " + projects.Recent_Projects.length + ` ${projects.Recent_Projects < 2 ? "project" : "project's"}`
     ProjectCountIn.innerHTML = projects.Recent_Projects.length 
 }
 PushMyDataInHtml()
