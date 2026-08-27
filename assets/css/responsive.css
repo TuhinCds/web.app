@@ -194,6 +194,12 @@
     background: transparent;
     border: none;
 }
+.Used_in_project {
+    margin: 0 !important;
+}
+.usedInProjectContainer {
+    margin: 0 !important;
+}
 .code-view {
     border: none;
 }

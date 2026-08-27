@@ -41,7 +41,6 @@ const TopNav = document.getElementById('TopNav')
 
 const sidebar = document.getElementById('sidebar')
 const menuToggler = document.getElementById('menuToggler')
-const sidebarIcon = menuToggler.querySelector('i')
 const overly = document.getElementById('overly')
 
 // Im_What 
@@ -214,13 +213,9 @@ Navigation.forEach(item => {
 
 function Sidebar() {
     sidebar.classList.toggle('open')
-    if ( sidebar.classList.contains('open')) {
-        sidebarIcon.classList.remove('fa-bars')
-        sidebarIcon.classList.add('fa-xmark')
+    if (sidebar.classList.contains('open')) {
         ActiveOverly()
     } else {
-        sidebarIcon.classList.add('fa-bars')
-        sidebarIcon.classList.remove('fa-xmark')
         DeactiveOverly()
     }
 }
@@ -334,12 +329,15 @@ function AddProjects() {
                                             <div class="project-body-this">
                                                 <div class="project-title">${project.title_icon}&nbsp;${project.title.length > 40 ? project.title.slice(0, 40) + "... " + "more" : project.title}</div>
                                                 <div class="project-description">${project.description.length > 155 ? project.description.slice(0, 155) + ".. " + `<span class="moreBtn">more</span>` : project.description}</div>
-                                                <div class="Used_in_project">
-                                                <!-- Programing Languages -->
+                                                <div class="usedInProjectContainer">
+                                                    <p class="usedInProjectHead"><i class="fa-solid fa-diagram-predecessor"></i>Use in project</p>
+                                                    <div class="Used_in_project">
+                                                        <!-- Programing Languages -->
+                                                    </div>
                                                 </div>
                                                 <div class="code-view">
-                                                    <a ${project.status === "upcoming" ? "" : `href="${project.code_link}"`} target="${project.target ? project.target : "_blank"}"><i class="fa-brands fa-github"></i>&nbsp;Code</a>
-                                                    <a ${project.status === "upcoming" ? `class="upcoming-status"` : `href="${project.preview_link}"`} target="${project.target ? project.target : "_blank"}"><i class="fa-solid fa-arrow-up-right-from-square"></i>Live preview</a>
+                                                    <a class="viewCode" ${project.status === "upcoming" ? "" : `href="${project.code_link}"`} target="${project.target ? project.target : "_blank"}"><i class="fa-solid fa-code"></i></a>
+                                                    <a class="previewProject" ${project.status === "upcoming" ? `class="upcoming-status"` : `href="${project.preview_link}"`} target="${project.target ? project.target : "_blank"}"><i class="fa-solid fa-arrow-up-right-from-square"></i>See Project</a>
                                                 </div>
                                                 
                                       </div>
@@ -390,8 +388,6 @@ function AddProjects() {
                 projectsImageSlideBtns.querySelectorAll("button")[d].classList.add("active")
             
             }
-           
-
         if (imgs.length > 1) {
             imgs.forEach((imgJ, index) => {
             let createBtn = document.createElement("button")
@@ -406,11 +402,7 @@ function AddProjects() {
                 countD = index
                 
             })
-
-            
-
         })
-
         slideImagesImg.addEventListener("click", () => {
                 countD++;
                 if (countD >= imgs.length) countD = 0;
@@ -429,9 +421,6 @@ function AddProjects() {
             projectsImageSlideBtns.querySelectorAll("button")[0].classList.add("btnCompress")
             projectsImageSlideBtns.querySelectorAll("button")[imgs.length - 1].classList.add("btnCompress")
         }
-
-
-            
     })              
 }
 
@@ -529,7 +518,7 @@ SkillsAndTools.Skills_Data.forEach(item => {
                                                 <span>${item.parcent}%</span>
                                             </p>
                                      <div class="parsent-data">
-                                        <div style="width: ${item.parcent}%; background: ${item.parcent > 80 && item.parcent < 100 ? 'rgba(2, 222, 116, 1)' : item.parcent > 50 && item.parcent < 80 ? 'rgb(44, 213, 255)' : item.parcent > 30 && item.parcent < item.parcent < 50 ? 'rgb(150, 44, 255)' : item.parcent < 30 ? 'rgba(255, 44, 143, 1)' : ''};"class="parsent"></div>
+                                        <div style="width: ${item.parcent}%; background: ${item.parcent > 80 && item.parcent < 100 ? 'rgba(2, 222, 116, 1)' : item.parcent > 50 && item.parcent < 80 ? 'rgb(44, 213, 255)' : item.parcent > 30 && item.parcent < item.parcent < 50 ? 'rgb(150, 44, 255)' : item.parcent < 30 ? 'rgb(255, 121, 44)' : ''};"class="parsent"></div>
                                 </div>
                 `
 

@@ -54,6 +54,7 @@ const MyInfo = {
 }
 export {MyInfo}
 export const What_im = [
+    'Student',
     'Critical thinker',
     'Problem solver',
     'Lifelong learner',
@@ -61,7 +62,6 @@ export const What_im = [
     'Creative mind',
     'Learner'
 ]
-
 
 
 
@@ -171,8 +171,9 @@ export const projects = {
         title_icon: '<i class="fa-solid fa-weight-hanging"></i>',
         description: 'It can track your body. If you input your body weight, height, age, it will automatically suggest what you should do. For example, if you are very thin, it will tell you how to get fit or gain weight in a healthy way. <span class="mark-orange">(my old project)</span>',
         Used_in_project: [
+            { component: 'HTML' },
+            { component: 'CSS' },
             { component: 'JavaScript' },
-            { component: 'node js' },
         ],
         code_link: 'https://github.com/TuhinCds/BMI-calc.web.git',
         preview_link: 'https://tuhincds.github.io/BMI-calc.web/',
@@ -187,27 +188,28 @@ export const projects = {
         title_icon: '<i class="fa-solid fa-arrow-up-right-dots"></i>',
         description: 'if you search a sort form  so it find the full form.',
         Used_in_project: [
+            { component: 'HTML' },
+            { component: 'CSS' },
+            { component: 'JavaScript' },
             { component: 'node.js' },
-            { component: 'file managements'},
-            { component: 'database used file'}
+            { component: 'MongoDB'}
         ],
         code_link: 'https://github.com/TuhinCds/FullForm_Finder.web.git',
         preview_link: '',
         target: '_blank',
-        status: 'upcoming',
+        status: '',
     },
     {
         images: [
             {img: 'project4.png', title: ["", 10], link: ""}
         ],
-        title: 'Ai Robot',
+        title: 'Aritificial Inteligence Robot',
         title_icon: '<i class="fa-solid fa-robot"></i>',
         description: 'Ai Robot stions, class schet',
         Used_in_project: [
             { component: 'Arduino programming' },
-            { component: 'Data Stucture' },
+            { component: '' },
             { component: 'Arduino uno, and other devices' },
-            { component: 'cicuits' },
             { component: 'Python' },
             {component: "other component"}
         ],
@@ -245,22 +247,8 @@ export const SkillsAndTools = {
             icon: '<i class="fa-solid fa-tv"></i>',
             skills: [
                 {skill: "JavaScript", parcent: 40},
-                {skill: "Node.js", parcent: 50},
-                {skill: "MySQL", parcent: 10},
-            ],
-
-            
-        },
-        {
-            header_title: 'App development',
-            title: 'App development',
-            description: "I'm knowing App develpment programming languages",
-            icon: '<i class="fa-solid fa-laptop-code"></i>',
-            skills: [
-                {skill: "Java", parcent: 20},
-                {skill: "C++", parcent: 10},
-                {skill: "C", parcent: 56},
-                {skill: "JavaScript - backend", parcent: 79},
+                {skill: "Node.js", parcent: 90},
+                {skill: "MongoDB", parcent: 70},
             ],
 
             
@@ -274,6 +262,7 @@ export const SkillsAndTools = {
             skills: [
                 {skill: "Git/GitHub", parcent: 60},
                 {skill: "VS Code", parcent: 80},
+                {skill: "PlatformIO", parcent: 30},
             ],
             
         },
@@ -288,8 +277,15 @@ export const SkillsAndTools = {
                 {skill: "Sensors", parcent: 40},
                 {skill: "C", parcent: 60}
             ],
-
-            
+        },
+        {
+            header_title: 'Databases',
+            title: 'Databases',
+            description: "I knowing Database",
+            icon: '<i class="fa-solid fa-database"></i>',
+            skills: [
+                {skill: "MongoDB", parcent: 80},
+            ],
         },
         
     
