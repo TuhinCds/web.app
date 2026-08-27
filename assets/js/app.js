@@ -518,7 +518,7 @@ SkillsAndTools.Skills_Data.forEach(item => {
                                                 <span>${item.parcent}%</span>
                                             </p>
                                      <div class="parsent-data">
-                                        <div style="width: ${item.parcent}%; background: ${item.parcent > 80 && item.parcent < 100 ? 'rgba(2, 222, 116, 1)' : item.parcent > 50 && item.parcent < 80 ? 'rgb(44, 213, 255)' : item.parcent > 30 && item.parcent < item.parcent < 50 ? 'rgb(150, 44, 255)' : item.parcent < 30 ? 'rgb(255, 121, 44)' : ''};"class="parsent"></div>
+                                        <div style="width: ${item.parcent}%; background: ${item.parcent > 80 && item.parcent < 100 ? 'rgba(2, 222, 116, 1)' : item.parcent > 50 && item.parcent < 80 ? 'rgb(44, 213, 255)' : item.parcent > 30 && item.parcent < item.parcent < 50 ? 'rgb(150, 44, 255)' : item.parcent < 30 ? 'rgb(255, 44, 44)' : ''};"class="parsent"></div>
                                 </div>
                 `
 

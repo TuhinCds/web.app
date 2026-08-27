@@ -106,8 +106,9 @@ html, body {
 }
 .sidebar {
     position: fixed;
-    top: 0;
-    bottom: 0;
+    top: 15px;
+    bottom: 15px;
+    border-radius: 25px;
     width: 0;
     left: 0;
     transform: translateX(-100%);
@@ -829,17 +830,7 @@ html, body {
 .parsent {
     position: relative;
 }
-.parsent::after {
-    position: absolute;
-    content: '';
-    width: 20px;
-    height: 7px;
-    background: var(--dark-transparent-97);
-    right: -30px;
-    border-radius: 100px;
-    top: 50%;
-    transform: translateY(-50%);
-}
+
 #SkillsIn {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -1152,6 +1143,8 @@ html, body {
 }
 #overly {
     background: var(--dark-transparent-99) !important;
+    backdrop-filter: blur(30px) !important;
+    /* background: red !important; */
 }
 .logo-side {
     text-decoration: none;
@@ -1627,8 +1620,8 @@ html, body {
     display: flex;
     align-items: center;
     gap: 4px;
-    padding: 2px;
-    border: 1px solid var(--dark-transparent-97);
+    padding: 2.5px !important;
+    border: .3px solid var(--dark-transparent-99) !important;
     border-radius: 100px;
 }
 .btns-p button {
@@ -1639,9 +1632,6 @@ html, body {
     border-radius: 100px;
     cursor: pointer;
     transition: background .3s;
-}
-.btns-p button:hover {
-    background: var(--dark-transparent-99);
 }
 .btns-p button.active {
     background: var(--dark-transparent-97);
@@ -2954,6 +2944,6 @@ html, body {
     /* background: red; */
     color: white !important;
 }
-.introSec{
+.btns-p {
 
 }
