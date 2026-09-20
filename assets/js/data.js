@@ -184,7 +184,7 @@ export const projects = {
         images: [
             {img: 'project2.png', title: ["", 10], link: ""}
         ],
-        title: 'Full Form Finder API',
+        title: 'Full Form Finder',
         title_icon: '<i class="fa-solid fa-arrow-up-right-dots"></i>',
         description: 'if you search a sort form  so it find the full form.',
         Used_in_project: [
@@ -205,13 +205,15 @@ export const projects = {
         ],
         title: 'Aritificial Inteligence Robot',
         title_icon: '<i class="fa-solid fa-robot"></i>',
-        description: 'Ai Robot stions, class schet',
+        description: 'Just for Testing... [small]',
         Used_in_project: [
-            { component: 'Arduino programming' },
+            { component: 'C/C++' },
             { component: '' },
             { component: 'Arduino uno, and other devices' },
             { component: 'Python' },
-            {component: "other component"}
+            { component: "Local server"},
+            { component: "MongoDB"},
+            {component: "other components"}
         ],
         code_link: '',
         preview_link: '',

@@ -714,15 +714,15 @@ function MyEducation() {
                                                     <div class="eduStepMainPart1">
                                                         <div class="organizationName eduOrgan-${item.eduS === "SSC" ? "blue" : ""}">
                                                             <span class="icon"><i class="fa-solid fa-school-circle-check"></i></span>
-                                                            <span>${item.organizationName}</span>
+                                                            <span class="organizationNameTxt">${item.organizationName}</span>
                                                         </div>
                                                         <div class="eduMain">
                                                             <p class="edu-year-show">${item.year}</p>
                                                             <div class="vr-border-p1"></div>
                                                             <p class="gpaSec">
                                                                 <span>GPA</span>
-                                                                <span class="indicator-white"></span>
-                                                                <span class="gpaValue">${item.GPA}</span>
+                                                                ${!item.GPA ? "" : '<span class="indicator-white"></span>'}
+                                                                <span class="gpaValue">${item.GPA} ${!item.GPA ? `<span class="loading-bar-circle-base-2"></span>` : ""}</span>
                                                             </p>
                                                         </div>
                                                     </div>

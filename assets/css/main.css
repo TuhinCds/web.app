@@ -32,6 +32,7 @@
     --project-container-color: rgb(254, 254, 254);
     --btn-bg-x: #f3f3f3e3;
     --btn-bg-x-2: rgb(254, 254, 254);
+    --bg-auto-opacity: 0;
 }
 :root[data-theme="dark"] {
     --btn-bg-x: #f3f3f31a;
@@ -55,6 +56,7 @@
     --sidebar-toggle-btn: rgba(255, 255, 255, 0.163);
     --blur-color: rgba(0, 0, 0, 0.429);
     --blur-header: blur(70px);
+    --bg-auto-opacity: .2;
 }
 *,
 *::after,
@@ -164,7 +166,6 @@ html, body {
     margin-top: 60px;
 }
 .hero-btns a {
-    margin: 0 5px;
     text-decoration: none;
     color: var(--text-color);
     padding: 10px 15px;
@@ -586,7 +587,7 @@ html, body {
     text-align: center;
 }
 .project {
-    background: var(--bg-color);
+    /* background: var(--bg-color); */
     /* border: 1px solid var(--dark-transparent-97); */
     border-radius: 20px;
     overflow: hidden;
@@ -1452,7 +1453,7 @@ html, body {
     display: flex;
     align-items: center;
     justify-content: start;
-    margin-bottom: 10px;
+    margin-bottom: 0px;
 }
 .eduStepLeftSide {
     display: flex;
@@ -1582,7 +1583,7 @@ html, body {
     background: transparent !important;
 }
 .eduOrgan-blue {
-    color: rgb(24, 108, 252);
+    color: rgb(62, 131, 250);
 }
 .showStatus {
     text-transform: capitalize;
@@ -1634,8 +1635,9 @@ html, body {
     transition: background .3s;
 }
 .btns-p button.active {
-    background: var(--dark-transparent-97);
-    color: var(--text-color)
+    /* background: var(--dark-transparent-97); */
+    color: white;
+    background: #457efb !important;
 }
 #filterBtn {
     display: none !important;
@@ -2765,7 +2767,7 @@ html, body {
     align-items: center;
     justify-content: center;
     gap: 10px;
-    color: var(--text-color-80);
+    color: var(--text-color-80) !important;
     padding: 9px 16px;
     border-radius: 1000px;
     background: rgba(146, 162, 255, 0.148);
@@ -2942,8 +2944,95 @@ html, body {
 }
 .indicatorXc {
     /* background: red; */
-    color: white !important;
+    color: var(--text-color-80) !important;
 }
 .btns-p {
 
+}
+.organizationNameTxt {
+    font-size: .9rem;
+}
+.loading-bar-circle-base-2 {
+    width: 10px;
+    height: 10px;
+    border-radius: 1000px;
+    border: 1.5px solid rgb(201, 200, 200);
+    border-bottom: 1.5px solid transparent;
+    animation:rotateXY .9s linear infinite;
+}
+
+@keyframes rotateXY {
+    0%{
+        transform: rotate(0deg);
+    } 100%{
+        transform: rotate(360deg);
+    }
+}
+.gpaValue {
+    display: flex;
+}
+.hero-btns {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px !important;
+}
+.hero-links {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.hero-links a{
+    backdrop-filter: blur(4px);
+    padding: 12px 17px !important;
+}
+.hero-links a:first-child {
+    border-radius: 20px 5px 5px 20px;
+}
+.hero-links a:last-child {
+    background: var(--dark-transparent-97) !important;
+    border-radius: 5px 20px 20px 5px;
+    color: var(--text-color-80);
+}
+.bgOverly {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    opacity: var(--bg-auto-opacity);
+    pointer-events: none;
+}
+.bgOverly img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+}
+.eduStep {
+    backdrop-filter: blur(5px);
+}
+.skill {
+    backdrop-filter: blur(5px);
+}
+.project {
+    backdrop-filter: blur(10px);
+}
+.AboutMe-container {
+    backdrop-filter: blur(7px);
+}
+.contact-child-con {
+   backdrop-filter: blur(4px); 
+}
+.btns-p {
+    backdrop-filter: blur(4px);
+}
+.eduContainerTxtHead {
+    font-size: 1.2rem;
+}
+#ErrorHandlerCard {
+    backdrop-filter: blur(8px);
+}
+.repoCardMain {
+    backdrop-filter: blur(8px);
 }
