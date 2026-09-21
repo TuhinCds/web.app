@@ -1,7 +1,7 @@
 const MyInfo = {
     MyGenarelInfo: {
         liveIn: "Bangladesh",
-        homeDescription: "Iam a Learner, i have expenrience in JavaScript, Node.js, C, C++, Go, RUST, Python and various web development frameworks.",
+        homeDescription: "Iam a Learner, i have expenrience in JavaScript, Node.js, database, C/C++, Go, RUST, Python and various web development frameworks.",
         IamInInternet: [
             {name: "Email", title: "• EMAIL", sortLink: "tuhin433@gmail.com", link: `mailto:tuhin433@gmail.com?subject=Hello&body=I want to talk to you`, icon: `<i class="fa-solid fa-envelope-circle-check"></i>`},
             {name: "Phone", title: "Calling number",sortLink: "+8801314383497", link: `tel:+8801314383497`, icon: `<i class="fa-solid fa-mobile-vibrate"></i>`},
@@ -30,8 +30,8 @@ const MyInfo = {
             ]
         },
         aboutMeTitle: `<i class="fa-solid fa-code"></i> Hello, Iam Tuhin and Iam a Learner`,
-        aboutMeDescription: `Hey! I'm Md Tuhin, a young developer and <span class="mark-red">tech</span> explorer who loves turning ideas into real, functional creations. I'm genuinely passionate about technology—whether it's coding, electronics, or building smart systems—and I enjoy learning how things work behind the scenes.
-                             I see <span class="mark-blue">technology as a space where creativity</span> meets logic. That's why I spend my time experimenting with new concepts, <span class="mark-orange">learning modern development </span> skills, and building projects that help me grow step by step. From web development to automation and innovative tech solutions, I'm always excited to create something meaningful.
+        aboutMeDescription: `Hey! I'm Md Tuhin, a young developer and <span class="mark-red">tech</span> explorer who loves turning ideas into real, functional creations. I'm genuinely passionate about technology—whether it's programming, or building smart systems—and I enjoy learning how things work behind the scenes.
+                             I see <span class="mark-blue">technology as a space where creativity</span> meets logic. That's why I spend my time experimenting with new concepts, <span class="mark-orange">learning modern development </span> skills, and building projects that help me grow step by step. From web development to system programming and innovative tech solutions, I'm always excited to create something meaningful.
                              I believe progress comes from curiosity, consistency, and the courage to try. Every <span class="mark-white">project I build</span>, no matter how small, teaches me something new and pushes me closer to the future I'm working for.
                              In short: I love learning, I love building, and I'm committed to becoming better every single day. 🚀`,
         
