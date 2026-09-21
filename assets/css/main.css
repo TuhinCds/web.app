@@ -146,7 +146,7 @@ html, body {
 }
 
 .my_title {
-    font-size: 3.6rem;
+    font-size: 3.9rem;
     text-align: center;
 }
 .my_title_two {
@@ -163,7 +163,7 @@ html, body {
     text-align: center;
 }
 .hero-btns {
-    margin-top: 60px;
+    margin-top:5px;
 }
 .hero-btns a {
     text-decoration: none;
@@ -184,7 +184,7 @@ html, body {
 }
 .text-dec1 {
     color: transparent;
-    background: linear-gradient(48deg, var(--text-color-80) 20%, rgb(0, 106, 255) 40%, rgb(84, 181, 255));
+    background: linear-gradient(48deg, var(--text-color-80) 20%, rgb(31, 123, 251) 40%, rgb(79, 173, 245));
     -webkit-background-clip: text;
     background-clip: text;
 }
@@ -245,7 +245,7 @@ html, body {
     height: 20px;
     left: 80%;
     top: 40px;
-    background: rgba(0, 0, 255, 0.579);
+    background: rgba(29, 29, 247, 0.579);
 }
 .circle:nth-child(4) {
     width: calc( var(--circle-size) + 20px);
@@ -2768,11 +2768,12 @@ html, body {
     justify-content: center;
     gap: 10px;
     color: var(--text-color-80) !important;
-    padding: 9px 16px;
+    padding: 9px 9px;
+    padding-left: 19px;
     border-radius: 1000px;
-    background: rgba(146, 162, 255, 0.148);
+    background: var(--dark-transparent-97);
     text-decoration: none;
-    border: 1px solid rgba(255, 255, 255, 0);
+    border: 1px solid rgba(255, 255, 255, 0.043);
     font-size: .9rem;
 }
 
@@ -2980,19 +2981,22 @@ html, body {
 .hero-links {
     display: flex;
     align-items: center;
-    gap: 5px;
+    gap: 10px;
 }
 .hero-links a{
     backdrop-filter: blur(4px);
     padding: 12px 17px !important;
 }
 .hero-links a:first-child {
-    border-radius: 20px 5px 5px 20px;
+    /* border-radius: 20px 5px 5px 20px; */
+    padding: 12px 25px;
+    font-weight: 500;
+    
 }
 .hero-links a:last-child {
     background: var(--dark-transparent-97) !important;
-    border-radius: 5px 20px 20px 5px;
     color: var(--text-color-80);
+    border: .4px solid var(--dark-transparent-98)
 }
 .bgOverly {
     position: fixed;
@@ -3002,6 +3006,7 @@ html, body {
     top: 0;
     opacity: var(--bg-auto-opacity);
     pointer-events: none;
+    display: none;
 }
 .bgOverly img {
     width: 100%;
@@ -3035,4 +3040,29 @@ html, body {
 }
 .repoCardMain {
     backdrop-filter: blur(8px);
+}
+.imageContainerLeetcodeProfile img{
+    width: 38px;
+    border-radius: 300px;
+    border: .5px solid var(--dark-transparent-97)
+}
+.imageContainerLeetcodeProfile {
+    display: flex;
+    align-items: center;
+}
+.meInLeetCode {
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+}
+.indicatorXc {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.centerCorner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
 }
