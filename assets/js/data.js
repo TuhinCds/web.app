@@ -164,6 +164,398 @@ export const projects = {
         },
         {
         images: [
+            {img: 'telegram-cloud-photo-size-5-6210606569712456099-w.jpg', title: ["", 10], link: ""},
+            {img: 'image-p2-2.png', title: ["", 10], link: ""},
+            {img: 'Screenshot 2026-10-07 at 11.10.44 AM.png', title: ["", 10], link: ""},
+            {img: 'Screenshot 2026-10-07 at 11.13.19 AM.png', title: ["", 10], link: ""},
+            {img: 'Screenshot 2026-10-07 at 11.18.17 AM.png', title: ["", 10], link: ""},
+            {img: 'Screenshot 2026-10-07 at 11.24.24 AM.png', title: ["", 10], link: ""},
+            {img: 'Screenshot 2026-10-07 at 11.54.58 AM.png', title: ["", 10], link: ""},
+            {img: 'Screenshot 2026-10-07 at 11.55.17 AM.png', title: ["", 10], link: ""},
+            {img: 'Screenshot 2026-10-07 at 11.56.50 AM.png', title: ["", 10], link: ""},
+            {img: 'Screenshot 2026-10-07 at 11.58.19 AM.png', title: ["", 10], link: ""},
+            {img: 'Screenshot 2026-10-07 at 11.10.57 AM.png', title: ["", 10], link: ""},
+        ],
+        title: "A Smart Room controler with Inteligent",
+        title_icon: '<i class="fa-solid fa-gear"></i>',
+        description: `
+<div class="project-documentation">
+
+  <header class="project-header">
+    <p>
+      A real-time IoT-based smart room management platform for monitoring,
+      controlling, automating, and synchronizing room devices through
+      software, physical switches, and Telegram.
+    </p>
+  </header>
+
+
+  <section class="project-section">
+    <h2>1. Smart Home Dashboard</h2>
+
+    <p>
+      The <span>Home Screen</span> provides a real-time overview of the
+      connected room.
+    </p>
+
+    <ul>
+      <li>View all configured switches.</li>
+      <li>Turn switches ON/OFF in real time.</li>
+      <li>View the current status of each switch.</li>
+      <li>Control devices connected to the room controller.</li>
+      <li>View live room temperature and humidity.</li>
+      <li>Synchronize device state across connected clients.</li>
+    </ul>
+
+    <p>
+      Any change made from the software, physical switch, Telegram, or
+      automation system is synchronized across the entire system.
+    </p>
+  </section>
+
+
+  <section class="project-section">
+    <h2>2. Device Activity Monitor</h2>
+
+    <p>
+      The <span>Device Activity</span> page provides a live event stream
+      of everything happening on the connected device.
+    </p>
+
+    <ul>
+      <li>Switch ON/OFF events</li>
+      <li>Physical button events</li>
+      <li>Device connection and disconnection</li>
+      <li>Configuration changes</li>
+      <li>User actions</li>
+      <li>Automated actions</li>
+    </ul>
+
+    <p>
+      Each activity can include the event type, switch name, previous
+      and current status, user information, timestamp, and action source.
+    </p>
+  </section>
+
+
+  <section class="project-section">
+    <h2>3. Physical Switch Configuration</h2>
+
+    <p>
+      The system supports physical switches or buttons connected directly
+      to controller GPIO pins.
+    </p>
+
+    <h3>Example Configuration</h3>
+
+    <ul>
+      <li>GPIO 5 → Bedroom Light</li>
+      <li>GPIO 6 → Room Fan</li>
+      <li>GPIO 7 → Main Light</li>
+    </ul>
+
+    <p>
+      Users can select a GPIO pin and assign it to a software switch.
+      When the physical button is pressed, the assigned switch receives
+      the corresponding event automatically.
+    </p>
+
+    <ul>
+      <li>Physical switch name</li>
+      <li>GPIO/input pin</li>
+      <li>Target software switch</li>
+      <li>Button behavior</li>
+      <li>Enabled/disabled status</li>
+    </ul>
+  </section>
+
+
+  <section class="project-section">
+    <h2>4. Switch Management</h2>
+
+    <p>
+      Users can dynamically manage all software-controlled switches.
+    </p>
+
+    <ul>
+      <li>Create a switch</li>
+      <li>Update a switch</li>
+      <li>Delete a switch</li>
+      <li>Rename a switch</li>
+      <li>Change switch configuration</li>
+      <li>Enable or disable a switch</li>
+      <li>Control switch state</li>
+    </ul>
+  </section>
+
+
+  <section class="project-section">
+    <h2>5. Timer & Automation</h2>
+
+    <p>
+      The <span>Timer</span> section allows users to schedule automated
+      device actions.
+    </p>
+
+    <ul>
+      <li>Select a target switch.</li>
+      <li>Select an ON/OFF action.</li>
+      <li>Set a delay or duration.</li>
+      <li>Set an execution time.</li>
+      <li>Enable or disable the timer.</li>
+    </ul>
+
+    <p>
+      <strong>Example:</strong>
+      Turn OFF Bedroom Light after 30 seconds.
+    </p>
+  </section>
+
+
+  <section class="project-section">
+    <h2>6. Multi-Device & Real-Time Synchronization</h2>
+
+    <p>
+      Multiple users and clients can connect to the same smart room.
+      Every device state change is synchronized in real time.
+    </p>
+
+    <ol>
+      <li>User A toggles a light ON.</li>
+      <li>The controller receives the command.</li>
+      <li>The physical device changes state.</li>
+      <li>The server updates the device state.</li>
+      <li>All connected clients receive the updated state.</li>
+      <li>Telegram can send a notification.</li>
+      <li>The activity monitor records the event.</li>
+    </ol>
+  </section>
+
+
+  <section class="project-section">
+    <h2>7. Device Authentication & Login</h2>
+
+    <p>
+      The system includes a multi-step authentication mechanism to
+      protect device access.
+    </p>
+
+    <ol>
+      <li>User provides the required information.</li>
+      <li>The system validates the information.</li>
+      <li>Email verification is completed.</li>
+      <li>Available active devices are displayed.</li>
+      <li>The user selects a device.</li>
+      <li>The user authenticates using the device password.</li>
+      <li>Access is granted according to the user's permissions.</li>
+    </ol>
+  </section>
+
+
+  <section class="project-section">
+    <h2>8. Device Management & Settings</h2>
+
+    <ul>
+      <li>View connected device information.</li>
+      <li>Connect or disconnect from a device.</li>
+      <li>Switch between available devices.</li>
+      <li>Manage device access.</li>
+      <li>Configure device settings.</li>
+      <li>View device status.</li>
+    </ul>
+  </section>
+
+
+  <section class="project-section">
+    <h2>9. Telegram Integration</h2>
+
+    <p>
+      Telegram works as an additional control interface for the smart
+      room. After authentication, users can remotely monitor and control
+      their device through Telegram.
+    </p>
+
+    <h3>Example Commands</h3>
+
+    <p>
+      <code>show switches</code>
+    </p>
+
+    <p>
+      <code>show physical switches</code>
+    </p>
+
+    <p>
+      <code>turn on light</code>
+    </p>
+
+    <p>
+      <code>turn off bedroom light</code>
+    </p>
+
+    <p>
+      The system can interpret different natural-language variations of
+      the same command and map them to the correct device action.
+    </p>
+  </section>
+
+
+  <section class="project-section">
+    <h2>10. Telegram Notifications</h2>
+
+    <p>
+      Telegram can also be used as a real-time notification channel.
+    </p>
+
+    <div class="notification-example">
+
+      <p>
+        <strong>Room Environment Update</strong>
+      </p>
+
+      <ul>
+        <li>Temperature: <span>27.4°C</span></li>
+        <li>Humidity: <span>61%</span></li>
+        <li>Device: <span>Room Controller #01</span></li>
+        <li>Event: <span>Room environment updated</span></li>
+      </ul>
+
+    </div>
+  </section>
+
+
+  <section class="project-section">
+    <h2>11. Real-Time User Activity Notifications</h2>
+
+    <p>
+      Whenever a connected user performs an action, the event can appear
+      in the software and be sent to Telegram.
+    </p>
+
+    <div class="activity-example">
+
+      <p>
+        <strong>User:</strong>
+        <span>Tuhin</span>
+      </p>
+
+      <p>
+        <strong>Profile:</strong>
+        <span>User Profile Image</span>
+      </p>
+
+      <p>
+        <strong>Action:</strong>
+        <span>Bedroom Light → ON</span>
+      </p>
+
+      <p>
+        <strong>Source:</strong>
+        <span>Software</span>
+      </p>
+
+      <p>
+        <strong>Device:</strong>
+        <span>Room Controller #01</span>
+      </p>
+
+      <p>
+        <strong>Time:</strong>
+        <span>01:42 PM</span>
+      </p>
+
+    </div>
+  </section>
+
+
+  <section class="project-section">
+    <h2>12. Unified Control Architecture</h2>
+
+    <p>
+      All control interfaces communicate with the same real-time device
+      state.
+    </p>
+
+    <pre>
+                    ┌─────────────────────┐
+                    │   Room Controller   │
+                    │      IoT Device     │
+                    └──────────┬──────────┘
+                               │
+                     Real-Time State Sync
+                               │
+        ┌──────────────────────┼──────────────────────┐
+        │                      │                      │
+        ▼                      ▼                      ▼
+   Software App          Physical Switches        Telegram
+        │                      │                      │
+        └──────────────────────┼──────────────────────┘
+                               │
+                               ▼
+                     Unified Device State
+                               │
+              ┌────────────────┼────────────────┐
+              ▼                ▼                ▼
+         Dashboard        Activity Log      Notifications
+    </pre>
+  </section>
+
+
+  <section class="project-section">
+    <h2>13. Core System Capabilities</h2>
+
+    <ul>
+      <li>Real-Time Device Control</li>
+      <li>Real-Time Synchronization</li>
+      <li>Smart Switch Management</li>
+      <li>Physical GPIO Mapping</li>
+      <li>Temperature Monitoring</li>
+      <li>Humidity Monitoring</li>
+      <li>Live Activity Monitoring</li>
+      <li>Timers & Automation</li>
+      <li>Multi-User Access</li>
+      <li>Authentication & Authorization</li>
+      <li>Email Verification</li>
+      <li>Telegram Control</li>
+      <li>Intelligent Command Interpretation</li>
+      <li>Telegram Notifications</li>
+      <li>User Activity Tracking</li>
+      <li>Device Management</li>
+      <li>Multi-Device Support</li>
+    </ul>
+  </section>
+
+
+  <section class="core-principle">
+    <h2>Core System Principle</h2>
+
+    <p>
+      One device state, multiple control interfaces,
+      real-time synchronization.
+    </p>
+  </section>
+
+</div>
+
+`,
+        Used_in_project: [
+            { component: 'JavaScript' },
+            { component: "API's" },
+            { component: 'express.js' },
+            { component: 'MongoDB' },
+            { component: 'Cloudinary' },
+            { component: 'Telegram API' },
+            { component: 'ESP 8266' },
+            { component: 'other component' },
+        ],
+        code_link: 'https://github.com/TuhinCds',
+        preview_link: 'https://github.com/TuhinCd',
+        target: '_blank',
+        status: '',
+
+        },
+        {
+        images: [
             {img: 'bmiProjectim1.png', title: ["", 10], link: ""},
             {img: 'bmiProjectim2.png', title: ["", 10], link: ""},
         ],

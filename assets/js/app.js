@@ -328,7 +328,7 @@ function AddProjects() {
                                             </div>
                                             <div class="project-body-this">
                                                 <div class="project-title">${project.title_icon}&nbsp;${project.title.length > 40 ? project.title.slice(0, 40) + "... " + "more" : project.title}</div>
-                                                <div class="project-description">${project.description.length > 155 ? project.description.slice(0, 155) + ".. " + `<span class="moreBtn">more</span>` : project.description}</div>
+                                                <div class="project-description project-documentation-light">${project.description.length > 155 ? project.description.slice(0, 155) + ".. " + `<span class="moreBtn">more</span>` : project.description}</div>
                                                 <div class="usedInProjectContainer">
                                                     <p class="usedInProjectHead"><i class="fa-solid fa-diagram-predecessor"></i>Use in project</p>
                                                     <div class="Used_in_project">
