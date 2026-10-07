@@ -34,6 +34,7 @@
     --btn-bg-x-2: rgb(254, 254, 254);
     --bg-auto-opacity: 0;
     --bg-color-t5: rgb(198, 197, 197);
+    --discription-color: #8399b9;
 }
 :root[data-theme="dark"] {
     --btn-bg-x: #f3f3f31a;
@@ -59,6 +60,7 @@
     --blur-header: blur(70px);
     --bg-auto-opacity: .2;
     --bg-color-t5: rgba(2, 2, 2, 0.214);
+    --discription-color: #8399b9;
 }
 *,
 *::after,
@@ -3095,7 +3097,7 @@ html, body {
   font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont,
     "Segoe UI", sans-serif;
 
-  color: #1f2937;
+  color: var(--discription-color);
   line-height: 1.7;
   font-size: 16px;
 }
@@ -3103,7 +3105,7 @@ html, body {
   font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont,
     "Segoe UI", sans-serif;
 
-  color: #485971;
+  color: var(--discription-color);
   line-height: 1.7;
   font-size: 16px;
 }
@@ -3145,7 +3147,7 @@ html, body {
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.75;
-  color: #4b5563;
+  color: #6c7a8f;
   margin: 0 0 14px;
 }
 
@@ -3164,7 +3166,7 @@ html, body {
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.7;
-  color: #4b5563;
+  color: #647082;
   margin-bottom: 7px;
 }
 
@@ -3175,7 +3177,7 @@ html, body {
 
 .project-documentation strong {
   font-weight: 600;
-  color: #111827;
+  color: #415c97;
 }
 
 
@@ -3209,8 +3211,8 @@ html, body {
   font-size: 0.9em;
   font-weight: 500;
 
-  background: #f3f4f6;
-  color: #223254;
+  background: var(--dark-transparent-97);
+  color: var(--text-color-80);
 
   padding: 3px 7px;
   border-radius: 5px;
