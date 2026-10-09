@@ -1,4 +1,43 @@
 const MyInfo = {
+    Current: {
+      project: {
+        name: "MyWiki",
+        img: "",
+        link: "https://tuhincds.github.io/MyWiki/",
+        target: "_blank"
+      }
+    },
+    SocialActivityPlatform: [
+      {
+        name: "facebook",
+        icon: `<i class="fa-brands fa-facebook"></i>`,
+        profileLink: "https://www.facebook.com/MdTuhin128",
+        target: "_blank"
+      },
+      {
+        name: "instagram",
+        icon: `<i class="fa-brands fa-instagram"></i>`,
+        profileLink: "https://www.instagram.com/tuhinc18/",
+        target: "_blank"
+      },
+      {
+        name: "github",
+        icon: `<i class="fa-brands fa-github"></i>`,
+        profileLink: "https://github.com/TuhinCds",
+        target: "_blank"
+      },
+      {
+        name: "leetcode",
+        icon: `
+<svg width="24" height="24" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M60.8607 74.8886C63.1089 72.6437 66.7481 72.6496 68.989 74.9017C71.23 77.1538 71.2241 80.7994 68.976 83.0443L58.9929 93.0126C49.7828 102.209 34.7641 102.343 25.3986 93.3224C25.3445 93.2706 21.1743 89.1815 7.41705 75.6915C-1.73529 66.7174 -2.64709 52.3575 5.96552 43.1359L22.0236 25.9417C30.5715 16.7886 46.3283 15.7882 56.1015 23.6918L70.6861 35.4869C73.156 37.4844 73.5418 41.1094 71.5478 43.5836C69.5538 46.0578 65.9351 46.4442 63.4653 44.4468L48.8807 32.6518C43.7695 28.5183 34.8285 29.086 30.4181 33.8087L14.3598 51.0032C10.1669 55.4924 10.6261 62.7245 15.4581 67.4624C25.5603 77.3683 33.3459 85.0024 33.3549 85.011C38.224 89.7007 46.0969 89.6308 50.8776 84.857L60.8607 74.8886Z" fill="#FFA116"/>
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M36.609 64.9129C33.4346 64.9129 30.8613 62.3351 30.8613 59.1553C30.8613 55.9754 33.4346 53.3976 36.609 53.3976H78.9977C82.172 53.3976 84.7453 55.9754 84.7453 59.1553C84.7453 62.3351 82.172 64.9129 78.9977 64.9129H36.609Z" fill="#B3B3B3"/>
+</svg>`,
+        profileLink: "https://leetcode.com/u/Md-tuhin/",
+        target: "_blank"
+      },
+    ]
+    ,
     MyGenarelInfo: {
         liveIn: "Bangladesh",
         homeDescription: "Iam a Learner, i have expenrience in JavaScript, Node.js, database, C/C++, Go, RUST, Python and various web development frameworks.",

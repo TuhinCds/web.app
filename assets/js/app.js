@@ -42,6 +42,8 @@ const TopNav = document.getElementById('TopNav')
 const sidebar = document.getElementById('sidebar')
 const menuToggler = document.getElementById('menuToggler')
 const overly = document.getElementById('overly')
+const allSocialPlatformLinks = document.getElementById("allSocialPlatformLinks")
+const currentProjectLinkOne = document.getElementById("currentProjectLinkOne")
 
 // Im_What 
 
@@ -1164,3 +1166,32 @@ async function HandleCommits(repo) {
         console.log(err)
     }
 } 
+
+function pushSocialLinks(Array){
+    allSocialPlatformLinks.innerHTML = ""
+    Array.forEach((platform, idx) => {
+        let createPlatformBlock = document.createElement("span")
+        let StraightLine = document.createElement("div")
+        StraightLine.classList.add("straght-line-top")
+        createPlatformBlock.classList.add("platform-block")
+        createPlatformBlock.innerHTML = `
+                            <a href="${platform.profileLink}" target="${platform.target}">
+                                <span class="link-icon">${platform.icon}</span>
+                            </a>`
+        allSocialPlatformLinks.appendChild(createPlatformBlock)
+        if(Array.length > 1){
+            if(idx !== Array.length-1){
+                allSocialPlatformLinks.appendChild(StraightLine)
+            }
+        }
+    })
+}
+
+pushSocialLinks(MyInfo.SocialActivityPlatform)
+function showcurrentProjectLinkOne(project){
+    window.open(project.link, project.target)
+}
+
+currentProjectLinkOne.addEventListener("click", () => {
+    showcurrentProjectLinkOne(MyInfo.Current.project)
+})

@@ -27,8 +27,8 @@
     --nav-a-border-color: rgba(0, 167, 233, 0);
     --sidebar-shadow-color: rgba(0, 0, 0, 0.196);
     --sidebar-toggle-btn: rgb(255, 255, 255);
-    --blur-color: rgb(255, 255, 255);
-    --blur-header: blur(20px);
+    --blur-color: rgba(255, 255, 255, 0.578);
+    --blur-header: blur(30px);
     --project-container-color: rgb(254, 254, 254);
     --btn-bg-x: #f3f3f3e3;
     --btn-bg-x-2: rgb(254, 254, 254);
@@ -3304,4 +3304,82 @@ html, body {
 }
 .path-x2 {
     fill: var(--text-color);
+}
+
+.sidebar_Contact_links{
+    color: white;
+}
+.sidebar-main-navigation {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    /* background: red; */
+}
+.lineDiverderW1H1 {
+    height: 1.2px;
+    background: var(--dark-transparent-97);
+    margin: 10px 20px;
+}
+.sidebar_Contact_links {
+    padding: 7px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+#allSocialPlatformLinks {
+    background: var(--dark-transparent-98);
+    border: .4px solid var(--dark-transparent-99);
+    padding: 10px 12px;
+    border-radius: 10px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: space-between;
+}
+.platform-block a {
+    text-decoration: none;
+    color: var(--text-color-80)
+}
+.platform-block a .link-icon i{
+    font-size: 1.3rem;
+}
+.straght-line-top {
+    height: 20px;
+    width: .8px;
+    background: var(--dark-transparent-97);
+}
+.sidebarBottomButton_cureentProject {
+    position: fixed;
+    bottom: 20px;
+    right: 10px;
+    left: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    padding: 10px 17px;
+}
+.sidebarBottomButton_cureentProject button {
+    padding: 14px 24px;
+    border:none;
+    border-radius: 100px;
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    font-family:"Plus Jakarta Sans", sans-serif;
+    background: rgb(72, 117, 251);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-left: .3px solid rgba(254, 253, 253, 0.323);
+    border-right: .3px solid rgba(254, 253, 253, 0.477);
+}
+
+.sidebar-main-navigation ul li a.selected {
+    background: rgba(247, 244, 244, 0.115) !important;
+    background: transparent !important;
+    color: rgb(97, 160, 255) !important;
+    border-radius: 0 !important;
+}
+.sidebar-main-navigation ul li a{
+    padding: 13px !important;
+    font-family: "Geomini", sans-serif !important;
 }

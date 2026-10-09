@@ -45,6 +45,7 @@
 
 
 #SidebarNav li .selected::after {
+    display: none;
     position: absolute;
     content: '';
     width: 6px;
