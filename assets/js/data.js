@@ -540,7 +540,9 @@ export const projects = {
 `,
         Used_in_project: [
             { component: 'JavaScript' },
+            { component: 'C++' },
             { component: "API's" },
+            { component: "WebSocket" },
             { component: 'express.js' },
             { component: 'MongoDB' },
             { component: 'Cloudinary' },
